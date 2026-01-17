@@ -1,10 +1,9 @@
 // ==UserScript==
-// @name     New - pornhub.com playlist videos link grabber
+// @name     Better pornhub.com playlist videos link grabber
 // @description This adds a button to pornhub playlists to grab links to all videos of this playlist
-// @version  1.2.0
+// @version  1.2.1
 // @license MIT
 // @grant    none
-// // @require https://update.sleazyfork.org/scripts/562977/1736152/Bsodergren%20Library.js
 // @match    https://*.pornhub.com/playlist/*
 // @match    https://*.pornhubpremium.com/playlist/*
 // @namespace https://greasyfork.org/users/984905
