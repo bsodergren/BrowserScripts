@@ -3,14 +3,15 @@
 // @namespace   Violentmonkey Scripts
 // @match       https://members.private.com/en/scene/*
 // @grant       none
-// @downloadURL  https://raw.githubusercontent.com/bsodergren/BrowserScripts/refs/heads/main/Private/Private.js
-// @updateURL https://raw.githubusercontent.com/bsodergren/BrowserScripts/refs/heads/main/Private/Private.js
-// @version     1.0
+// @version     1.1.0
 // @author      -
+// @license MIT
 // @description 9/15/2025, 10:25:49 AM
+// @downloadURL https://update.sleazyfork.org/scripts/562974/privatecom.user.js
+// @updateURL https://update.sleazyfork.org/scripts/562974/privatecom.meta.js
 // ==/UserScript==
 
-(function () {
+;(function () {
   'use strict'
 
   var videoPlaylist = document.querySelector('.title-zone')
