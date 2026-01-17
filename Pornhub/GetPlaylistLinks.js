@@ -1,21 +1,22 @@
-
 // ==UserScript==
 // @name     New - pornhub.com playlist videos link grabber
 // @description This adds a button to pornhub playlists to grab links to all videos of this playlist
-// @version  1.1.0
+// @version  1.2.0
 // @license MIT
 // @grant    none
+// // @require https://update.sleazyfork.org/scripts/562977/1736152/Bsodergren%20Library.js
 // @match    https://*.pornhub.com/playlist/*
 // @match    https://*.pornhubpremium.com/playlist/*
+// @namespace https://greasyfork.org/users/984905
 // ==/UserScript==
-
+ 
 ;(function () {
   'use strict'
-
+ 
   var btnContainer = document.querySelector(
     '#userPlaylistActions #js-playlistTabsNav'
   )
-
+ 
   var linkGrabberBtn = document.createElement('button')
   linkGrabberBtn.onclick = grabVideoList
   linkGrabberBtn.classList.add('playlistButtons') //playlistButtons tooltipTrig js-pop
@@ -24,17 +25,33 @@
   span.className = 'text'
   linkGrabberBtn.appendChild(span)
   btnContainer.appendChild(linkGrabberBtn)
+ 
+  
+  function copyText () {
+    var text= '';
+      var videoPlaylist = document.getElementById('videoPlaylist')
+    var linkList = videoPlaylist.querySelectorAll('div > a')
+    for (var i = 0; i < linkList.length; i++) {
+      // innerHTML = linkList[i].href;
+      // console.log(linkList[i].href,linkList[i].href.match(/view_video/) )
+      if (linkList[i].href.match(/view_video/) !== null) {
+        text = text + '\n' + linkList[i].href
+      }
+    }
+    navigator.clipboard
+      .writeText(text)
+  }
 
   function grabVideoList () {
     var videoPlaylist = document.getElementById('videoPlaylist')
     var linkList = videoPlaylist.querySelectorAll('div > a')
     //     for(var i = 0; i< linkList.length; i++){
-
+ 
     //       // console.log(linkList[i]);
     //     }
     showLinks(linkList)
   }
-
+ 
   function showLinks (linkList) {
     var outerModalDiv = document.createElement('div')
     var innerModalDiv = document.createElement('div')
@@ -49,7 +66,7 @@
     outerModalDiv.style.height = '100%'
     outerModalDiv.style.backgroundColor = 'rgb(0,0,0)'
     outerModalDiv.style.backgroundColor = 'rgb(0,0,0,0.4)'
-
+ 
     //add close btn
     var buttonContainer = document.createElement('div')
     buttonContainer.className = 'userButtons'
@@ -59,15 +76,15 @@
     closeBtn.classList.add('mainButton')
     closeBtn.classList.add('addFriendButton')
     closeBtn.classList.add('add')
-
+ 
     innerCloseBtn.innerText = 'X'
     innerCloseBtn.className = 'buttonBase'
-
+ 
     closeBtn.onclick = RemoveOuterModalPanel
     closeBtn.appendChild(innerCloseBtn)
     buttonContainer.appendChild(closeBtn)
     innerModalDiv.appendChild(buttonContainer)
-
+ 
     innerModalDiv.style.backgroundColor = '#1b1b1b'
     innerModalDiv.style.margin = 'auto'
     innerModalDiv.style.padding = '20px'
@@ -76,7 +93,7 @@
     innerModalDiv.style.color = '#ababab'
     innerModalDiv.style.overflowY = 'auto'
     innerModalDiv.style.height = '80%'
-
+ 
     var CopyTexBtn = document.createElement('button')
     CopyTexBtn.onclick = copyText
     CopyTexBtn.classList.add('playlistButtons') //playlistButtons tooltipTrig js-pop
@@ -84,7 +101,7 @@
     CopyTexrspan.innerText = 'Get all video links'
     CopyTexrspan.className = 'text'
     CopyTexBtn.appendChild(CopyTexrspan)
-
+ 
     var instructions1 = document.createElement('p')
     var instructions2 = document.createElement('p')
     var instructions3 = document.createElement('p')
@@ -97,7 +114,7 @@
     innerModalDiv.appendChild(instructions2)
     innerModalDiv.appendChild(instructions3)
     innerModalDiv.appendChild(CopyTexBtn)
-
+ 
     var linkListDiv = document.createElement('div')
     linkListDiv.id = 'linkListDivID'
     for (var i = 0; i < linkList.length; i++) {
@@ -112,11 +129,11 @@
       }
     }
     innerModalDiv.appendChild(linkListDiv)
-
+ 
     outerModalDiv.appendChild(innerModalDiv)
     document.body.appendChild(outerModalDiv)
   }
-
+ 
   function RemoveOuterModalPanel () {
     var toRemove = document.getElementById(
       'playlistVidsLinkContainingModalPanel'
