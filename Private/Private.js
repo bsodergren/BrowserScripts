@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name        New script private.com
+// @name       private.com
 // @namespace   Violentmonkey Scripts
 // @match       https://members.private.com/en/scene/*
 // @grant       none
-// @downloadURL  
+// @downloadURL  https://raw.githubusercontent.com/bsodergren/BrowserScripts/refs/heads/main/Private/Private.js
+// @updateURL https://raw.githubusercontent.com/bsodergren/BrowserScripts/refs/heads/main/Private/Private.js
 // @version     1.0
 // @author      -
 // @description 9/15/2025, 10:25:49 AM
