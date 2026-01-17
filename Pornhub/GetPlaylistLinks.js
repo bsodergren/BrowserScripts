@@ -4,9 +4,6 @@
 // @description This adds a button to pornhub playlists to grab links to all videos of this playlist
 // @version  1.1.0
 // @license MIT
-// @downloadURL https://raw.githubusercontent.com/bsodergren/BrowserScripts/refs/heads/main/Pornhub/GetPlaylistLinks.js
-// @updateURL https://raw.githubusercontent.com/bsodergren/BrowserScripts/refs/heads/main/Pornhub/GetPlaylistLinks.js
-// @require https://github.com/bsodergren/BrowserScripts/raw/refs/heads/main/Pornhub/CopyText.js
 // @grant    none
 // @match    https://*.pornhub.com/playlist/*
 // @match    https://*.pornhubpremium.com/playlist/*

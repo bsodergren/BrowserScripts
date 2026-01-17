@@ -10,7 +10,7 @@
 // @description 9/15/2025, 10:25:49 AM
 // ==/UserScript==
 
-;(function () {
+(function () {
   'use strict'
 
   var videoPlaylist = document.querySelector('.title-zone')
