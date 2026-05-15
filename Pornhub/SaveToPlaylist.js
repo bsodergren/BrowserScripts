@@ -10,7 +10,7 @@
 // @author      -
 // @run-at       document-end
 // @description 4/28/2026, 6:34:22 AM
-// @require https://raw.githubusercontent.com/bsodergren/BrowserScripts/refs/heads/main/ScriptReq/Additional.js
+// @require https://update.sleazyfork.org/scripts/578336/1826440/Bs%20ToastPopup.js
 // ==/UserScript==
 
 
