@@ -8,24 +8,27 @@
 // @match    https://*.pornhubpremium.com/playlist/*
 // @namespace https://greasyfork.org/users/984905
 // ==/UserScript==
- 
+
 ;(function () {
   'use strict'
- 
+
   var btnContainer = document.querySelector(
-    '#userPlaylistActions #js-playlistTabsNav'
+    //'#userPlaylistActions #js-playlistTabsNav'
+    '.cmtHeader h2'
   )
- 
-  var linkGrabberBtn = document.createElement('button')
+
+
+
+  var linkGrabberBtn = document.createElement('span')
   linkGrabberBtn.onclick = grabVideoList
   linkGrabberBtn.classList.add('playlistButtons') //playlistButtons tooltipTrig js-pop
-  var span = document.createElement('span')
-  span.innerText = 'Get all video links'
-  span.className = 'text'
-  linkGrabberBtn.appendChild(span)
+  // var span = document.createElement('h2')
+  linkGrabberBtn.innerText = 'Get all video links'
+  // span.className = 'playlistButtons'
+  // linkGrabberBtn.appendChild(span)
   btnContainer.appendChild(linkGrabberBtn)
- 
-  
+
+
   function copyText () {
     var text= '';
       var videoPlaylist = document.getElementById('videoPlaylist')
@@ -45,12 +48,12 @@
     var videoPlaylist = document.getElementById('videoPlaylist')
     var linkList = videoPlaylist.querySelectorAll('div > a')
     //     for(var i = 0; i< linkList.length; i++){
- 
+
     //       // console.log(linkList[i]);
     //     }
     showLinks(linkList)
   }
- 
+
   function showLinks (linkList) {
     var outerModalDiv = document.createElement('div')
     var innerModalDiv = document.createElement('div')
@@ -65,7 +68,7 @@
     outerModalDiv.style.height = '100%'
     outerModalDiv.style.backgroundColor = 'rgb(0,0,0)'
     outerModalDiv.style.backgroundColor = 'rgb(0,0,0,0.4)'
- 
+
     //add close btn
     var buttonContainer = document.createElement('div')
     buttonContainer.className = 'userButtons'
@@ -75,15 +78,15 @@
     closeBtn.classList.add('mainButton')
     closeBtn.classList.add('addFriendButton')
     closeBtn.classList.add('add')
- 
+
     innerCloseBtn.innerText = 'X'
     innerCloseBtn.className = 'buttonBase'
- 
+
     closeBtn.onclick = RemoveOuterModalPanel
     closeBtn.appendChild(innerCloseBtn)
     buttonContainer.appendChild(closeBtn)
     innerModalDiv.appendChild(buttonContainer)
- 
+
     innerModalDiv.style.backgroundColor = '#1b1b1b'
     innerModalDiv.style.margin = 'auto'
     innerModalDiv.style.padding = '20px'
@@ -92,7 +95,7 @@
     innerModalDiv.style.color = '#ababab'
     innerModalDiv.style.overflowY = 'auto'
     innerModalDiv.style.height = '80%'
- 
+
     var CopyTexBtn = document.createElement('button')
     CopyTexBtn.onclick = copyText
     CopyTexBtn.classList.add('playlistButtons') //playlistButtons tooltipTrig js-pop
@@ -100,7 +103,7 @@
     CopyTexrspan.innerText = 'Get all video links'
     CopyTexrspan.className = 'text'
     CopyTexBtn.appendChild(CopyTexrspan)
- 
+
     var instructions1 = document.createElement('p')
     var instructions2 = document.createElement('p')
     var instructions3 = document.createElement('p')
@@ -113,26 +116,29 @@
     innerModalDiv.appendChild(instructions2)
     innerModalDiv.appendChild(instructions3)
     innerModalDiv.appendChild(CopyTexBtn)
- 
+
     var linkListDiv = document.createElement('div')
+      var linkListLi = document.createElement('ol')
     linkListDiv.id = 'linkListDivID'
     for (var i = 0; i < linkList.length; i++) {
       // innerHTML = linkList[i].href;
       // console.log(linkList[i].href,linkList[i].href.match(/view_video/) )
       if (linkList[i].href.match(/view_video/) !== null) {
+        var OrderedList = document.createElement('li')
         var a = document.createElement('a')
         a.innerHTML = linkList[i].href
         a.href = linkList[i].href
-        linkListDiv.appendChild(a)
-        linkListDiv.appendChild(document.createElement('br'))
+        OrderedList.appendChild(a)
+        linkListLi.appendChild(OrderedList)
       }
     }
+    linkListDiv.appendChild(linkListLi)
     innerModalDiv.appendChild(linkListDiv)
- 
+
     outerModalDiv.appendChild(innerModalDiv)
     document.body.appendChild(outerModalDiv)
   }
- 
+
   function RemoveOuterModalPanel () {
     var toRemove = document.getElementById(
       'playlistVidsLinkContainingModalPanel'
