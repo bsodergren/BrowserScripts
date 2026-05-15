@@ -1,0 +1,521 @@
+{
+  "scripts": {
+    "pornhub.com playlist link grabber for -view_video": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/388309/pornhubcom%20playlist%20link%20grabber%20for%20view_video.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 0
+      },
+      "position": 1,
+      "lastModified": 1778883870631,
+      "lastUpdated": 1758319205235
+    },
+    "pornhub.com playlist videos link grabber": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/427906/pornhubcom%20playlist%20videos%20link%20grabber.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 0
+      },
+      "position": 2,
+      "lastModified": 1778883870632,
+      "lastUpdated": 1775238288216
+    },
+    "Playlist PH Pagination Enhanced": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/535501/Playlist%20PH%20Pagination%20Enhanced.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 3,
+      "lastModified": 1778883870632,
+      "lastUpdated": 1757935761300
+    },
+    "nubiles playlist videos link grabber": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 4,
+      "lastModified": 1778883870633,
+      "lastUpdated": 1767861649771
+    },
+    "New script private.com": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 5,
+      "lastModified": 1778883870634,
+      "lastUpdated": 1757951448239
+    },
+    "eporner playlist videos link grabber": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 6,
+      "lastModified": 1778883870634,
+      "lastUpdated": 1768376325568
+    },
+    "New script pornbox.com": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "injectInto": "page",
+        "pathMap": {},
+        "runAt": "document-end"
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 7,
+      "lastModified": 1778883870635,
+      "lastUpdated": 1758126089367
+    },
+    "PH - Search & UI Tweaks - Filter Fix": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/533462/PH%20-%20Search%20%20UI%20Tweaks%20-%20Filter%20Fix.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 8,
+      "lastModified": 1778883870635,
+      "lastUpdated": 1758510061760
+    },
+    "Brazzers - TWEAKED": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/421554/Brazzers%20-%20TWEAKED.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 2
+      },
+      "position": 9,
+      "lastModified": 1778883870635,
+      "lastUpdated": 1761828929524
+    },
+    "Better pornhub.com playlist videos link grabber": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://raw.githubusercontent.com/bsodergren/BrowserScripts/refs/heads/main/Pornhub/GetPlaylistLinks.js",
+        "pathMap": {},
+        "updateURL": "https://raw.githubusercontent.com/bsodergren/BrowserScripts/refs/heads/main/Pornhub/GetPlaylistLinks.js"
+      },
+      "config": {
+        "enabled": 0,
+        "notifyUpdates": 0,
+        "removed": 0,
+        "shouldUpdate": 0
+      },
+      "position": 10,
+      "lastModified": 1778883870636,
+      "lastUpdated": 1773322700308
+    },
+    "private.com": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/562974/privatecom.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 11,
+      "lastModified": 1778883870636,
+      "lastUpdated": 1768635437258
+    },
+    "PH - Search & UI Tweaks": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/373951/PH%20-%20Search%20%20UI%20Tweaks.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 12,
+      "lastModified": 1778883870636,
+      "lastUpdated": 1769412772143
+    },
+    "Adulttime Grid View": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/530256/Adulttime%20Grid%20View.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": true,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 13,
+      "lastModified": 1778885075975,
+      "lastUpdated": 1770273422692
+    },
+    "Pornhub video download with one click": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/563118/Pornhub%20video%20download%20with%20one%20click.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 2
+      },
+      "position": 14,
+      "lastModified": 1778883870637,
+      "lastUpdated": 1770587587994
+    },
+    "MagicPH": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/492700/MagicPH.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 15,
+      "lastModified": 1778883870637,
+      "lastUpdated": 1770587376932
+    },
+    "Xhamster Widescreen - New Design - PlayList v.574": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/418869/Xhamster%20Widescreen%20-%20New%20Design%20-%20PlayList%20v573.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 16,
+      "lastModified": 1778883870638,
+      "lastUpdated": 1771504283411
+    },
+    "New script phpliveregex.com": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "pathMap": {},
+        "runAt": "document-end"
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 17,
+      "lastModified": 1778883870638,
+      "lastUpdated": 1771670447398
+    },
+    "adultmobile.com": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 18,
+      "lastModified": 1778883870638,
+      "lastUpdated": 1772766350493
+    },
+    "private mp4 download": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "name": "private mp4 download",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 19,
+      "lastModified": 1778883870638,
+      "lastUpdated": 1775724229696
+    },
+    "ExtendPornHub": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "from": "https://sleazyfork.org/en/scripts/6587-extendpornhub",
+        "lastInstallURL": "https://update.sleazyfork.org/scripts/6587/ExtendPornHub.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 20,
+      "lastModified": 1778883870639,
+      "lastUpdated": 1775796497282
+    },
+    "Right click to save to playlist": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "name": "Right click to save to playlist",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 21,
+      "lastModified": 1778886382693,
+      "lastUpdated": 1778885340488
+    },
+    "New script newsensations.com": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 0,
+        "removed": 0,
+        "shouldUpdate": 1
+      },
+      "position": 22,
+      "lastModified": 1778883870639,
+      "lastUpdated": 1778770338308
+    },
+    "Adulttime Actiontag script": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "lastInstallURL": "https://update.greasyfork.org/scripts/578332/Adulttime%20Actiontag%20script.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 1,
+        "shouldUpdate": 2,
+        "removed": 0
+      },
+      "position": 23,
+      "lastModified": 1778887125020,
+      "lastUpdated": 1778887125020
+    },
+    "Pornhub - Save to local playlist": {
+      "custom": {
+        "origInclude": true,
+        "origExclude": true,
+        "origMatch": true,
+        "origExcludeMatch": true,
+        "from": "https://greasyfork.org/en/scripts/578338-pornhub-save-to-local-playlist",
+        "lastInstallURL": "https://update.greasyfork.org/scripts/578338/Pornhub%20-%20Save%20to%20local%20playlist.user.js",
+        "pathMap": {}
+      },
+      "config": {
+        "enabled": 1,
+        "shouldUpdate": 1,
+        "removed": 0
+      },
+      "position": 24,
+      "lastModified": 1778886396148,
+      "lastUpdated": 1778886396148
+    }
+  },
+  "settings": {
+    "isApplied": true,
+    "blacklist": "file://*/*",
+    "blacklistNet": "file://*/*",
+    "popupWidth": 320,
+    "updateEnabledScriptsOnly": false,
+    "autoUpdate": 1,
+    "lastUpdate": 1778857827527,
+    "lastModified": 1778884559645,
+    "showBadge": "unique",
+    "badgeColor": "#880088",
+    "badgeColorBlocked": "#888888",
+    "exportValues": true,
+    "exportNameTemplate": "[violentmonkey]_YYYY-MM-DD_HH.mm.ss",
+    "expose": {
+      "greasyfork%2Eorg": true,
+      "sleazyfork%2Eorg": true
+    },
+    "closeAfterInstall": false,
+    "editAfterInstall": false,
+    "helpForLocalFile": true,
+    "trackLocalFile": false,
+    "autoReload": false,
+    "features": null,
+    "syncScriptStatus": true,
+    "syncAutomatically": true,
+    "customCSS": "",
+    "importScriptData": true,
+    "importSettings": true,
+    "notifyUpdates": true,
+    "notifyUpdatesGlobal": true,
+    "version": 1,
+    "defaultInjectInto": "auto",
+    "ffInject": true,
+    "xhrInject": false,
+    "filters": {
+      "showOrder": false,
+      "showVisit": false,
+      "sort": "exec-",
+      "viewSingleColumn": false,
+      "viewTable": false
+    },
+    "filtersPopup": {
+      "sort": "exec",
+      "enabledFirst": false,
+      "groupRunAt": true,
+      "hideDisabled": "group"
+    },
+    "editor": {
+      "killTrailingSpaceOnSave": true,
+      "showTrailingSpace": true,
+      "autocompleteOnTyping": 100,
+      "lineWrapping": false,
+      "indentWithTabs": false,
+      "indentUnit": 2,
+      "tabSize": 2,
+      "undoDepth": 500
+    },
+    "editorTheme": ".cm-s-rubyblue.CodeMirror { background: #112435; color: white; }\n.cm-s-rubyblue div.CodeMirror-selected { background: #38566F; }\n.cm-s-rubyblue .CodeMirror-line::selection, .cm-s-rubyblue .CodeMirror-line > span::selection, .cm-s-rubyblue .CodeMirror-line > span > span::selection { background: rgba(56, 86, 111, 0.99); }\n.cm-s-rubyblue .CodeMirror-line::-moz-selection, .cm-s-rubyblue .CodeMirror-line > span::-moz-selection, .cm-s-rubyblue .CodeMirror-line > span > span::-moz-selection { background: rgba(56, 86, 111, 0.99); }\n.cm-s-rubyblue .CodeMirror-gutters { background: #1F4661; border-right: 7px solid #3E7087; }\n.cm-s-rubyblue .CodeMirror-guttermarker { color: white; }\n.cm-s-rubyblue .CodeMirror-guttermarker-subtle { color: #3E7087; }\n.cm-s-rubyblue .CodeMirror-linenumber { color: white; }\n.cm-s-rubyblue .CodeMirror-cursor { border-left: 1px solid white; }\n\n.cm-s-rubyblue span.cm-comment { color: #999; font-style:italic; line-height: 1em; }\n.cm-s-rubyblue span.cm-atom { color: #F4C20B; }\n.cm-s-rubyblue span.cm-number, .cm-s-rubyblue span.cm-attribute { color: #82C6E0; }\n.cm-s-rubyblue span.cm-keyword { color: #F0F; }\n.cm-s-rubyblue span.cm-string { color: #F08047; }\n.cm-s-rubyblue span.cm-meta { color: #F0F; }\n.cm-s-rubyblue span.cm-variable-2, .cm-s-rubyblue span.cm-tag { color: #7BD827; }\n.cm-s-rubyblue span.cm-variable-3, .cm-s-rubyblue span.cm-def, .cm-s-rubyblue span.cm-type { color: white; }\n.cm-s-rubyblue span.cm-bracket { color: #F0F; }\n.cm-s-rubyblue span.cm-link { color: #F4C20B; }\n.cm-s-rubyblue span.CodeMirror-matchingbracket { color:#F0F !important; }\n.cm-s-rubyblue span.cm-builtin, .cm-s-rubyblue span.cm-special { color: #FF9D00; }\n.cm-s-rubyblue span.cm-error { color: #AF2018; }\n\n.cm-s-rubyblue .CodeMirror-activeline-background { background: #173047; }\n",
+    "editorThemeName": "rubyblue",
+    "editorWindow": true,
+    "editorWindowPos": {},
+    "editorWindowSimple": true,
+    "scriptTemplate": "// ==UserScript==\n// @name        New script {{name}}\n// @namespace https://greasyfork.org/users/984905\n// @license     MIT\n// @match       {{url}}\n// @grant       none\n// @version     1.0\n// @author      bjorn\n// @description {{date}}\n// ==/UserScript==\n",
+    "showAdvanced": true,
+    "valueEditor": {
+      "autocompleteOnTyping": 100,
+      "lineWrapping": false,
+      "indentWithTabs": false,
+      "indentUnit": 2,
+      "tabSize": 2,
+      "undoDepth": 500,
+      "editAsString": true
+    },
+    "uiTheme": ""
+  },
+  "values": {
+    "https-3a-2f-2fwww.ph.com-2f-0aPlaylist-20PH-20Pagination-20Enhanced-0a": {
+      "ph_current_page_337678131": "n1",
+      "ph_current_page_356610531": "n1",
+      "ph_items_count_337678131": "n36",
+      "ph_items_count_356610531": "n42",
+      "ph_items_per_page": "n100"
+    }
+  }
+}
