@@ -4,10 +4,11 @@
 // @match        https://members.adulttime.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.1.0
+// @version     1.2.0
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
 // @description 4/28/2026, 6:34:22 AM
+// @require https://update.greasyfork.org/scripts/576832/1817140/Coloured%20logger.js
 // ==/UserScript==
 
 ; (function () {
@@ -99,6 +100,7 @@
         var titleElement = document.getElementsByClassName('ScenePlayerHeaderPlus-SceneTitle-Title')
         title = titleElement[0].innerText
         subtitle = { VideoName: title, Subtitle: href }
+        logger.info(subtitle)
         saveToText(subtitle, 'saveAdulttimeSubtitle')
     }
 
