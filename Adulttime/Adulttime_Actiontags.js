@@ -4,15 +4,14 @@
 // @match        https://members.adulttime.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.2.0
+// @version     1.2.1
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
 // @description 4/28/2026, 6:34:22 AM
-// @require https://update.greasyfork.org/scripts/576832/1817140/Coloured%20logger.js
 // ==/UserScript==
 
 ; (function () {
-    function showToast(message, duration = 3000) {
+    function showToast(message, duration = 3000, element = null) {
         // Create toast container if it doesn't exist
         let container = document.getElementById('tm-toast-container');
         if (!container) {
@@ -52,6 +51,9 @@
             toast.style.opacity = '0';
             toast.addEventListener('transitionend', () => {
                 toast.remove();
+                if (element !== null) {
+                    element.remove()
+                }
             });
         }, duration);
     }
@@ -100,7 +102,6 @@
         var titleElement = document.getElementsByClassName('ScenePlayerHeaderPlus-SceneTitle-Title')
         title = titleElement[0].innerText
         subtitle = { VideoName: title, Subtitle: href }
-        logger.info(subtitle)
         saveToText(subtitle, 'saveAdulttimeSubtitle')
     }
 
@@ -130,6 +131,7 @@
 
     function saveToText(Formdata, action) {
 
+        var b = null
         if (action === "saveAdulttimeSubtitle") {
             toastText = "Saved Subtitles"
         }
@@ -149,12 +151,9 @@
                 "Content-Type": "application/x-www-form-urlencoded"
             }
         })
-        showToast(toastText, 3000)
-        if (b !== null) {
-            b.remove()
-        }
-    }
+        showToast(toastText, 3000, b)
 
-    unsafeWindow.getVideoLinks = getVideoLinks
-    unsafeWindow.getVideoLinks = getSubtitle
+    }
+    // unsafeWindow.getVideoLinks = getVideoLinks
+    // unsafeWindow.getVideoLinks = getSubtitle
 })()
