@@ -4,7 +4,8 @@
 // @match        https://members.adulttime.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.0
+// @version     1.1.0
+// @license     MIT
 // @namespace https://greasyfork.org/users/984905
 // @description 4/28/2026, 6:34:22 AM
 // ==/UserScript==
