@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name        Bsodergren Library
-// @version     1.2.1
+// @version     1.5.2
+// @grant        GM_xmlhttpRequest
+// @grant        nsafeWindow
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
 // ==/UserScript==
 
-function showToast(message, duration = 3000) {
+function showToast(message, duration = 3000, cmdElement = null) {
     // Create toast container if it doesn't exist
     let container = document.getElementById('tm-toast-container');
     if (!container) {
@@ -45,6 +47,9 @@ function showToast(message, duration = 3000) {
         toast.style.opacity = '0';
         toast.addEventListener('transitionend', () => {
             toast.remove();
+            if (cmdElement !== null) {
+                cmdElement();
+            }
         });
     }, duration);
 }
@@ -64,3 +69,32 @@ function waitForElement(selector, callback) {
         subtree: true
     })
 }
+
+
+function jsonToUrlEncoded(jsonObj) {
+    if (typeof jsonObj !== 'object' || jsonObj === null) {
+        throw new Error("Input must be a non-null object");
+    }
+    return Object.keys(jsonObj)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(jsonObj[key]))
+        .join('&');
+}
+
+
+function saveToLocalServer(postUrl, data, toast, command = null) {
+
+    postUrl = "http://media.lan/plex/" + postUrl
+    const encoded = jsonToUrlEncoded(data);
+
+    GM_xmlhttpRequest({
+        method: "POST",
+        url: postUrl,
+        data: encoded,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    });
+
+    showToast(toast, 3000, command)
+}
+
