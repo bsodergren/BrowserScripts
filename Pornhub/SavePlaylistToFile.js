@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name     Save Playlist to File
+// @name      Pornhub -  Save Playlist to File
 // @description This adds a button to pornhub playlists to grab links to all videos of this playlist
-// @version  1.2.10
+// @version  1.3.0
 // @license MIT
 // @match    https://*.pornhub.com/playlist/*
 // @match    https://*.pornhubpremium.com/playlist/*
@@ -12,7 +12,7 @@
 // @require http://media.lan/scripts/ScriptReq/Additional.js?543345345v
 // ==/UserScript==
 
-;(function () {
+; (function () {
   var VideoListCmd = grabVideoList
   btnContainerId = '#userPlaylistActions #js-playlistTabsNav'
   var btnContainer = document.querySelector(btnContainerId)
@@ -25,7 +25,7 @@
   linkGrabberBtn.appendChild(span)
   btnContainer.appendChild(linkGrabberBtn)
 
-  function SaveToPlaylist () {
+  function SaveToPlaylist() {
     var text = ''
     var PlaylistNameEl = document.getElementsByClassName('playlistTitle')
     var PlaylistName = PlaylistNameEl[0].innerHTML
@@ -55,19 +55,19 @@
     )
   }
 
-  function grabFavList () {
+  function grabFavList() {
     var videoPlaylist = document.getElementById('moreData')
     var linkList = videoPlaylist.querySelectorAll('li > div > div > a')
     showLinks(linkList)
   }
 
-  function grabVideoList () {
+  function grabVideoList() {
     var videoPlaylist = document.getElementById('videoPlaylist')
     var linkList = videoPlaylist.querySelectorAll('div > a')
     showLinks(linkList)
   }
 
-  function showLinks (linkList) {
+  function showLinks(linkList) {
     var outerModalDiv = document.createElement('div')
     var innerModalDiv = document.createElement('div')
     outerModalDiv.id = 'playlistVidsLinkContainingModalPanel' //use a long id to avoid name conflicts
@@ -152,7 +152,7 @@
     document.body.appendChild(outerModalDiv)
   }
 
-  function RemoveOuterModalPanel () {
+  function RemoveOuterModalPanel() {
     var toRemove = document.getElementById(
       'playlistVidsLinkContainingModalPanel'
     )
