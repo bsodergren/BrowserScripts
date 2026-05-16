@@ -6,22 +6,15 @@
 // @match        https://*.pornhubpremium.com/*
 // @match        https://*.pornhubpremium.org/*
 // @grant       GM_xmlhttpRequest
-// @version     1.2.3
+// @version     1.3.1
 // @author      Bjorn
 // @run-at       document-end
 // @description 4/28/2026, 6:34:22 AM
-// @require http://media.lan/scripts/ScriptReq/Additional.js?v645
+// @require http://media.lan/scripts/ScriptReq/Additional.js?797426
 // ==/UserScript==
 
 
-; (function () {
-    'use strict';
-
-    let d = document.getElementsByClassName('row-5-thumbs');
-    if (typeof d[0] !== "undefined") {
-        d[0].setAttribute("style", 'grid-template-columns: repeat(2, minmax(0, 1fr));')
-    }
-
+(function () {
     let savedLinks = [];
     document.addEventListener('contextmenu', function (e) {
         if (e.ctrlKey && e.shiftKey) {
@@ -38,5 +31,4 @@
             }
         }
     });
-
 }());

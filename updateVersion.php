@@ -2,13 +2,23 @@
 <?php
 
 $file = file_get_contents($argv[1]);
-$matched = preg_match('/(\/\/ @version\s+)([\d\.]+)/', $file, $matches);
 
+
+$matched = preg_match_all('/(\/\/ @require\s+)(.*)\?(.*)/', $file, $matches, PREG_SET_ORDER);
+
+if ($matched) {
+    foreach ($matches as $match) {
+        $find = $match[0];
+        $replace = $match[1] . $match[2] . '?' . random_int(100000, 999999);
+        $file = str_replace($find, $replace, $file);
+    }
+}
+
+$matched = preg_match('/(\/\/ @version\s+)([\d\.]+)/', $file, $matches);
 if (!$matched) {
     echo "Version not found in file.\n";
     exit(1);
 }
-
 
 $find = $matches[0];
 $version = $matches[2];

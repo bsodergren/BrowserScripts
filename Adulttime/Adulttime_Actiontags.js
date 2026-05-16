@@ -3,14 +3,15 @@
 // @match        https://members.adulttime.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.6.0
+// @version     1.6.7
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?fsrf
+// @require http://media.lan/scripts/ScriptReq/Additional.js?683029
 // @description 4/28/2026, 6:34:22 AM
 // ==/UserScript==
-;
-(function() {
+
+
+(function () {
 	waitForElement('.VideoJSPlayer-DownloadOptionSubTitle-Link', el => {
 		el.onclick = getSubtitle
 	})
@@ -47,6 +48,10 @@
 	function getVideoLinks() {
 		// Example: Change background color
 		let people = []
+		let markers = []
+		let genreList = []
+		let actorList = []
+
 		var VideoList = document.querySelectorAll('.vjs-marker')
 		var titleElement = document.getElementsByClassName('ScenePlayerHeaderPlus-SceneTitle-Title')
 		title = titleElement[0].innerText
@@ -54,18 +59,38 @@
 		Lentext = pro[0].getAttribute('aria-valuetext')
 		lenSplit = Lentext.split(' of ')
 		Videolength = lenSplit[1]
-		people.push({
-			VideoName: title,
-			VideoLen: Videolength
-		})
+
+		d = document.querySelectorAll(".ActorImage-BackgroundBox")
+
+		for (var i = 0; i < d.length; i++) {
+			var parent = d[i].parentElement
+			actor = parent.innerText
+			actorList.push(actor)
+		}
+
+		g = document.querySelectorAll(".ButtonList-Button")
+		for (var i = 0; i < g.length; i++) {
+			genre = g[i].innerText
+			genreList.push(genre)
+		}
+
 		for (var i = 0; i < VideoList.length; i++) {
 			markerName = VideoList[i].getAttribute('data-tip')
 			position = VideoList[i].getAttribute('position')
-			people.push({
+			markers.push({
 				Marker: markerName,
 				Position: position
 			})
 		}
+
+		people = {
+			VideoName: title,
+			VideoLen: Videolength,
+			Markers: markers,
+			Genre: genreList,
+			Actors: actorList
+		}
+
 		data = {
 			action: 'saveAdulttimeJson',
 			class: 'Form',
@@ -100,4 +125,4 @@
 	// }
 	// unsafeWindow.getVideoLinks = getVideoLinks
 	// unsafeWindow.getVideoLinks = getSubtitle
-})()
+}());

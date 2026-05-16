@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name        Bsodergren Library
-// @version     1.5.2
-// @grant        GM_xmlhttpRequest
-// @grant        nsafeWindow
+// @version     1.6.0
+// @grant       GM_xmlhttpRequest
+// @grant       nsafeWindow
 // @license     MIT
-// @namespace https://greasyfork.org/users/984905
+// @namespace   https://greasyfork.org/users/984905
 // ==/UserScript==
 
 function showToast(message, duration = 3000, cmdElement = null) {
@@ -26,10 +26,13 @@ function showToast(message, duration = 3000, cmdElement = null) {
     // Create toast element
     const toast = document.createElement('div');
     toast.textContent = message;
-    toast.style.background = 'rgba(0, 0, 0, 0.85)';
+    toast.style.background = 'rgb(0, 0, 0)';
     toast.style.color = '#fff';
     toast.style.padding = '10px 16px';
     toast.style.borderRadius = '6px';
+    toast.style.borderColor = 'white';
+    toast.style.borderWidth = '3px';
+    toast.style.borderStyle = "double";
     toast.style.fontSize = '18px';
     toast.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
     toast.style.opacity = '0.5';
