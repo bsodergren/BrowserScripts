@@ -3,60 +3,66 @@
 // @match        https://members.adulttime.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.7.8
+// @version     1.7.10
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?832350
+// @require http://media.lan/scripts/ScriptReq/Additional.js?874433
 // @description 4/28/2026, 6:34:22 AM
 // ==/UserScript==
 
-(function () {
+; (function () {
+	var MarkerGrabberBtn = document.createElement('button')
+	var spanm = document.createElement('span')
+	spanm.innerText = 'Get Video Markers'
+	spanm.className = 'Button'
+	spanm.style.height = '40px'
+	spanm.style.fontSize = '16px'
+	MarkerGrabberBtn.appendChild(spanm)
 
-  	var MarkerGrabberBtn = document.createElement('button')
-		var spanm = document.createElement('span')
-		  spanm.innerText = 'Get Video Markers'
-		  spanm.className = 'Button'
-		  spanm.style.height = '40px'
-		  spanm.style.fontSize = '16px'
-		  MarkerGrabberBtn.appendChild(spanm)
+	waitForElement('.VideoJSPlayer-DownloadOptions-BorderBox', el => {
+		el.onclick = getInfoPlusActionTag
+	})
 
 	waitForElement('.VideoJSPlayer-DownloadOptionSubTitle-Link', el => {
 		el.onclick = getSubtitle
 	})
 	// Example usage:
 	waitForElement('.ScenePlayerHeaderPlus-ActionTagsButtonToggleWrapper', el => {
-    btn = document.getElementById("InfoButton");
-    // console.log(btn)
-    btn.remove()
+		btn = document.getElementById('InfoButton')
+		// console.log(btn)
+		btn.remove()
 
+		MarkerGrabberBtn.onclick = getInfoPlusActionTag
+		// console.log(MarkerGrabberBtn)
+		spanm.innerText = 'Get Video Markers'
+		var mBtnParent = el.parentElement
 
-	  MarkerGrabberBtn.onclick = getInfoPlusActionTag
-    // console.log(MarkerGrabberBtn)
-      spanm.innerText = 'Get Video Markers'
-      var mBtnParent = el.parentElement
-
-    mBtnParent.appendChild(MarkerGrabberBtn)
+		mBtnParent.appendChild(MarkerGrabberBtn)
 	})
 
-  waitForElement('.ScenePlayerHeaderPlus-ChannelName-Link', el => {
-    t = document.querySelector(".ScenePlayerHeaderPlus-ActionTagsButtonToggleWrapper")
-    console.log(t)
-    if(t === null){
-      MarkerGrabberBtn.onclick = getVideoInfo
-      spanm.innerText = 'Get Video Info'
-        MarkerGrabberBtn.id = 'InfoButton'
-      var BtnParent = el.parentElement
-      BtnParent.appendChild(MarkerGrabberBtn)
-    }
-
+	waitForElement('.ScenePlayerHeaderPlus-ChannelName-Link', el => {
+		t = document.querySelector(
+			'.ScenePlayerHeaderPlus-ActionTagsButtonToggleWrapper'
+		)
+		console.log(t)
+		if (t === null) {
+			MarkerGrabberBtn.onclick = getVideoInfo
+			spanm.innerText = 'Get Video Info'
+			MarkerGrabberBtn.id = 'InfoButton'
+			var BtnParent = el.parentElement
+			BtnParent.appendChild(MarkerGrabberBtn)
+		}
 	})
-
 
 	function getSubtitle() {
-		var downloadEl = document.getElementsByClassName('VideoJSPlayer-DownloadOptionSubTitle-Link')
+		var downloadEl = document.getElementsByClassName(
+			'VideoJSPlayer-DownloadOptionSubTitle-Link'
+		)
 		href = downloadEl[0].href
 		downloadEl[0].href = '#'
-		var titleElement = document.getElementsByClassName('ScenePlayerHeaderPlus-SceneTitle-Title')
+		var titleElement = document.getElementsByClassName(
+			'ScenePlayerHeaderPlus-SceneTitle-Title'
+		)
 		title = titleElement[0].innerText
 		subtitle = {
 			VideoName: title,
@@ -70,31 +76,34 @@
 		saveToLocalServer('process.php', data, 'Saved Subtitles')
 	}
 
-  function getInfoPlusActionTag(){
-    getVideoInfo(true)
-  }
+	function getInfoPlusActionTag() {
+		getVideoInfo(true)
+	}
 
-  // Ensure script runs only after DOM is ready
+	// Ensure script runs only after DOM is ready
 	function getVideoInfo(actionTags = false) {
 		// Example: Change background color
 		let people = []
 		let markers = []
 		let genreList = []
 		let actorList = []
-    studioName = '';
+		studioName = ''
 
+		var StudioEl = document.querySelector(
+			'.ScenePlayerHeaderPlus-ChannelName-Link'
+		)
+		studioName = StudioEl.title
 
-		var StudioEl = document.querySelector(".ScenePlayerHeaderPlus-ChannelName-Link")
-		studioName = StudioEl.title;
-
-		var titleElement = document.getElementsByClassName('ScenePlayerHeaderPlus-SceneTitle-Title')
+		var titleElement = document.getElementsByClassName(
+			'ScenePlayerHeaderPlus-SceneTitle-Title'
+		)
 		title = titleElement[0].innerText
 		pro = document.getElementsByClassName('vjs-progress-holder')
 		Lentext = pro[0].getAttribute('aria-valuetext')
 		lenSplit = Lentext.split(' of ')
 		Videolength = lenSplit[1]
 
-		d = document.querySelectorAll(".ActorImage-BackgroundBox")
+		d = document.querySelectorAll('.ActorImage-BackgroundBox')
 
 		for (var i = 0; i < d.length; i++) {
 			var parent = d[i].parentElement
@@ -102,23 +111,23 @@
 			actorList.push(actor)
 		}
 
-		g = document.querySelectorAll(".ButtonList-Button")
+		g = document.querySelectorAll('.ButtonList-Button')
 		for (var i = 0; i < g.length; i++) {
 			genre = g[i].innerText
 			genreList.push(genre)
 		}
 
-    if(actionTags === true){
-      var VideoList = document.querySelectorAll('.vjs-marker')
-		for (var i = 0; i < VideoList.length; i++) {
-			markerName = VideoList[i].getAttribute('data-tip')
-			position = VideoList[i].getAttribute('position')
-			markers.push({
-				Marker: markerName,
-				Position: position
-			})
+		var VideoList = document.querySelectorAll('.vjs-marker')
+		if (VideoList !== null) {
+			for (var i = 0; i < VideoList.length; i++) {
+				markerName = VideoList[i].getAttribute('data-tip')
+				position = VideoList[i].getAttribute('position')
+				markers.push({
+					Marker: markerName,
+					Position: position
+				})
+			}
 		}
-    }
 
 		people = {
 			VideoName: title,
@@ -163,4 +172,4 @@
 	// }
 	// unsafeWindow.getVideoLinks = getVideoLinks
 	// unsafeWindow.getVideoLinks = getSubtitle
-}());
+})()
