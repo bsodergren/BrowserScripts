@@ -5,12 +5,11 @@
 // @match        https://*.pornhub.org/*
 // @match        https://*.pornhubpremium.com/*
 // @match        https://*.pornhubpremium.org/*
-// @version     1.0.1
+// @version     1.0.3
 // @author      Bjorn
 // @run-at       document-end
 // @description
 // ==/UserScript==
-
 
 ; (function () {
     'use strict';

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren PH Library
-// @version     1.3.6
+// @version     1.3.7
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
 // ==/UserScript==

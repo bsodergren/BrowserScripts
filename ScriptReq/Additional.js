@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Library
-// @version     1.6.0
+// @version     1.6.1
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @license     MIT

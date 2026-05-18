@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name      Pornhub -  Save Playlist to File
 // @description This adds a button to pornhub playlists to grab links to all videos of this playlist
-// @version  1.5.6
+// @version  1.5.7
 // @license MIT
 // @match    https://*.pornhub.com/playlist/*
 // @match    https://*.pornhubpremium.com/playlist/*
@@ -10,8 +10,8 @@
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?663049
-// @require http://media.lan/scripts/ScriptReq/PhFuncs.js?732070
+// @require http://media.lan/scripts/ScriptReq/Additional.js?664041
+// @require http://media.lan/scripts/ScriptReq/PhFuncs.js?121247
 // ==/UserScript==
 
 (function () {
