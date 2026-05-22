@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Xhamster Widescreen - New Design - PlayList v.574
 // @namespace xhamster.com
-// @version 5.740000.0
+// @version 5.740000.1
 // @description Wide Xhamster on large screen (1920x1080) ONLY...
 // @author janvier56
 // @license unlicense
@@ -56,10 +56,9 @@
 // @downloadURL https://update.sleazyfork.org/scripts/418869/Xhamster%20Widescreen%20-%20New%20Design%20-%20PlayList%20v574.user.js
 // @updateURL https://update.sleazyfork.org/scripts/418869/Xhamster%20Widescreen%20-%20New%20Design%20-%20PlayList%20v574.meta.js
 // ==/UserScript==
-
 (function() {
-let css = "";
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhamster19.com" || location.hostname.endsWith(".xhamster19.com")) || (location.hostname === "xhamster.desi" || location.hostname.endsWith(".xhamster.desi")) || (location.hostname === "fr.xhamster.com" || location.hostname.endsWith(".fr.xhamster.com")) || (location.hostname === "de.xhamster.com" || location.hostname.endsWith(".de.xhamster.com")) || (location.hostname === "nl.xhamster.com" || location.hostname.endsWith(".nl.xhamster.com")) || (location.hostname === "es.xhamster.com" || location.hostname.endsWith(".es.xhamster.com")) || (location.hostname === "it.xhamster.com" || location.hostname.endsWith(".it.xhamster.com")) || (location.hostname === "ru.xhamster.com" || location.hostname.endsWith(".ru.xhamster.com")) || (location.hostname === "pl.xhamster.com" || location.hostname.endsWith(".pl.xhamster.com")) || (location.hostname === "jp.xhamster.com" || location.hostname.endsWith(".jp.xhamster.com")) || (location.hostname === "ge.xhamster.com" || location.hostname.endsWith(".ge.xhamster.com")) || (location.hostname === "br.xhamster.com" || location.hostname.endsWith(".br.xhamster.com")) || (location.hostname === "cz.xhamster.com" || location.hostname.endsWith(".cz.xhamster.com")) || (location.hostname === "vi.xhamster.com" || location.hostname.endsWith(".vi.xhamster.com")) || (location.hostname === "tr.xhamster.com" || location.hostname.endsWith(".tr.xhamster.com")) || (location.hostname === "ua.xhamster.com" || location.hostname.endsWith(".ua.xhamster.com")) || (location.hostname === "hi.xhamster.com" || location.hostname.endsWith(".hi.xhamster.com")) || (location.hostname === "th.xhamster.com" || location.hostname.endsWith(".th.xhamster.com")) || (location.hostname === "ko.xhamster.com" || location.hostname.endsWith(".ko.xhamster.com")) || (location.hostname === "ro.xhamster.com" || location.hostname.endsWith(".ro.xhamster.com")) || (location.hostname === "pt.xhamster.com" || location.hostname.endsWith(".pt.xhamster.com")) || (location.hostname === "my.xhamster.com" || location.hostname.endsWith(".my.xhamster.com")) || (location.hostname === "id.xhamster.com" || location.hostname.endsWith(".id.xhamster.com")) || (location.hostname === "thumb-v.xhcdn.com" || location.hostname.endsWith(".thumb-v.xhcdn.com")) || (location.hostname === "thumb-v-ec.xhcdn.com" || location.hostname.endsWith(".thumb-v-ec.xhcdn.com")) || (location.hostname === "http://ept.xhcdn.com" || location.hostname.endsWith(".http://ept.xhcdn.com")) || (location.hostname === "http://ep0.xhcdn.com" || location.hostname.endsWith(".http://ep0.xhcdn.com")) || (location.hostname === "http://ep1.xhcdn.com" || location.hostname.endsWith(".http://ep1.xhcdn.com")) || (location.hostname === "http://ep3.xhcdn.com" || location.hostname.endsWith(".http://ep3.xhcdn.com")) || (location.hostname === "http://ep4.xhcdn.com" || location.hostname.endsWith(".http://ep4.xhcdn.com")) || (location.hostname === "http://ep4.xhcdn.com" || location.hostname.endsWith(".http://ep4.xhcdn.com")) || (location.hostname === "http://ep5.xhcdn.com" || location.hostname.endsWith(".http://ep5.xhcdn.com")) || (location.hostname === "http://ep6.xhcdn.com" || location.hostname.endsWith(".http://ep6.xhcdn.com")) || (location.hostname === "http://ep7.xhcdn.com" || location.hostname.endsWith(".http://ep7.xhcdn.com")) || (location.hostname === "http://ep8.xhcdn.com" || location.hostname.endsWith(".http://ep8.xhcdn.com")) || (location.hostname === "http://ep9.xhcdn.com" || location.hostname.endsWith(".http://ep9.xhcdn.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+	let css = "";
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhamster19.com" || location.hostname.endsWith(".xhamster19.com")) || (location.hostname === "xhamster.desi" || location.hostname.endsWith(".xhamster.desi")) || (location.hostname === "fr.xhamster.com" || location.hostname.endsWith(".fr.xhamster.com")) || (location.hostname === "de.xhamster.com" || location.hostname.endsWith(".de.xhamster.com")) || (location.hostname === "nl.xhamster.com" || location.hostname.endsWith(".nl.xhamster.com")) || (location.hostname === "es.xhamster.com" || location.hostname.endsWith(".es.xhamster.com")) || (location.hostname === "it.xhamster.com" || location.hostname.endsWith(".it.xhamster.com")) || (location.hostname === "ru.xhamster.com" || location.hostname.endsWith(".ru.xhamster.com")) || (location.hostname === "pl.xhamster.com" || location.hostname.endsWith(".pl.xhamster.com")) || (location.hostname === "jp.xhamster.com" || location.hostname.endsWith(".jp.xhamster.com")) || (location.hostname === "ge.xhamster.com" || location.hostname.endsWith(".ge.xhamster.com")) || (location.hostname === "br.xhamster.com" || location.hostname.endsWith(".br.xhamster.com")) || (location.hostname === "cz.xhamster.com" || location.hostname.endsWith(".cz.xhamster.com")) || (location.hostname === "vi.xhamster.com" || location.hostname.endsWith(".vi.xhamster.com")) || (location.hostname === "tr.xhamster.com" || location.hostname.endsWith(".tr.xhamster.com")) || (location.hostname === "ua.xhamster.com" || location.hostname.endsWith(".ua.xhamster.com")) || (location.hostname === "hi.xhamster.com" || location.hostname.endsWith(".hi.xhamster.com")) || (location.hostname === "th.xhamster.com" || location.hostname.endsWith(".th.xhamster.com")) || (location.hostname === "ko.xhamster.com" || location.hostname.endsWith(".ko.xhamster.com")) || (location.hostname === "ro.xhamster.com" || location.hostname.endsWith(".ro.xhamster.com")) || (location.hostname === "pt.xhamster.com" || location.hostname.endsWith(".pt.xhamster.com")) || (location.hostname === "my.xhamster.com" || location.hostname.endsWith(".my.xhamster.com")) || (location.hostname === "id.xhamster.com" || location.hostname.endsWith(".id.xhamster.com")) || (location.hostname === "thumb-v.xhcdn.com" || location.hostname.endsWith(".thumb-v.xhcdn.com")) || (location.hostname === "thumb-v-ec.xhcdn.com" || location.hostname.endsWith(".thumb-v-ec.xhcdn.com")) || (location.hostname === "http://ept.xhcdn.com" || location.hostname.endsWith(".http://ept.xhcdn.com")) || (location.hostname === "http://ep0.xhcdn.com" || location.hostname.endsWith(".http://ep0.xhcdn.com")) || (location.hostname === "http://ep1.xhcdn.com" || location.hostname.endsWith(".http://ep1.xhcdn.com")) || (location.hostname === "http://ep3.xhcdn.com" || location.hostname.endsWith(".http://ep3.xhcdn.com")) || (location.hostname === "http://ep4.xhcdn.com" || location.hostname.endsWith(".http://ep4.xhcdn.com")) || (location.hostname === "http://ep4.xhcdn.com" || location.hostname.endsWith(".http://ep4.xhcdn.com")) || (location.hostname === "http://ep5.xhcdn.com" || location.hostname.endsWith(".http://ep5.xhcdn.com")) || (location.hostname === "http://ep6.xhcdn.com" || location.hostname.endsWith(".http://ep6.xhcdn.com")) || (location.hostname === "http://ep7.xhcdn.com" || location.hostname.endsWith(".http://ep7.xhcdn.com")) || (location.hostname === "http://ep8.xhcdn.com" || location.hostname.endsWith(".http://ep8.xhcdn.com")) || (location.hostname === "http://ep9.xhcdn.com" || location.hostname.endsWith(".http://ep9.xhcdn.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
 		css += `
 
 		/* ==== X Xhamster Widescreen - New Design - PLAYLIST - v.574 (new574)  - NO MOBILE - ADD xhvid.com == CHROME DEV ==== */
@@ -83,7 +82,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 
 		==== */
 
-		/* MEMO  ========== 
+		/* MEMO  ==========
 
 		COLOR XHAMSTER:
 		RED XHAM : background-color: #e34449 !important;
@@ -5494,7 +5493,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 			max-height: 3vh !important;
 			line-height: 3vh !important;
 		    align-items: center;
-		    
+
 		    padding: 0px 0 15px 40px !important;
 		    font-size: 15px !important;
 		    will-change: transform;
@@ -5544,7 +5543,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		.alert-item__text {
 			position: relative !important;
 			display: block !important;
-			
+
 		    float: right  !important;
 		    min-height: 3vh !important;
 			max-height: 3vh !important;
@@ -5721,7 +5720,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 
 		}
 
-		/* (new574) VR - VIDEO PLAYER CONTAINER 
+		/* (new574) VR - VIDEO PLAYER CONTAINER
 		https://xhamster.com/videos/vrlatina-spanish-hottie-rossa-vaxx-vr-experience-xhMmYzg
 		.video-page .player-container .player-container__player#vrplayer
 		=== */
@@ -5802,7 +5801,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		}
 
 		/* (new574) VR - CONTEXT MENU */
-		.video-page:has(#vrplayer) .xp-context-menu, 
+		.video-page:has(#vrplayer) .xp-context-menu,
 		.video-page:has(#vrplayer) .xp-context-menu.xh-helper-hidden {
 		    padding: 2px 0px;
 		    border-radius: 3px;
@@ -5820,7 +5819,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		    transform: translate(-40px, 0px) scale(0.5) !important;
 		}
 		/* HOVER */
-		.video-page:has(#vrplayer) .xp-context-menu:hover, 
+		.video-page:has(#vrplayer) .xp-context-menu:hover,
 		.video-page:has(#vrplayer) .xp-context-menu.xh-helper-hidden:hover {
 		    opacity: 1 !important;
 		    transform: translate(-5px, 0px) scale(1) !important;
@@ -5842,10 +5841,10 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		}
 
 		/* (new574) VR - INFOS MIDDLE  */
-		.video-page:has(#vrplayer) .ab-info.controls-info__item.xh-helper-hidden p, 
-		.video-page:has(#vrplayer) .ab-info.controls-info__item.xh-helper-hidden > p:empty, 
-		.video-page:has(#vrplayer) .ab-info.controls-info__item.xh-helper-hidden > p:not(:empty), 
-		.video-page:has(#vrplayer).ab-info.controls-info__item p, .video-page .ab-info.controls-info__item > p:empty, 
+		.video-page:has(#vrplayer) .ab-info.controls-info__item.xh-helper-hidden p,
+		.video-page:has(#vrplayer) .ab-info.controls-info__item.xh-helper-hidden > p:empty,
+		.video-page:has(#vrplayer) .ab-info.controls-info__item.xh-helper-hidden > p:not(:empty),
+		.video-page:has(#vrplayer).ab-info.controls-info__item p, .video-page .ab-info.controls-info__item > p:empty,
 		.video-page:has(#vrplayer) .ab-info.controls-info__item > p:not(:empty) {
 		    min-height: 11vh !important;
 		    max-height: 11vh !important;
@@ -5884,7 +5883,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		}
 
 
-		/* (new563) NORMAL - MOMENT - VIDEO PLAYER CONTAINER 
+		/* (new563) NORMAL - MOMENT - VIDEO PLAYER CONTAINER
 		https://xhamster.com/moments/husband-english-subtitles-xhwVdLu#
 		=== */
 		.video-page main.video-type-moment {
@@ -7321,7 +7320,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 			border: 8px solid #D33535 !important;
 		}
 
-		/* (new569) SEARCH SUGGESTIONS MENU - BIG AVATAR HOVER 
+		/* (new569) SEARCH SUGGESTIONS MENU - BIG AVATAR HOVER
 		header .top-header [class^="sectionContainer-"] [class^="searchSection-"] form .search-suggestions li[data-role="suggest-item"] [class^="avatar-"]
 		*/
 		header .top-header [class^="sectionContainer-"] [class^="searchSection-"] form .search-suggestions li[data-role="suggest-item"]:hover [class^="avatar-"] img {
@@ -9659,7 +9658,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 			padding: 2px 3px !important;
 			overflow: visible !important;
 			border-radius: 3px;
-			
+
 			z-index: 0 !important;
 			transform: translate(0px, 0px) scale(1) !important;
 			transition: all ease 0s !important;
@@ -9795,7 +9794,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		    margin: 0vh 0 0vh 0 !important;
 		/*border: 1px solid gold !important;*/
 		}
-		.video-page .width-wrap .comments-section.comments-container #commentBox[class*="experimentBContainer-"]:not([class*="experimentBCollapsed-"]):has([class^="commentItem-"]:hover) [class^="commentTabs-"] [class^="heading-"][class$="comments-heading"] [class^="triggerBlock-"], 
+		.video-page .width-wrap .comments-section.comments-container #commentBox[class*="experimentBContainer-"]:not([class*="experimentBCollapsed-"]):has([class^="commentItem-"]:hover) [class^="commentTabs-"] [class^="heading-"][class$="comments-heading"] [class^="triggerBlock-"],
 
 		.video-page .width-wrap .comments-section.comments-container #commentBox[class*="experimentBContainer-"]:not([class*="experimentBCollapsed-"]):has([class^="commentItem-"]:hover) [class^="commentTabs-"] [class^="heading-"][class$="comments-heading"] {
 		    display: inline-block !important;
@@ -10087,10 +10086,10 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		}
 		[class^="inputAreaInner-"][class*="xh-editable"] + button[class*="timeCodeButton-"]:hover .xh-icon.time-code:before ,
 		.video-page .width-wrap [class^="commentTabs-"] [class^="heading-"].comments-heading + div:has([class^="inputArea-"]) > [class^="root-"] [class^="inputArea-"] [class^="inputAreaInner-"]:not(.textarea) + button[class*="timeCodeButton-"]:hover .xh-icon.time-code:before {
-			
+
 		color: white !important;
-		    
-			
+
+
 		}
 		/* (new558) ADD COM - TEXTRERA - WHEN HOVER A COMMENT */
 		.video-page .width-wrap #commentBox:has([class^="commentsList-"] [class^="commentItem-"]:hover) [class^="heading-"].comments-heading + [class^="form-"]  {
@@ -10532,7 +10531,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 			position: relative;
 			margin-bottom: 22px;
 		}
-		/* VID - RELATED - 
+		/* VID - RELATED -
 		/* LARGE MODE ok */
 		.video-page--large-mode .width-wrap.with-player-container + .width-wrap .mixed-section.videos.related-container {
 			width: 100% !important;
@@ -11474,7 +11473,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		}
 
 		/* (new571) - TOP - LOG XHAM
-		*:not(.error-page) header .logo-container span:has(a.logo) a.logo img[class*="logoImg-"]:first-of-type 
+		*:not(.error-page) header .logo-container span:has(a.logo) a.logo img[class*="logoImg-"]:first-of-type
 		=== */
 		*:not(.error-page) header .logo-container span:has(a.logo){
 			position: absolute !important;
@@ -13652,7 +13651,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 			overflow: hidden !important;
 			overflow-y: auto !important;
 		}
-		/* (new565) CAT - TAGS  / CHANNEL ?? 
+		/* (new565) CAT - TAGS  / CHANNEL ??
 		https://xhamster.com/channels/mia-sonne
 		https://xhamster.com/channels/hoobe
 		=== */
@@ -21135,7 +21134,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 			font-size: 18px;
 			line-height: 26px;
 		}
-		/* SEARCH NO RESULTS - RECOMMENDATION VIDEOS THUMBNAIL HOVER - - RIGHT - 
+		/* SEARCH NO RESULTS - RECOMMENDATION VIDEOS THUMBNAIL HOVER - - RIGHT -
 		.search-results .mixed-section.index-videos .thumb-list.thumb-list--margin.thumb-list--sidebar.thumb-list--banner + .empty-video-state .thumb-list__item.video-thumb
 		=== */
 		/* RIGHT / TOP */
@@ -23431,7 +23430,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 
 
 
-		/* (new378) COLL FAV - COUNTER - AFTER - myIndex2 - GOOD ON HOVER 
+		/* (new378) COLL FAV - COUNTER - AFTER - myIndex2 - GOOD ON HOVER
 		NOT EMPTY .favorites-page .side-column ul.submenu li .counter
 		=== */
 		.favorites-page body:first-of-type .side-column .favorites-side-switcher .active ul.submenu.video-collections-list li:not(:first-of-type):after,
@@ -26796,7 +26795,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		}
 
 
-		/* A VOIR - BLOG / STORY -  SUPP INVALIDES IMAGES - 
+		/* A VOIR - BLOG / STORY -  SUPP INVALIDES IMAGES -
 		Not good for: https://xhamster.com/blog/posts/895309
 		=== */
 		.story-page .story-section .story-item .story-text img[src*="https://thumb-v-cl.xhcdn.com/"].blog-image.deprecated,
@@ -32646,7 +32645,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		    gap: var(--xh-spacers-m);
 		    grid-auto-rows: minmax(150px, auto);
 		    max-width: 100%;
-			
+
 			height: 82vh !important;
 			margin: -2vh 0 -2vh 0 !important;
 			padding: 2px !important;
@@ -34911,8 +34910,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		}
 		/* AAA ==== END ==== ALL === */
 		`;
-}
-if (location.href.startsWith("https://xhamster.desi/videos/") || location.href.startsWith("https://xhamster.com/videos/") || location.href.startsWith("https://fr.xhamster.com/videos/") || location.href.startsWith("https://de.xhamster.com/videos/") || location.href.startsWith("https://nl.xhamster.com/videos/") || location.href.startsWith("https://es.xhamster.com/videos/") || location.href.startsWith("https://it.xhamster.com/videos/") || location.href.startsWith("https://ru.xhamster.com/videos/") || location.href.startsWith("https://pl.xhamster.com/videos/") || location.href.startsWith("https://jp.xhamster.com/videos/") || location.href.startsWith("https://ge.xhamster.com/videos/") || location.href.startsWith("https://br.xhamster.com/videos/") || location.href.startsWith("https://cz.xhamster.com/videos/") || location.href.startsWith("https://vi.xhamster.com/videos/") || location.href.startsWith("https://tr.xhamster.com/videos/") || location.href.startsWith("https://ua.xhamster.com/videos/") || location.href.startsWith("https://hi.xhamster.com/videos/") || location.href.startsWith("https://th.xhamster.com/videos/") || location.href.startsWith("https://ko.xhamster.com/videos/") || location.href.startsWith("https://ro.xhamster.com/videos/") || location.href.startsWith("https://pt.xhamster.com/videos/") || location.href.startsWith("https://my.xhamster.com/videos/") || location.href.startsWith("https://id.xhamster.com/videos/") || location.href.startsWith("https://xhvid.com/videos/")) {
+	}
+	if (location.href.startsWith("https://xhamster.desi/videos/") || location.href.startsWith("https://xhamster.com/videos/") || location.href.startsWith("https://fr.xhamster.com/videos/") || location.href.startsWith("https://de.xhamster.com/videos/") || location.href.startsWith("https://nl.xhamster.com/videos/") || location.href.startsWith("https://es.xhamster.com/videos/") || location.href.startsWith("https://it.xhamster.com/videos/") || location.href.startsWith("https://ru.xhamster.com/videos/") || location.href.startsWith("https://pl.xhamster.com/videos/") || location.href.startsWith("https://jp.xhamster.com/videos/") || location.href.startsWith("https://ge.xhamster.com/videos/") || location.href.startsWith("https://br.xhamster.com/videos/") || location.href.startsWith("https://cz.xhamster.com/videos/") || location.href.startsWith("https://vi.xhamster.com/videos/") || location.href.startsWith("https://tr.xhamster.com/videos/") || location.href.startsWith("https://ua.xhamster.com/videos/") || location.href.startsWith("https://hi.xhamster.com/videos/") || location.href.startsWith("https://th.xhamster.com/videos/") || location.href.startsWith("https://ko.xhamster.com/videos/") || location.href.startsWith("https://ro.xhamster.com/videos/") || location.href.startsWith("https://pt.xhamster.com/videos/") || location.href.startsWith("https://my.xhamster.com/videos/") || location.href.startsWith("https://id.xhamster.com/videos/") || location.href.startsWith("https://xhvid.com/videos/")) {
 		css += `
 		/* VIDEO PAGE - CLEAN .progress-bar (new554vx) */
 
@@ -35071,8 +35070,8 @@ if (location.href.startsWith("https://xhamster.desi/videos/") || location.href.s
 
 		/* END - URL-PREF - VIDEO PAGE  ==== */
 		`;
-}
-if (location.href.startsWith("https://xhamster.desi/videos/") || location.href.startsWith("https://xhamster.com/videos/") || location.href.startsWith("https://fr.xhamster.com/videos/") || location.href.startsWith("https://de.xhamster.com/videos/") || location.href.startsWith("https://nl.xhamster.com/videos/") || location.href.startsWith("https://es.xhamster.com/videos/") || location.href.startsWith("https://it.xhamster.com/videos/") || location.href.startsWith("https://ru.xhamster.com/videos/") || location.href.startsWith("https://pl.xhamster.com/videos/") || location.href.startsWith("https://jp.xhamster.com/videos/") || location.href.startsWith("https://ge.xhamster.com/videos/") || location.href.startsWith("https://br.xhamster.com/videos/") || location.href.startsWith("https://cz.xhamster.com/videos/") || location.href.startsWith("https://vi.xhamster.com/videos/") || location.href.startsWith("https://tr.xhamster.com/videos/") || location.href.startsWith("https://ua.xhamster.com/videos/") || location.href.startsWith("https://hi.xhamster.com/videos/") || location.href.startsWith("https://th.xhamster.com/videos/") || location.href.startsWith("https://ko.xhamster.com/videos/") || location.href.startsWith("https://ro.xhamster.com/videos/") || location.href.startsWith("https://pt.xhamster.com/videos/") || location.href.startsWith("https://my.xhamster.com/videos/") || location.href.startsWith("https://id.xhamster.com/videos/") || location.href.startsWith("https://xhvid.com/videos/")) {
+	}
+	if (location.href.startsWith("https://xhamster.desi/videos/") || location.href.startsWith("https://xhamster.com/videos/") || location.href.startsWith("https://fr.xhamster.com/videos/") || location.href.startsWith("https://de.xhamster.com/videos/") || location.href.startsWith("https://nl.xhamster.com/videos/") || location.href.startsWith("https://es.xhamster.com/videos/") || location.href.startsWith("https://it.xhamster.com/videos/") || location.href.startsWith("https://ru.xhamster.com/videos/") || location.href.startsWith("https://pl.xhamster.com/videos/") || location.href.startsWith("https://jp.xhamster.com/videos/") || location.href.startsWith("https://ge.xhamster.com/videos/") || location.href.startsWith("https://br.xhamster.com/videos/") || location.href.startsWith("https://cz.xhamster.com/videos/") || location.href.startsWith("https://vi.xhamster.com/videos/") || location.href.startsWith("https://tr.xhamster.com/videos/") || location.href.startsWith("https://ua.xhamster.com/videos/") || location.href.startsWith("https://hi.xhamster.com/videos/") || location.href.startsWith("https://th.xhamster.com/videos/") || location.href.startsWith("https://ko.xhamster.com/videos/") || location.href.startsWith("https://ro.xhamster.com/videos/") || location.href.startsWith("https://pt.xhamster.com/videos/") || location.href.startsWith("https://my.xhamster.com/videos/") || location.href.startsWith("https://id.xhamster.com/videos/") || location.href.startsWith("https://xhvid.com/videos/")) {
 		css += `
 		/* VIDEO PAGE - TEST CHROME - SEEK VIDEO */
 		/*  (new555vx) just ok - VIDEO - BACKGROUND IMAGE SEEKING MOUSE PRESSED - .chrome:not(.video-page--large-mode) */
@@ -35124,8 +35123,8 @@ if (location.href.startsWith("https://xhamster.desi/videos/") || location.href.s
 			opacity: 0.8 !important;
 		}
 		`;
-}
-if (location.href.startsWith("https://xhamster.desi/videos/") || location.href.startsWith("https://xhamster.com/videos/") || location.href.startsWith("https://fr.xhamster.com/videos/") || location.href.startsWith("https://de.xhamster.com/videos/") || location.href.startsWith("https://nl.xhamster.com/videos/") || location.href.startsWith("https://es.xhamster.com/videos/") || location.href.startsWith("https://it.xhamster.com/videos/") || location.href.startsWith("https://ru.xhamster.com/videos/") || location.href.startsWith("https://pl.xhamster.com/videos/") || location.href.startsWith("https://jp.xhamster.com/videos/") || location.href.startsWith("https://ge.xhamster.com/videos/") || location.href.startsWith("https://br.xhamster.com/videos/") || location.href.startsWith("https://cz.xhamster.com/videos/") || location.href.startsWith("https://vi.xhamster.com/videos/") || location.href.startsWith("https://tr.xhamster.com/videos/") || location.href.startsWith("https://ua.xhamster.com/videos/") || location.href.startsWith("https://hi.xhamster.com/videos/") || location.href.startsWith("https://th.xhamster.com/videos/") || location.href.startsWith("https://ko.xhamster.com/videos/") || location.href.startsWith("https://ro.xhamster.com/videos/") || location.href.startsWith("https://pt.xhamster.com/videos/") || location.href.startsWith("https://my.xhamster.com/videos/") || location.href.startsWith("https://id.xhamster.com/videos/") || location.href.startsWith("https://xhvid.com/videos/")) {
+	}
+	if (location.href.startsWith("https://xhamster.desi/videos/") || location.href.startsWith("https://xhamster.com/videos/") || location.href.startsWith("https://fr.xhamster.com/videos/") || location.href.startsWith("https://de.xhamster.com/videos/") || location.href.startsWith("https://nl.xhamster.com/videos/") || location.href.startsWith("https://es.xhamster.com/videos/") || location.href.startsWith("https://it.xhamster.com/videos/") || location.href.startsWith("https://ru.xhamster.com/videos/") || location.href.startsWith("https://pl.xhamster.com/videos/") || location.href.startsWith("https://jp.xhamster.com/videos/") || location.href.startsWith("https://ge.xhamster.com/videos/") || location.href.startsWith("https://br.xhamster.com/videos/") || location.href.startsWith("https://cz.xhamster.com/videos/") || location.href.startsWith("https://vi.xhamster.com/videos/") || location.href.startsWith("https://tr.xhamster.com/videos/") || location.href.startsWith("https://ua.xhamster.com/videos/") || location.href.startsWith("https://hi.xhamster.com/videos/") || location.href.startsWith("https://th.xhamster.com/videos/") || location.href.startsWith("https://ko.xhamster.com/videos/") || location.href.startsWith("https://ro.xhamster.com/videos/") || location.href.startsWith("https://pt.xhamster.com/videos/") || location.href.startsWith("https://my.xhamster.com/videos/") || location.href.startsWith("https://id.xhamster.com/videos/") || location.href.startsWith("https://xhvid.com/videos/")) {
 		css += `
 		/* LARGE - VIDEO - CONTAINER TOTAL - OLD */
 		.video-page.video-page--large-mode .main-wrap {
@@ -36641,8 +36640,8 @@ if (location.href.startsWith("https://xhamster.desi/videos/") || location.href.s
 			font-size: 8px !important;
 		}
 		`;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || location.href.startsWith("https://xhamster.desi.com/creators/") || location.href.startsWith("https://xhamster.com/creators/") || location.href.startsWith("https://fr.xhamster.com/creators/") || location.href.startsWith("https:/de.xhamster.com/creators/") || location.href.startsWith("https:/nl.xhamster.com/creators/") || location.href.startsWith("https://es.xhamster.com/creators/") || location.href.startsWith("https://it.xhamster.com/creators/") || location.href.startsWith("https://ru.xhamster.com/creators/") || location.href.startsWith("https://pl.xhamster.com/creators/") || location.href.startsWith("https://jp.xhamster.com/creators/") || location.href.startsWith("https://ge.xhamster.com/creators/") || location.href.startsWith("https://br.xhamster.com/creators/") || location.href.startsWith("https://cz.xhamster.com/creators/") || location.href.startsWith("https://vi.xhamster.com/creators/") || location.href.startsWith("https://tr.xhamster.com/creators/") || location.href.startsWith("https://ua.xhamster.com/creators/") || location.href.startsWith("https://hi.xhamster.com/creators/") || location.href.startsWith("https://th.xhamster.com/creators/") || location.href.startsWith("https://ko.xhamster.com/creators/") || location.href.startsWith("https://ro.xhamster.com/creators/") || location.href.startsWith("https://pt.xhamster.com/creators/") || location.href.startsWith("https://my.xhamster.com/creators/") || location.href.startsWith("https://id.xhamster.com/creators/") || location.href.startsWith("https://xhvid.com/videos/creators/")) {
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || location.href.startsWith("https://xhamster.desi.com/creators/") || location.href.startsWith("https://xhamster.com/creators/") || location.href.startsWith("https://fr.xhamster.com/creators/") || location.href.startsWith("https:/de.xhamster.com/creators/") || location.href.startsWith("https:/nl.xhamster.com/creators/") || location.href.startsWith("https://es.xhamster.com/creators/") || location.href.startsWith("https://it.xhamster.com/creators/") || location.href.startsWith("https://ru.xhamster.com/creators/") || location.href.startsWith("https://pl.xhamster.com/creators/") || location.href.startsWith("https://jp.xhamster.com/creators/") || location.href.startsWith("https://ge.xhamster.com/creators/") || location.href.startsWith("https://br.xhamster.com/creators/") || location.href.startsWith("https://cz.xhamster.com/creators/") || location.href.startsWith("https://vi.xhamster.com/creators/") || location.href.startsWith("https://tr.xhamster.com/creators/") || location.href.startsWith("https://ua.xhamster.com/creators/") || location.href.startsWith("https://hi.xhamster.com/creators/") || location.href.startsWith("https://th.xhamster.com/creators/") || location.href.startsWith("https://ko.xhamster.com/creators/") || location.href.startsWith("https://ro.xhamster.com/creators/") || location.href.startsWith("https://pt.xhamster.com/creators/") || location.href.startsWith("https://my.xhamster.com/creators/") || location.href.startsWith("https://id.xhamster.com/creators/") || location.href.startsWith("https://xhvid.com/videos/creators/")) {
 		css += `
 		/* PORNSTAR - CREATOR (new574) - cf STYLE IN TOP
 		test link:
@@ -36805,8 +36804,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		border: none  !important;
 		}
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/my/edit/profile") || location.href.startsWith("https://fr.xhamster.com/my/edit/profile") || location.href.startsWith("https://de.xhamster.com/my/edit/profile") || location.href.startsWith("https://nl.xhamster.com/my/edit/profile") || location.href.startsWith("https://es.xhamster.com/my/edit/profile") || location.href.startsWith("https://it.xhamster.com/my/edit/profile") || location.href.startsWith("https://ru.xhamster.com/my/edit/profile") || location.href.startsWith("https://pl.xhamster.com/my/edit/profile") || location.href.startsWith("https://jp.xhamster.com/my/edit/profile") || location.href.startsWith("https://ge.xhamster.com/my/edit/profile") || location.href.startsWith("https://br.xhamster.com/my/edit/profile") || location.href.startsWith("https://cz.xhamster.com/my/edit/profile") || location.href.startsWith("https://vi.xhamster.com/my/edit/profile") || location.href.startsWith("https://tr.xhamster.com/my/edit/profile") || location.href.startsWith("https://ua.xhamster.com/my/edit/profile") || location.href.startsWith("https://hi.xhamster.com/my/edit/profile") || location.href.startsWith("https://th.xhamster.com/my/edit/profile") || location.href.startsWith("https://ko.xhamster.com/my/edit/profile") || location.href.startsWith("https://ro.xhamster.com/my/edit/profile") || location.href.startsWith("https://pt.xhamster.com/my/edit/profile") || location.href.startsWith("https://my.xhamster.com/my/edit/profile") || location.href.startsWith("https://id.xhamster.com/my/edit/profile") || location.href.startsWith("https://xhvid.com/my/edit/profile")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/my/edit/profile") || location.href.startsWith("https://fr.xhamster.com/my/edit/profile") || location.href.startsWith("https://de.xhamster.com/my/edit/profile") || location.href.startsWith("https://nl.xhamster.com/my/edit/profile") || location.href.startsWith("https://es.xhamster.com/my/edit/profile") || location.href.startsWith("https://it.xhamster.com/my/edit/profile") || location.href.startsWith("https://ru.xhamster.com/my/edit/profile") || location.href.startsWith("https://pl.xhamster.com/my/edit/profile") || location.href.startsWith("https://jp.xhamster.com/my/edit/profile") || location.href.startsWith("https://ge.xhamster.com/my/edit/profile") || location.href.startsWith("https://br.xhamster.com/my/edit/profile") || location.href.startsWith("https://cz.xhamster.com/my/edit/profile") || location.href.startsWith("https://vi.xhamster.com/my/edit/profile") || location.href.startsWith("https://tr.xhamster.com/my/edit/profile") || location.href.startsWith("https://ua.xhamster.com/my/edit/profile") || location.href.startsWith("https://hi.xhamster.com/my/edit/profile") || location.href.startsWith("https://th.xhamster.com/my/edit/profile") || location.href.startsWith("https://ko.xhamster.com/my/edit/profile") || location.href.startsWith("https://ro.xhamster.com/my/edit/profile") || location.href.startsWith("https://pt.xhamster.com/my/edit/profile") || location.href.startsWith("https://my.xhamster.com/my/edit/profile") || location.href.startsWith("https://id.xhamster.com/my/edit/profile") || location.href.startsWith("https://xhvid.com/my/edit/profile")) {
 		css += `
 		/* PROFILE EDIT ==== * /
 
@@ -36946,8 +36945,8 @@ if (location.href.startsWith("https://xhamster.com/my/edit/profile") || location
 
 		/* ==== END URL-PREF - PROFILE EDIT ==== */
 		`;
-}
-if ((location.hostname === "xhamsterlive.com" || location.hostname.endsWith(".xhamsterlive.com")) || (location.hostname === "fr.xhamsterlive.com" || location.hostname.endsWith(".fr.xhamsterlive.com"))) {
+	}
+	if ((location.hostname === "xhamsterlive.com" || location.hostname.endsWith(".xhamsterlive.com")) || (location.hostname === "fr.xhamsterlive.com" || location.hostname.endsWith(".fr.xhamsterlive.com"))) {
 		css += `
 		/* CAMS XhamsterLive */
 
@@ -36965,7 +36964,7 @@ if ((location.hostname === "xhamsterlive.com" || location.hostname.endsWith(".xh
 		}
 
 
-		/* (new571) CAM -  PROFILE PAGE - CAM COPY 
+		/* (new571) CAM -  PROFILE PAGE - CAM COPY
 		https://fr.xhamsterlive.com/user/Lilibm77
 		=== */
 		.profile-cover {
@@ -37798,7 +37797,7 @@ if ((location.hostname === "xhamsterlive.com" || location.hostname.endsWith(".xh
 			-webkit-user-select: text;  /* Chrome all / Safari all */
 			-moz-user-select: text;     /* Firefox all */
 			-ms-user-select: text;      /* IE 10+ */
-			user-select: text;          /* Likely future */  
+			user-select: text;          /* Likely future */
 		/*border: 1px solid aqua !important;*/
 		}
 
@@ -38002,7 +38001,7 @@ if ((location.hostname === "xhamsterlive.com" || location.hostname.endsWith(".xh
 		}
 
 
-		/* (new556) BLURED 
+		/* (new556) BLURED
 		https://fr.xhamsterlive.com/LadyPeanut/videos
 		=== */
 		.videos-list-item-v2 .content-wrapper.content-wrapper--blured {
@@ -38945,8 +38944,8 @@ if ((location.hostname === "xhamsterlive.com" || location.hostname.endsWith(".xh
 
 		/* END - Xhamsterlive ==== */
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/creators/all/categories/")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/creators/all/categories/")) {
 		css += `
 		/* CAT - CHANNEL LIST - CREATORS - ALL (new514) */
 		.channels-page.list .layoutPage {
@@ -39017,8 +39016,8 @@ if (location.href.startsWith("https://xhamster.com/creators/all/categories/")) {
 		background: #111 !important;
 		}
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/dating/") || location.href.startsWith("https://fr.xhamster.com/dating/") || location.href.startsWith("https://de.xhamster.com/dating/") || location.href.startsWith("https://nl.xhamster.com/dating/") || location.href.startsWith("https://es.xhamster.com/dating/") || location.href.startsWith("https://it.xhamster.com/dating/") || location.href.startsWith("https://ru.xhamster.com/dating/") || location.href.startsWith("https://pl.xhamster.com/dating/") || location.href.startsWith("https://jp.xhamster.com/dating/") || location.href.startsWith("https://ge.xhamster.com/dating/") || location.href.startsWith("https://br.xhamster.com/dating/") || location.href.startsWith("https://cz.xhamster.com/dating/") || location.href.startsWith("https://vi.xhamster.com/dating/") || location.href.startsWith("https://tr.xhamster.com/dating/") || location.href.startsWith("https://ua.xhamster.com/dating/") || location.href.startsWith("https://hi.xhamster.com/dating/") || location.href.startsWith("https://th.xhamster.com/dating/") || location.href.startsWith("https://ko.xhamster.com/dating/") || location.href.startsWith("https://ro.xhamster.com/dating/") || location.href.startsWith("https://pt.xhamster.com/dating/") || location.href.startsWith("https://my.xhamster.com/dating/") || location.href.startsWith("https://id.xhamster.com/dating/") || location.href.startsWith("https://xhvid.com/dating/")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/dating/") || location.href.startsWith("https://fr.xhamster.com/dating/") || location.href.startsWith("https://de.xhamster.com/dating/") || location.href.startsWith("https://nl.xhamster.com/dating/") || location.href.startsWith("https://es.xhamster.com/dating/") || location.href.startsWith("https://it.xhamster.com/dating/") || location.href.startsWith("https://ru.xhamster.com/dating/") || location.href.startsWith("https://pl.xhamster.com/dating/") || location.href.startsWith("https://jp.xhamster.com/dating/") || location.href.startsWith("https://ge.xhamster.com/dating/") || location.href.startsWith("https://br.xhamster.com/dating/") || location.href.startsWith("https://cz.xhamster.com/dating/") || location.href.startsWith("https://vi.xhamster.com/dating/") || location.href.startsWith("https://tr.xhamster.com/dating/") || location.href.startsWith("https://ua.xhamster.com/dating/") || location.href.startsWith("https://hi.xhamster.com/dating/") || location.href.startsWith("https://th.xhamster.com/dating/") || location.href.startsWith("https://ko.xhamster.com/dating/") || location.href.startsWith("https://ro.xhamster.com/dating/") || location.href.startsWith("https://pt.xhamster.com/dating/") || location.href.startsWith("https://my.xhamster.com/dating/") || location.href.startsWith("https://id.xhamster.com/dating/") || location.href.startsWith("https://xhvid.com/dating/")) {
 		css += `
 		/* DATING ==== */
 		.dating-page .pager-section {
@@ -39102,8 +39101,8 @@ if (location.href.startsWith("https://xhamster.com/dating/") || location.href.st
 
 		/* END - URL-PREF - DATING - SEARCH PAGE ==== */
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/dating") || location.href.startsWith("https://fr.xhamster.com/dating") || location.href.startsWith("https://de.xhamster.com/dating") || location.href.startsWith("https://nl.xhamster.com/dating") || location.href.startsWith("https://es.xhamster.com/dating") || location.href.startsWith("https://it.xhamster.com/dating") || location.href.startsWith("https://ru.xhamster.com/dating") || location.href.startsWith("https://pl.xhamster.com/dating") || location.href.startsWith("https://jp.xhamster.com/dating") || location.href.startsWith("https://ge.xhamster.com/dating") || location.href.startsWith("https://br.xhamster.com/dating") || location.href.startsWith("https://cz.xhamster.com/dating") || location.href.startsWith("https://vi.xhamster.com/dating") || location.href.startsWith("https://tr.xhamster.com/dating") || location.href.startsWith("https://ua.xhamster.com/dating") || location.href.startsWith("https://hi.xhamster.com/dating") || location.href.startsWith("https://th.xhamster.com/dating") || location.href.startsWith("https://ko.xhamster.com/dating") || location.href.startsWith("https://ro.xhamster.com/dating") || location.href.startsWith("https://pt.xhamster.com/dating") || location.href.startsWith("https://my.xhamster.com/dating") || location.href.startsWith("https://id.xhamster.com/dating") || location.href.startsWith("https://xhamster.com/dating") || location.href.startsWith("https://xhamster.com/dating/couple#result-block") || location.href.startsWith("https://xhamster.com/dating/gay#result-block") || location.href.startsWith("https://xhamster.com/dating/lesbian#result-block") || location.href.startsWith("https://xhamster.com/dating/man#result-block") || location.href.startsWith("https://xhamster.com/dating#result-block") || location.href.startsWith("https://xhvid.com/dating#result-block")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/dating") || location.href.startsWith("https://fr.xhamster.com/dating") || location.href.startsWith("https://de.xhamster.com/dating") || location.href.startsWith("https://nl.xhamster.com/dating") || location.href.startsWith("https://es.xhamster.com/dating") || location.href.startsWith("https://it.xhamster.com/dating") || location.href.startsWith("https://ru.xhamster.com/dating") || location.href.startsWith("https://pl.xhamster.com/dating") || location.href.startsWith("https://jp.xhamster.com/dating") || location.href.startsWith("https://ge.xhamster.com/dating") || location.href.startsWith("https://br.xhamster.com/dating") || location.href.startsWith("https://cz.xhamster.com/dating") || location.href.startsWith("https://vi.xhamster.com/dating") || location.href.startsWith("https://tr.xhamster.com/dating") || location.href.startsWith("https://ua.xhamster.com/dating") || location.href.startsWith("https://hi.xhamster.com/dating") || location.href.startsWith("https://th.xhamster.com/dating") || location.href.startsWith("https://ko.xhamster.com/dating") || location.href.startsWith("https://ro.xhamster.com/dating") || location.href.startsWith("https://pt.xhamster.com/dating") || location.href.startsWith("https://my.xhamster.com/dating") || location.href.startsWith("https://id.xhamster.com/dating") || location.href.startsWith("https://xhamster.com/dating") || location.href.startsWith("https://xhamster.com/dating/couple#result-block") || location.href.startsWith("https://xhamster.com/dating/gay#result-block") || location.href.startsWith("https://xhamster.com/dating/lesbian#result-block") || location.href.startsWith("https://xhamster.com/dating/man#result-block") || location.href.startsWith("https://xhamster.com/dating#result-block") || location.href.startsWith("https://xhvid.com/dating#result-block")) {
 		css += `
 		/* USERS DATING ==== */
 		/* (new502) URL PREF - USERS DAT - PAGE HEIGHT */
@@ -39458,8 +39457,8 @@ if (location.href.startsWith("https://xhamster.com/dating") || location.href.sta
 		/* END = URL-PREF - USERS DAT - DATING / SEARCH USER - ===== */
 		/* END - URL-PREF - PAGE HEIGHT - USERS DAT  ==== */
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/my/favorites/stories") || location.href.startsWith("https://fr.xhamster.com/my/favorites/stories") || location.href.startsWith("https://de.xhamster.com/my/favorites/stories") || location.href.startsWith("https://nl.xhamster.com/my/favorites/stories") || location.href.startsWith("https://es.xhamster.com/my/favorites/stories") || location.href.startsWith("https://it.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ru.xhamster.com/my/favorites/stories") || location.href.startsWith("https://pl.xhamster.com/my/favorites/stories") || location.href.startsWith("https://jp.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ge.xhamster.com/my/favorites/stories") || location.href.startsWith("https://br.xhamster.com/my/favorites/stories") || location.href.startsWith("https://cz.xhamster.com/my/favorites/stories") || location.href.startsWith("https://vi.xhamster.com/my/favorites/stories") || location.href.startsWith("https://tr.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ua.xhamster.com/my/favorites/stories") || location.href.startsWith("https://hi.xhamster.com/my/favorites/stories") || location.href.startsWith("https://th.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ko.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ro.xhamster.com/my/favorites/stories") || location.href.startsWith("https://pt.xhamster.com/my/favorites/stories") || location.href.startsWith("https://my.xhamster.com/my/favorites/stories") || location.href.startsWith("https://id.xhamster.com/my/favorites/stories") || location.href.startsWith("https://xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://fr.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://de.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://nl.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://es.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://it.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ru.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://pl.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://jp.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ge.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://br.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://cz.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://vi.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://tr.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ua.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://hi.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://th.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ko.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ro.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://pt.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://my.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://id.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://xhamster.com/my/favorites/users") || location.href.startsWith("https://fr.xhamster.com/my/favorites/users") || location.href.startsWith("https://de.xhamster.com/my/favorites/users") || location.href.startsWith("https://nl.xhamster.com/my/favorites/users") || location.href.startsWith("https://es.xhamster.com/my/favorites/users") || location.href.startsWith("https://it.xhamster.com/my/favorites/users") || location.href.startsWith("https://ru.xhamster.com/my/favorites/users") || location.href.startsWith("https://pl.xhamster.com/my/favorites/users") || location.href.startsWith("https://jp.xhamster.com/my/favorites/users") || location.href.startsWith("https://ge.xhamster.com/my/favorites/users") || location.href.startsWith("https://br.xhamster.com/my/favorites/users") || location.href.startsWith("https://cz.xhamster.com/my/favorites/users") || location.href.startsWith("https://vi.xhamster.com/my/favorites/users") || location.href.startsWith("https://tr.xhamster.com/my/favorites/users") || location.href.startsWith("https://ua.xhamster.com/my/favorites/users") || location.href.startsWith("https://hi.xhamster.com/my/favorites/users") || location.href.startsWith("https://th.xhamster.com/my/favorites/users") || location.href.startsWith("https://ko.xhamster.com/my/favorites/users") || location.href.startsWith("https://ro.xhamster.com/my/favorites/users") || location.href.startsWith("https://pt.xhamster.com/my/favorites/users") || location.href.startsWith("https://my.xhamster.com/my/favorites/users") || location.href.startsWith("https://id.xhamster.com/my/favorites/users") || location.href.startsWith("https://xhvid.com/my/favorites/users")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/my/favorites/stories") || location.href.startsWith("https://fr.xhamster.com/my/favorites/stories") || location.href.startsWith("https://de.xhamster.com/my/favorites/stories") || location.href.startsWith("https://nl.xhamster.com/my/favorites/stories") || location.href.startsWith("https://es.xhamster.com/my/favorites/stories") || location.href.startsWith("https://it.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ru.xhamster.com/my/favorites/stories") || location.href.startsWith("https://pl.xhamster.com/my/favorites/stories") || location.href.startsWith("https://jp.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ge.xhamster.com/my/favorites/stories") || location.href.startsWith("https://br.xhamster.com/my/favorites/stories") || location.href.startsWith("https://cz.xhamster.com/my/favorites/stories") || location.href.startsWith("https://vi.xhamster.com/my/favorites/stories") || location.href.startsWith("https://tr.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ua.xhamster.com/my/favorites/stories") || location.href.startsWith("https://hi.xhamster.com/my/favorites/stories") || location.href.startsWith("https://th.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ko.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ro.xhamster.com/my/favorites/stories") || location.href.startsWith("https://pt.xhamster.com/my/favorites/stories") || location.href.startsWith("https://my.xhamster.com/my/favorites/stories") || location.href.startsWith("https://id.xhamster.com/my/favorites/stories") || location.href.startsWith("https://xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://fr.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://de.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://nl.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://es.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://it.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ru.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://pl.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://jp.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ge.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://br.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://cz.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://vi.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://tr.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ua.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://hi.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://th.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ko.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ro.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://pt.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://my.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://id.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://xhamster.com/my/favorites/users") || location.href.startsWith("https://fr.xhamster.com/my/favorites/users") || location.href.startsWith("https://de.xhamster.com/my/favorites/users") || location.href.startsWith("https://nl.xhamster.com/my/favorites/users") || location.href.startsWith("https://es.xhamster.com/my/favorites/users") || location.href.startsWith("https://it.xhamster.com/my/favorites/users") || location.href.startsWith("https://ru.xhamster.com/my/favorites/users") || location.href.startsWith("https://pl.xhamster.com/my/favorites/users") || location.href.startsWith("https://jp.xhamster.com/my/favorites/users") || location.href.startsWith("https://ge.xhamster.com/my/favorites/users") || location.href.startsWith("https://br.xhamster.com/my/favorites/users") || location.href.startsWith("https://cz.xhamster.com/my/favorites/users") || location.href.startsWith("https://vi.xhamster.com/my/favorites/users") || location.href.startsWith("https://tr.xhamster.com/my/favorites/users") || location.href.startsWith("https://ua.xhamster.com/my/favorites/users") || location.href.startsWith("https://hi.xhamster.com/my/favorites/users") || location.href.startsWith("https://th.xhamster.com/my/favorites/users") || location.href.startsWith("https://ko.xhamster.com/my/favorites/users") || location.href.startsWith("https://ro.xhamster.com/my/favorites/users") || location.href.startsWith("https://pt.xhamster.com/my/favorites/users") || location.href.startsWith("https://my.xhamster.com/my/favorites/users") || location.href.startsWith("https://id.xhamster.com/my/favorites/users") || location.href.startsWith("https://xhvid.com/my/favorites/users")) {
 		css += `
 		/* MY FAV - STORIE/PHOT/GALL - NO VIDEO FAVS COLL (new380) ==== */
 		body,
@@ -39478,8 +39477,8 @@ if (location.href.startsWith("https://xhamster.com/my/favorites/stories") || loc
 		}
 		/* END - URL-PREF - MY FAV STORIE/PHOT/GALL - NO VIDEO FAVS COLL ==== */
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/photos/search/") || location.href.startsWith("https://fr.xhamster.com/photos/search/") || location.href.startsWith("https://de.xhamster.com/photos/search/") || location.href.startsWith("https://nl.xhamster.com/photos/search/") || location.href.startsWith("https://es.xhamster.com/photos/search/") || location.href.startsWith("https://it.xhamster.com/photos/search/") || location.href.startsWith("https://ru.xhamster.com/photos/search/") || location.href.startsWith("https://pl.xhamster.com/photos/search/") || location.href.startsWith("https://jp.xhamster.com/photos/search/") || location.href.startsWith("https://ge.xhamster.com/photos/search/") || location.href.startsWith("https://br.xhamster.com/photos/search/") || location.href.startsWith("https://cz.xhamster.com/photos/search/") || location.href.startsWith("https://vi.xhamster.com/photos/search/") || location.href.startsWith("https://tr.xhamster.com/photos/search/") || location.href.startsWith("https://ua.xhamster.com/photos/search/") || location.href.startsWith("https://hi.xhamster.com/photos/search/") || location.href.startsWith("https://th.xhamster.com/photos/search/") || location.href.startsWith("https://ko.xhamster.com/photos/search/") || location.href.startsWith("https://ro.xhamster.com/photos/search/") || location.href.startsWith("https://pt.xhamster.com/photos/search/") || location.href.startsWith("https://my.xhamster.com/photos/search/") || location.href.startsWith("https://id.xhamster.com/photos/search/") || location.href.startsWith("https://xhamster.com/gay/photos/search") || location.href.startsWith("https://xhamster.com/photos/search?revert=orientation") || location.href.startsWith("https://xhamster.com/shemale/photos/search/") || location.href.startsWith("https://xhamster.com/shemale/photos/search/anal?revert=orientation") || location.href.startsWith("https://xhamster.com/photos/") || location.href.startsWith("https://xhamster.com/gay/photos/search") || location.href.startsWith("https://xhvid.com/photos/") || location.href.startsWith("https://xhvid.com/gay/photos/search") || location.href.startsWith("https://xhvid.com/shemale/photos/search/") || location.href.startsWith("https://xhvid.com/shemale/photos/search/anal?revert=orientation") || location.href.startsWith("https://xhvid.com/photos/search?revert=orientation")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/photos/search/") || location.href.startsWith("https://fr.xhamster.com/photos/search/") || location.href.startsWith("https://de.xhamster.com/photos/search/") || location.href.startsWith("https://nl.xhamster.com/photos/search/") || location.href.startsWith("https://es.xhamster.com/photos/search/") || location.href.startsWith("https://it.xhamster.com/photos/search/") || location.href.startsWith("https://ru.xhamster.com/photos/search/") || location.href.startsWith("https://pl.xhamster.com/photos/search/") || location.href.startsWith("https://jp.xhamster.com/photos/search/") || location.href.startsWith("https://ge.xhamster.com/photos/search/") || location.href.startsWith("https://br.xhamster.com/photos/search/") || location.href.startsWith("https://cz.xhamster.com/photos/search/") || location.href.startsWith("https://vi.xhamster.com/photos/search/") || location.href.startsWith("https://tr.xhamster.com/photos/search/") || location.href.startsWith("https://ua.xhamster.com/photos/search/") || location.href.startsWith("https://hi.xhamster.com/photos/search/") || location.href.startsWith("https://th.xhamster.com/photos/search/") || location.href.startsWith("https://ko.xhamster.com/photos/search/") || location.href.startsWith("https://ro.xhamster.com/photos/search/") || location.href.startsWith("https://pt.xhamster.com/photos/search/") || location.href.startsWith("https://my.xhamster.com/photos/search/") || location.href.startsWith("https://id.xhamster.com/photos/search/") || location.href.startsWith("https://xhamster.com/gay/photos/search") || location.href.startsWith("https://xhamster.com/photos/search?revert=orientation") || location.href.startsWith("https://xhamster.com/shemale/photos/search/") || location.href.startsWith("https://xhamster.com/shemale/photos/search/anal?revert=orientation") || location.href.startsWith("https://xhamster.com/photos/") || location.href.startsWith("https://xhamster.com/gay/photos/search") || location.href.startsWith("https://xhvid.com/photos/") || location.href.startsWith("https://xhvid.com/gay/photos/search") || location.href.startsWith("https://xhvid.com/shemale/photos/search/") || location.href.startsWith("https://xhvid.com/shemale/photos/search/anal?revert=orientation") || location.href.startsWith("https://xhvid.com/photos/search?revert=orientation")) {
 		css += `
 		/* SEARCH - PHOT (new561) */
 
@@ -39554,9 +39553,9 @@ if (location.href.startsWith("https://xhamster.com/photos/search/") || location.
 
 		/* END - SEARCH - PHOT */
 		`;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com"))) {
-  css += `
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com"))) {
+		css += `
   /* ==== HISTORY - NEWNAV (new573)=== */
 
 
@@ -39654,8 +39653,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 
 
   `;
-}
-if (location.href.startsWith("https://xhamster.com/photos/gallery/") || location.href.startsWith("https://fr.xhamster.com/photos/gallery/") || location.href.startsWith("https://de.xhamster.com/photos/gallery/") || location.href.startsWith("https://nl.xhamster.com/photos/gallery/") || location.href.startsWith("https://es.xhamster.com/photos/gallery/") || location.href.startsWith("https://it.xhamster.com/photos/gallery/") || location.href.startsWith("https://ru.xhamster.com/photos/gallery/") || location.href.startsWith("https://pl.xhamster.com/photos/gallery/") || location.href.startsWith("https://jp.xhamster.com/photos/gallery/") || location.href.startsWith("https://ge.xhamster.com/photos/gallery/") || location.href.startsWith("https://br.xhamster.com/photos/gallery/") || location.href.startsWith("https://cz.xhamster.com/photos/gallery/") || location.href.startsWith("https://vi.xhamster.com/photos/gallery/") || location.href.startsWith("https://tr.xhamster.com/photos/gallery/") || location.href.startsWith("https://ua.xhamster.com/photos/gallery/") || location.href.startsWith("https://hi.xhamster.com/photos/gallery/") || location.href.startsWith("https://th.xhamster.com/photos/gallery/") || location.href.startsWith("https://ko.xhamster.com/photos/gallery/") || location.href.startsWith("https://ro.xhamster.com/photos/gallery/") || location.href.startsWith("https://pt.xhamster.com/photos/gallery/") || location.href.startsWith("https://my.xhamster.com/photos/gallery/") || location.href.startsWith("https://id.xhamster.com/photos/gallery/") || location.href.startsWith("https://xhamster.com/photos/gallery/") || location.href.startsWith("https://xhvid.com/photos/gallery/")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/photos/gallery/") || location.href.startsWith("https://fr.xhamster.com/photos/gallery/") || location.href.startsWith("https://de.xhamster.com/photos/gallery/") || location.href.startsWith("https://nl.xhamster.com/photos/gallery/") || location.href.startsWith("https://es.xhamster.com/photos/gallery/") || location.href.startsWith("https://it.xhamster.com/photos/gallery/") || location.href.startsWith("https://ru.xhamster.com/photos/gallery/") || location.href.startsWith("https://pl.xhamster.com/photos/gallery/") || location.href.startsWith("https://jp.xhamster.com/photos/gallery/") || location.href.startsWith("https://ge.xhamster.com/photos/gallery/") || location.href.startsWith("https://br.xhamster.com/photos/gallery/") || location.href.startsWith("https://cz.xhamster.com/photos/gallery/") || location.href.startsWith("https://vi.xhamster.com/photos/gallery/") || location.href.startsWith("https://tr.xhamster.com/photos/gallery/") || location.href.startsWith("https://ua.xhamster.com/photos/gallery/") || location.href.startsWith("https://hi.xhamster.com/photos/gallery/") || location.href.startsWith("https://th.xhamster.com/photos/gallery/") || location.href.startsWith("https://ko.xhamster.com/photos/gallery/") || location.href.startsWith("https://ro.xhamster.com/photos/gallery/") || location.href.startsWith("https://pt.xhamster.com/photos/gallery/") || location.href.startsWith("https://my.xhamster.com/photos/gallery/") || location.href.startsWith("https://id.xhamster.com/photos/gallery/") || location.href.startsWith("https://xhamster.com/photos/gallery/") || location.href.startsWith("https://xhvid.com/photos/gallery/")) {
 		css += `
 		/* GALL  */
 		/* (new520) PHO - GAL - GALLERY / PHOTOS - GALLERY VIEWER PAGE */
@@ -39972,8 +39971,8 @@ if (location.href.startsWith("https://xhamster.com/photos/gallery/") || location
 		border: 1px solid red !important;
 		}
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://fr.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://de.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://nl.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://es.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://it.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ru.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://pl.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://jp.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ge.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://br.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://cz.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://vi.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://tr.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ua.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://hi.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://th.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ko.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ro.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://pt.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://my.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://id.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://xhvid.com/my/favorites/photos-and-galleries")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://fr.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://de.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://nl.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://es.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://it.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ru.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://pl.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://jp.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ge.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://br.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://cz.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://vi.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://tr.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ua.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://hi.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://th.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ko.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://ro.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://pt.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://my.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://id.xhamster.com/my/favorites/photos-and-galleries") || location.href.startsWith("https://xhvid.com/my/favorites/photos-and-galleries")) {
 		css += `
 		/* GALL - MY FAV */
 		/* (new380) URL PREF - MY FAV GALL - PAGE HEIGHT 931px */
@@ -40158,8 +40157,8 @@ if (location.href.startsWith("https://xhamster.com/my/favorites/photos-and-galle
 
 		/* END - URL-PREF - MY FAV GALL - HEIGHT==== */
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/") || location.href.startsWith("https://fr.xhamster.com/") || location.href.startsWith("https://de.xhamster.com/") || location.href.startsWith("https://nl.xhamster.com/") || location.href.startsWith("https://es.xhamster.com/") || location.href.startsWith("https://it.xhamster.com/") || location.href.startsWith("https://ru.xhamster.com/") || location.href.startsWith("https://pl.xhamster.com/") || location.href.startsWith("https://jp.xhamster.com/") || location.href.startsWith("https://ge.xhamster.com/") || location.href.startsWith("https://br.xhamster.com/") || location.href.startsWith("https://cz.xhamster.com/") || location.href.startsWith("https://vi.xhamster.com/") || location.href.startsWith("https://tr.xhamster.com/") || location.href.startsWith("https://ua.xhamster.com/") || location.href.startsWith("https://hi.xhamster.com/") || location.href.startsWith("https://th.xhamster.com/") || location.href.startsWith("https://ko.xhamster.com/") || location.href.startsWith("https://ro.xhamster.com/") || location.href.startsWith("https://pt.xhamster.com/") || location.href.startsWith("https://my.xhamster.com/") || location.href.startsWith("https://id.xhamster.com/") || location.href.startsWith("https://xhvid.com/")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/") || location.href.startsWith("https://fr.xhamster.com/") || location.href.startsWith("https://de.xhamster.com/") || location.href.startsWith("https://nl.xhamster.com/") || location.href.startsWith("https://es.xhamster.com/") || location.href.startsWith("https://it.xhamster.com/") || location.href.startsWith("https://ru.xhamster.com/") || location.href.startsWith("https://pl.xhamster.com/") || location.href.startsWith("https://jp.xhamster.com/") || location.href.startsWith("https://ge.xhamster.com/") || location.href.startsWith("https://br.xhamster.com/") || location.href.startsWith("https://cz.xhamster.com/") || location.href.startsWith("https://vi.xhamster.com/") || location.href.startsWith("https://tr.xhamster.com/") || location.href.startsWith("https://ua.xhamster.com/") || location.href.startsWith("https://hi.xhamster.com/") || location.href.startsWith("https://th.xhamster.com/") || location.href.startsWith("https://ko.xhamster.com/") || location.href.startsWith("https://ro.xhamster.com/") || location.href.startsWith("https://pt.xhamster.com/") || location.href.startsWith("https://my.xhamster.com/") || location.href.startsWith("https://id.xhamster.com/") || location.href.startsWith("https://xhvid.com/")) {
 		css += `
 		/* HOME / TREND (for GM "Super Loader") = URL-PREF = START ==== */
 		.main-page .main-wrap > .width-wrap main article {
@@ -40256,8 +40255,8 @@ if (location.href.startsWith("https://xhamster.com/") || location.href.startsWit
 		}
 		/* END - URL-PREF - HOME / TREND (for GM "Super Loader") ==== */
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/my/favorites/stories/") || location.href.startsWith("https://fr.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://de.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://nl.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://es.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://it.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ru.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://pl.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://jp.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ge.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://br.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://cz.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://vi.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://tr.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ua.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://hi.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://th.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ko.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ro.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://pt.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://my.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://id.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://xhamster.com/my/favorites/stories") || location.href.startsWith("https://fr.xhamster.com/my/favorites/stories") || location.href.startsWith("https://de.xhamster.com/my/favorites/stories") || location.href.startsWith("https://nl.xhamster.com/my/favorites/stories") || location.href.startsWith("https://es.xhamster.com/my/favorites/stories") || location.href.startsWith("https://it.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ru.xhamster.com/my/favorites/stories") || location.href.startsWith("https://pl.xhamster.com/my/favorites/stories") || location.href.startsWith("https://jp.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ge.xhamster.com/my/favorites/stories") || location.href.startsWith("https://br.xhamster.com/my/favorites/stories") || location.href.startsWith("https://cz.xhamster.com/my/favorites/stories") || location.href.startsWith("https://vi.xhamster.com/my/favorites/stories") || location.href.startsWith("https://tr.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ua.xhamster.com/my/favorites/stories") || location.href.startsWith("https://hi.xhamster.com/my/favorites/stories") || location.href.startsWith("https://th.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ko.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ro.xhamster.com/my/favorites/stories") || location.href.startsWith("https://pt.xhamster.com/my/favorites/stories") || location.href.startsWith("https://my.xhamster.com/my/favorites/stories") || location.href.startsWith("https://id.xhamster.com/my/favorites/stories") || location.href.startsWith("https://xhvid.com/my/favorites/stories")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/my/favorites/stories/") || location.href.startsWith("https://fr.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://de.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://nl.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://es.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://it.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ru.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://pl.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://jp.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ge.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://br.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://cz.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://vi.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://tr.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ua.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://hi.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://th.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ko.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://ro.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://pt.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://my.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://id.xhamster.com/my/favorites/stories/") || location.href.startsWith("https://xhamster.com/my/favorites/stories") || location.href.startsWith("https://fr.xhamster.com/my/favorites/stories") || location.href.startsWith("https://de.xhamster.com/my/favorites/stories") || location.href.startsWith("https://nl.xhamster.com/my/favorites/stories") || location.href.startsWith("https://es.xhamster.com/my/favorites/stories") || location.href.startsWith("https://it.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ru.xhamster.com/my/favorites/stories") || location.href.startsWith("https://pl.xhamster.com/my/favorites/stories") || location.href.startsWith("https://jp.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ge.xhamster.com/my/favorites/stories") || location.href.startsWith("https://br.xhamster.com/my/favorites/stories") || location.href.startsWith("https://cz.xhamster.com/my/favorites/stories") || location.href.startsWith("https://vi.xhamster.com/my/favorites/stories") || location.href.startsWith("https://tr.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ua.xhamster.com/my/favorites/stories") || location.href.startsWith("https://hi.xhamster.com/my/favorites/stories") || location.href.startsWith("https://th.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ko.xhamster.com/my/favorites/stories") || location.href.startsWith("https://ro.xhamster.com/my/favorites/stories") || location.href.startsWith("https://pt.xhamster.com/my/favorites/stories") || location.href.startsWith("https://my.xhamster.com/my/favorites/stories") || location.href.startsWith("https://id.xhamster.com/my/favorites/stories") || location.href.startsWith("https://xhvid.com/my/favorites/stories")) {
 		css += `
 		/* MY FAVS - BLOGS LIST - (new564) */
 		html.user-page.favorites-page,
@@ -40398,8 +40397,8 @@ if (location.href.startsWith("https://xhamster.com/my/favorites/stories/") || lo
 
 		/* END - BLOGS - MY FAVS LIST - LIST */
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/channels/") || location.href.startsWith("https://fr.xhamster.com/channels/") || location.href.startsWith("https://de.xhamster.com/channels/") || location.href.startsWith("https://nl.xhamster.com/channels/") || location.href.startsWith("https://es.xhamster.com/channels/") || location.href.startsWith("https://it.xhamster.com/channels/") || location.href.startsWith("https://ru.xhamster.com/channels/") || location.href.startsWith("https://pl.xhamster.com/channels/") || location.href.startsWith("https://jp.xhamster.com/channels/") || location.href.startsWith("https://ge.xhamster.com/channels/") || location.href.startsWith("https://br.xhamster.com/channels/") || location.href.startsWith("https://cz.xhamster.com/channels/") || location.href.startsWith("https://vi.xhamster.com/channels/") || location.href.startsWith("https://tr.xhamster.com/channels/") || location.href.startsWith("https://ua.xhamster.com/channels/") || location.href.startsWith("https://hi.xhamster.com/channels/") || location.href.startsWith("https://th.xhamster.com/channels/") || location.href.startsWith("https://ko.xhamster.com/channels/") || location.href.startsWith("https://ro.xhamster.com/channels/") || location.href.startsWith("https://pt.xhamster.com/channels/") || location.href.startsWith("https://my.xhamster.com/channels/") || location.href.startsWith("https://id.xhamster.com/channels/") || location.href.startsWith("https://xhamster.com/channels/") || location.href.startsWith("https://fr.xhamster.com/channels/") || location.href.startsWith("https://de.xhamster.com/channels/") || location.href.startsWith("https://nl.xhamster.com/channels/") || location.href.startsWith("https://es.xhamster.com/channels/") || location.href.startsWith("https://it.xhamster.com/channels/") || location.href.startsWith("https://ru.xhamster.com/channels/") || location.href.startsWith("https://pl.xhamster.com/channels/") || location.href.startsWith("https://jp.xhamster.com/channels/") || location.href.startsWith("https://ge.xhamster.com/channels/") || location.href.startsWith("https://br.xhamster.com/channels/") || location.href.startsWith("https://cz.xhamster.com/channels/") || location.href.startsWith("https://vi.xhamster.com/channels/") || location.href.startsWith("https://tr.xhamster.com/channels/") || location.href.startsWith("https://ua.xhamster.com/channels/") || location.href.startsWith("https://hi.xhamster.com/channels/") || location.href.startsWith("https://th.xhamster.com/channels/") || location.href.startsWith("https://ko.xhamster.com/channels/") || location.href.startsWith("https://ro.xhamster.com/channels/") || location.href.startsWith("https://pt.xhamster.com/channels/") || location.href.startsWith("https://my.xhamster.com/channels/") || location.href.startsWith("https://id.xhamster.com/channels/") || location.href.startsWith("https://xhvid.com/channels/")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/channels/") || location.href.startsWith("https://fr.xhamster.com/channels/") || location.href.startsWith("https://de.xhamster.com/channels/") || location.href.startsWith("https://nl.xhamster.com/channels/") || location.href.startsWith("https://es.xhamster.com/channels/") || location.href.startsWith("https://it.xhamster.com/channels/") || location.href.startsWith("https://ru.xhamster.com/channels/") || location.href.startsWith("https://pl.xhamster.com/channels/") || location.href.startsWith("https://jp.xhamster.com/channels/") || location.href.startsWith("https://ge.xhamster.com/channels/") || location.href.startsWith("https://br.xhamster.com/channels/") || location.href.startsWith("https://cz.xhamster.com/channels/") || location.href.startsWith("https://vi.xhamster.com/channels/") || location.href.startsWith("https://tr.xhamster.com/channels/") || location.href.startsWith("https://ua.xhamster.com/channels/") || location.href.startsWith("https://hi.xhamster.com/channels/") || location.href.startsWith("https://th.xhamster.com/channels/") || location.href.startsWith("https://ko.xhamster.com/channels/") || location.href.startsWith("https://ro.xhamster.com/channels/") || location.href.startsWith("https://pt.xhamster.com/channels/") || location.href.startsWith("https://my.xhamster.com/channels/") || location.href.startsWith("https://id.xhamster.com/channels/") || location.href.startsWith("https://xhamster.com/channels/") || location.href.startsWith("https://fr.xhamster.com/channels/") || location.href.startsWith("https://de.xhamster.com/channels/") || location.href.startsWith("https://nl.xhamster.com/channels/") || location.href.startsWith("https://es.xhamster.com/channels/") || location.href.startsWith("https://it.xhamster.com/channels/") || location.href.startsWith("https://ru.xhamster.com/channels/") || location.href.startsWith("https://pl.xhamster.com/channels/") || location.href.startsWith("https://jp.xhamster.com/channels/") || location.href.startsWith("https://ge.xhamster.com/channels/") || location.href.startsWith("https://br.xhamster.com/channels/") || location.href.startsWith("https://cz.xhamster.com/channels/") || location.href.startsWith("https://vi.xhamster.com/channels/") || location.href.startsWith("https://tr.xhamster.com/channels/") || location.href.startsWith("https://ua.xhamster.com/channels/") || location.href.startsWith("https://hi.xhamster.com/channels/") || location.href.startsWith("https://th.xhamster.com/channels/") || location.href.startsWith("https://ko.xhamster.com/channels/") || location.href.startsWith("https://ro.xhamster.com/channels/") || location.href.startsWith("https://pt.xhamster.com/channels/") || location.href.startsWith("https://my.xhamster.com/channels/") || location.href.startsWith("https://id.xhamster.com/channels/") || location.href.startsWith("https://xhvid.com/channels/")) {
 		css += `
 		/* PORNSTARS / CHANNELS (new543) ==== */
 
@@ -40945,8 +40944,8 @@ if (location.href.startsWith("https://xhamster.com/channels/") || location.href.
 
 		/* (new353) END - URL-PREF - CAT - CHANNELS ===== */
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/tags/") || location.href.startsWith("https://xhamster.com/categories/") || location.href.startsWith("https://fr.xhamster.com/tags/") || location.href.startsWith("https://fr.xhamster.com/categories/") || location.href.startsWith("https://de.xhamster.com/tags/") || location.href.startsWith("https://de.xhamster.com/categories/") || location.href.startsWith("https://nl.xhamster.com/tags/") || location.href.startsWith("https://nl.xhamster.com/categories/") || location.href.startsWith("https://es.xhamster.com/tags/") || location.href.startsWith("https://es.xhamster.com/categories/") || location.href.startsWith("https://it.xhamster.com/tags/") || location.href.startsWith("https://it.xhamster.com/categories/") || location.href.startsWith("https://ru.xhamster.com/tags/") || location.href.startsWith("https://ru.xhamster.com/categories/") || location.href.startsWith("https://pl.xhamster.com/tags/") || location.href.startsWith("https://pl.xhamster.com/categories/") || location.href.startsWith("https://jp.xhamster.com/tags/") || location.href.startsWith("https://jp.xhamster.com/categories/") || location.href.startsWith("https://ge.xhamster.com/tags/") || location.href.startsWith("https://ge.xhamster.com/categories/") || location.href.startsWith("https://br.xhamster.com/tags/") || location.href.startsWith("https://br.xhamster.com/tcategories/") || location.href.startsWith("https://cz.xhamster.com/tags/") || location.href.startsWith("https://cz.xhamster.com/categories/") || location.href.startsWith("https://vi.xhamster.com/tags/") || location.href.startsWith("https://vi.xhamster.com/categories/") || location.href.startsWith("https://tr.xhamster.com/tags/") || location.href.startsWith("https://tr.xhamster.com/categories/") || location.href.startsWith("https://ua.xhamster.com/tags/") || location.href.startsWith("https://ua.xhamster.com/categories/") || location.href.startsWith("https://hi.xhamster.com/tags/") || location.href.startsWith("https://hi.xhamster.com/tcategories/") || location.href.startsWith("https://th.xhamster.com/tags/") || location.href.startsWith("https://th.xhamster.com/categories/") || location.href.startsWith("https://ko.xhamster.com/tags/") || location.href.startsWith("https://ko.xhamster.com/categories/") || location.href.startsWith("https://ro.xhamster.com/tags/") || location.href.startsWith("https://ro.xhamster.com/categories/") || location.href.startsWith("https://pt.xhamster.com/tags/") || location.href.startsWith("https://pt.xhamster.com/categories/") || location.href.startsWith("https://my.xhamster.com/tags/") || location.href.startsWith("https://my.xhamster.com/categories/") || location.href.startsWith("https://id.xhamster.com/posts/") || location.href.startsWith("https://id.xhamster.com/categories/") || location.href.startsWith("https://xhvid.com/posts/") || location.href.startsWith("https://xhvid.com/categories/") || location.href.startsWith("https://xhvid.com/tags/")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/tags/") || location.href.startsWith("https://xhamster.com/categories/") || location.href.startsWith("https://fr.xhamster.com/tags/") || location.href.startsWith("https://fr.xhamster.com/categories/") || location.href.startsWith("https://de.xhamster.com/tags/") || location.href.startsWith("https://de.xhamster.com/categories/") || location.href.startsWith("https://nl.xhamster.com/tags/") || location.href.startsWith("https://nl.xhamster.com/categories/") || location.href.startsWith("https://es.xhamster.com/tags/") || location.href.startsWith("https://es.xhamster.com/categories/") || location.href.startsWith("https://it.xhamster.com/tags/") || location.href.startsWith("https://it.xhamster.com/categories/") || location.href.startsWith("https://ru.xhamster.com/tags/") || location.href.startsWith("https://ru.xhamster.com/categories/") || location.href.startsWith("https://pl.xhamster.com/tags/") || location.href.startsWith("https://pl.xhamster.com/categories/") || location.href.startsWith("https://jp.xhamster.com/tags/") || location.href.startsWith("https://jp.xhamster.com/categories/") || location.href.startsWith("https://ge.xhamster.com/tags/") || location.href.startsWith("https://ge.xhamster.com/categories/") || location.href.startsWith("https://br.xhamster.com/tags/") || location.href.startsWith("https://br.xhamster.com/tcategories/") || location.href.startsWith("https://cz.xhamster.com/tags/") || location.href.startsWith("https://cz.xhamster.com/categories/") || location.href.startsWith("https://vi.xhamster.com/tags/") || location.href.startsWith("https://vi.xhamster.com/categories/") || location.href.startsWith("https://tr.xhamster.com/tags/") || location.href.startsWith("https://tr.xhamster.com/categories/") || location.href.startsWith("https://ua.xhamster.com/tags/") || location.href.startsWith("https://ua.xhamster.com/categories/") || location.href.startsWith("https://hi.xhamster.com/tags/") || location.href.startsWith("https://hi.xhamster.com/tcategories/") || location.href.startsWith("https://th.xhamster.com/tags/") || location.href.startsWith("https://th.xhamster.com/categories/") || location.href.startsWith("https://ko.xhamster.com/tags/") || location.href.startsWith("https://ko.xhamster.com/categories/") || location.href.startsWith("https://ro.xhamster.com/tags/") || location.href.startsWith("https://ro.xhamster.com/categories/") || location.href.startsWith("https://pt.xhamster.com/tags/") || location.href.startsWith("https://pt.xhamster.com/categories/") || location.href.startsWith("https://my.xhamster.com/tags/") || location.href.startsWith("https://my.xhamster.com/categories/") || location.href.startsWith("https://id.xhamster.com/posts/") || location.href.startsWith("https://id.xhamster.com/categories/") || location.href.startsWith("https://xhvid.com/posts/") || location.href.startsWith("https://xhvid.com/categories/") || location.href.startsWith("https://xhvid.com/tags/")) {
 		css += `
 		/* TAGS */
 		/* (new558) TAGS - BEST - VIDEO CONTAINER WITH PUB */
@@ -41239,9 +41238,9 @@ if (location.href.startsWith("https://xhamster.com/tags/") || location.href.star
 
 		/* (new403) END - URL-PREF - TAGS PAGE */
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/posts/") || location.href.startsWith("https://my.xhamster.com/posts/") || location.href.startsWith("https://fr.xhamster.com/posts/") || location.href.startsWith("https://de.xhamster.com/posts/") || location.href.startsWith("https://nl.xhamster.com/posts/") || location.href.startsWith("https://es.xhamster.com/posts/") || location.href.startsWith("https://it.xhamster.com/posts/") || location.href.startsWith("https://ru.xhamster.com/posts/") || location.href.startsWith("https://pl.xhamster.com/posts/") || location.href.startsWith("https://jp.xhamster.com/posts/") || location.href.startsWith("https://ge.xhamster.com/posts/") || location.href.startsWith("https://br.xhamster.com/posts/") || location.href.startsWith("https://cz.xhamster.com/posts/") || location.href.startsWith("https://vi.xhamster.com/posts/") || location.href.startsWith("https://tr.xhamster.com/posts/") || location.href.startsWith("https://ua.xhamster.com/posts/") || location.href.startsWith("https://hi.xhamster.com/posts/") || location.href.startsWith("https://th.xhamster.com/posts/") || location.href.startsWith("https://ko.xhamster.com/posts/") || location.href.startsWith("https://ro.xhamster.com/posts/") || location.href.startsWith("https://pt.xhamster.com/posts/") || location.href.startsWith("https://my.xhamster.com/posts/") || location.href.startsWith("https://id.xhamster.com/posts/") || location.href.startsWith("https://xhamster.com/posts/") || location.href.startsWith("https://fr.xhamster.com/posts/") || location.href.startsWith("https://de.xhamster.com/posts/") || location.href.startsWith("https://nl.xhamster.com/posts/") || location.href.startsWith("https://es.xhamster.com/posts/") || location.href.startsWith("https://it.xhamster.com/posts/") || location.href.startsWith("https://ru.xhamster.com/posts/") || location.href.startsWith("https://pl.xhamster.com/posts/") || location.href.startsWith("https://jp.xhamster.com/posts/") || location.href.startsWith("https://ge.xhamster.com/posts/") || location.href.startsWith("https://br.xhamster.com/posts/") || location.href.startsWith("https://cz.xhamster.com/posts/") || location.href.startsWith("https://vi.xhamster.com/posts/") || location.href.startsWith("https://tr.xhamster.com/posts/") || location.href.startsWith("https://ua.xhamster.com/posts/") || location.href.startsWith("https://hi.xhamster.com/posts/") || location.href.startsWith("https://th.xhamster.com/posts/") || location.href.startsWith("https://ko.xhamster.com/posts/") || location.href.startsWith("https://ro.xhamster.com/posts/") || location.href.startsWith("https://pt.xhamster.com/posts/") || location.href.startsWith("https://id.xhamster.com/posts/") || location.href.startsWith("https://xhvid.com/posts/")) {
-  css += `
+	}
+	if (location.href.startsWith("https://xhamster.com/posts/") || location.href.startsWith("https://my.xhamster.com/posts/") || location.href.startsWith("https://fr.xhamster.com/posts/") || location.href.startsWith("https://de.xhamster.com/posts/") || location.href.startsWith("https://nl.xhamster.com/posts/") || location.href.startsWith("https://es.xhamster.com/posts/") || location.href.startsWith("https://it.xhamster.com/posts/") || location.href.startsWith("https://ru.xhamster.com/posts/") || location.href.startsWith("https://pl.xhamster.com/posts/") || location.href.startsWith("https://jp.xhamster.com/posts/") || location.href.startsWith("https://ge.xhamster.com/posts/") || location.href.startsWith("https://br.xhamster.com/posts/") || location.href.startsWith("https://cz.xhamster.com/posts/") || location.href.startsWith("https://vi.xhamster.com/posts/") || location.href.startsWith("https://tr.xhamster.com/posts/") || location.href.startsWith("https://ua.xhamster.com/posts/") || location.href.startsWith("https://hi.xhamster.com/posts/") || location.href.startsWith("https://th.xhamster.com/posts/") || location.href.startsWith("https://ko.xhamster.com/posts/") || location.href.startsWith("https://ro.xhamster.com/posts/") || location.href.startsWith("https://pt.xhamster.com/posts/") || location.href.startsWith("https://my.xhamster.com/posts/") || location.href.startsWith("https://id.xhamster.com/posts/") || location.href.startsWith("https://xhamster.com/posts/") || location.href.startsWith("https://fr.xhamster.com/posts/") || location.href.startsWith("https://de.xhamster.com/posts/") || location.href.startsWith("https://nl.xhamster.com/posts/") || location.href.startsWith("https://es.xhamster.com/posts/") || location.href.startsWith("https://it.xhamster.com/posts/") || location.href.startsWith("https://ru.xhamster.com/posts/") || location.href.startsWith("https://pl.xhamster.com/posts/") || location.href.startsWith("https://jp.xhamster.com/posts/") || location.href.startsWith("https://ge.xhamster.com/posts/") || location.href.startsWith("https://br.xhamster.com/posts/") || location.href.startsWith("https://cz.xhamster.com/posts/") || location.href.startsWith("https://vi.xhamster.com/posts/") || location.href.startsWith("https://tr.xhamster.com/posts/") || location.href.startsWith("https://ua.xhamster.com/posts/") || location.href.startsWith("https://hi.xhamster.com/posts/") || location.href.startsWith("https://th.xhamster.com/posts/") || location.href.startsWith("https://ko.xhamster.com/posts/") || location.href.startsWith("https://ro.xhamster.com/posts/") || location.href.startsWith("https://pt.xhamster.com/posts/") || location.href.startsWith("https://id.xhamster.com/posts/") || location.href.startsWith("https://xhvid.com/posts/")) {
+		css += `
   /* BLOGS (EMPTY)  */
   /* REGEX */
   /*=== TEST IA 1 - NOT WORKING
@@ -41254,9 +41253,9 @@ if (location.href.startsWith("https://xhamster.com/posts/") || location.href.sta
 
 
   `;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || location.href.startsWith("https://xhamster.com/my/edit/post/") || location.href.startsWith("https://xhamster.com/embedded_video.php") || location.href.startsWith("blob:https://xhamster.com/")) {
-  css += `
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || location.href.startsWith("https://xhamster.com/my/edit/post/") || location.href.startsWith("https://xhamster.com/embedded_video.php") || location.href.startsWith("blob:https://xhamster.com/")) {
+		css += `
   /* BLOGS / STORY EDIT TEST */
 
 
@@ -41280,9 +41279,9 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
   	border: 3px dotted lime !important;
   }*/
   `;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
-  css += `
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+		css += `
   /* PLAYLIST - NEW DESIGN (new558) */
 
 
@@ -41345,8 +41344,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
   	border: 0;
   }
   `;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
 		css += `
 		/* LIST of PLAYLIST - VIDEO PAGE  (new558) -  */
 
@@ -41390,7 +41389,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		    max-height: 60vh !important;
 			margin-right: var(--xh-spacers-s);
 		    overflow: auto;
-		    
+
 		}
 		/* (new558) PLAYLIST - VIDEO PAGE - JUST LIST of PLAYLIST - 3nd CONTAINER */
 		.favorites-control.positioned.xh-dropdown .dropdown.position-left.favorites-dropdown .favorites-dropdown__list [data-role="playlist-picker-container"] ,
@@ -41549,8 +41548,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		}
 
 		`;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
 		css += `
 		/* PLAYLIST - MODAL - ADD TO PLAYLIST - MY / OTHERS */
 
@@ -41723,7 +41722,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 
 		/* (new564) MODAL - ADD TO PLAYLIST - MY / OTHERS - SHOW ONLY SELECTED */
 
-		html.user-page.favorites-page [data-role="dialog-manager"]:has(.favorites-edit-collections) .desktop-dialog__header-new:hover + .favorites-edit-collections [class^="playlistsMenu-"] [class^="main-"]:not([class*="checked-"]), 
+		html.user-page.favorites-page [data-role="dialog-manager"]:has(.favorites-edit-collections) .desktop-dialog__header-new:hover + .favorites-edit-collections [class^="playlistsMenu-"] [class^="main-"]:not([class*="checked-"]),
 
 		.user-page.user-videos-page.my-uploads-page [data-role="dialog-manager"]:has(.favorites-edit-collections) .desktop-dialog__header-new:hover + .favorites-edit-collections [class^="playlistsMenu-"] [class^="main-"][class*="checked-"]:not([class*="checked-"])  {
 			display: none  !important;
@@ -41731,8 +41730,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 			border: 3px solid yellow !important;
 		}
 		`;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
 		css += `
 		/* PLAYLIST - MODAL - DELETE - CONFIRM - MY (new564) */
 
@@ -41843,8 +41842,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 			border: 0 none;
 		}
 		`;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com"))) {
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com"))) {
 		css += `
 		/* PLAYLIST - MODAL - EDIT */
 
@@ -41855,8 +41854,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		border: 1px solid red !important;
 		}
 		`;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com")) || new RegExp("^(?:^https?:\\/\\/(?:[^\\.]+\\.)*xhamster\\.[a-z]+\\/videos\\/?.*\$)\$").test(location.href) || new RegExp("^(?:^https?:\\/\\/(?:[^\\.]+\\.)*xhvid\\.[a-z]+\\/videos\\/?.*\$)\$").test(location.href)) {
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com")) || new RegExp("^(?:^https?:\\/\\/(?:[^\\.]+\\.)*xhamster\\.[a-z]+\\/videos\\/?.*\$)\$").test(location.href) || new RegExp("^(?:^https?:\\/\\/(?:[^\\.]+\\.)*xhvid\\.[a-z]+\\/videos\\/?.*\$)\$").test(location.href)) {
 		css += `
 		/* PLAYLIST - GM - SEARCH IN PLAYLISTS (new564)*/
 
@@ -41936,9 +41935,9 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		    border-radius: 5px;
 		}
 		`;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
-  css += `
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+		css += `
   /* PLAYLIST - GM - AUTO CLEAN PLAYLISTS - PERSO */
   button[class="Auto.Clean"]{
       position: fixed !important;
@@ -41960,9 +41959,9 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
   border: 1px solid red !important;
   }
   `;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
-  css += `
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+		css += `
   /* PLAYLIST - GM - AUTO CLEAN BOOST === */
 
   .user-page.favorites-page .xhamster-auto-clean-button  {
@@ -41995,8 +41994,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
       display: none  !important;
   }
   `;
-}
-if (location.href.startsWith("https://xhamster.com/my/favorites/videos") || location.href.startsWith("https://xhamster.com/my/favorites/videos?") || location.href.startsWith("https://xhamster.com/playlists/") || location.href.startsWith("xhamster.com")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/my/favorites/videos") || location.href.startsWith("https://xhamster.com/my/favorites/videos?") || location.href.startsWith("https://xhamster.com/playlists/") || location.href.startsWith("xhamster.com")) {
 		css += `
 		/* XHAM GM AUTO CLEAN BOOST - PAGINATION TEST - MERGED (new571)*/
 
@@ -42051,8 +42050,8 @@ if (location.href.startsWith("https://xhamster.com/my/favorites/videos") || loca
 		    object-fit: contain;
 		    width: 100%;
 		}
-		.favorites-nav-container:has([class*="link-"],[class*="isActive-"], [class^="subnav-"]) + .content-column [data-role="favorites-video-collections"] .thumb-list.thumb-list--sidebar .thumb-list__item .video-thumb-info .video-thumb__trigger +.video-thumb-info__name, 
-		.favorites-nav-container:has([class*="link-"],[class*="isActive-"], 
+		.favorites-nav-container:has([class*="link-"],[class*="isActive-"], [class^="subnav-"]) + .content-column [data-role="favorites-video-collections"] .thumb-list.thumb-list--sidebar .thumb-list__item .video-thumb-info .video-thumb__trigger +.video-thumb-info__name,
+		.favorites-nav-container:has([class*="link-"],[class*="isActive-"],
 		[class^="subnav-"]) + .content-column [data-role="favorites-video-collections"] .thumb-list.thumb-list--sidebar .thumb-list__item .video-thumb-info .xh-dropdown+.video-thumb-info__name {
 			display: -webkit-box;
 		    -webkit-box-orient: vertical;
@@ -42255,12 +42254,12 @@ if (location.href.startsWith("https://xhamster.com/my/favorites/videos") || loca
 		}
 
 
-		.user-page.favorites-page [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] > [class^="root-"] > [class^="root-"], 
+		.user-page.favorites-page [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] > [class^="root-"] > [class^="root-"],
 		.favorites-nav-container + .xh-tabs.content-column .tab-favorite.current-tab [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] > [class^="root-"] {
 		    background-color: #111 ;
 			border: 1px solid red  !important;
 		}
-		.user-page.favorites-page [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] > [class^="root-"] [class*="title-"], 
+		.user-page.favorites-page [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] > [class^="root-"] [class*="title-"],
 		.favorites-nav-container + .xh-tabs.content-column .tab-favorite.current-tab [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] > [class^="root-"] [class*="title-"] {
 			display: inline-block !important;
 			height: 2.9vh !important;
@@ -42287,8 +42286,8 @@ if (location.href.startsWith("https://xhamster.com/my/favorites/videos") || loca
 			background-color: #ff00004d !important;
 		}
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/my/watch-history/") || location.href.startsWith("https://xhvid.com/my/watch-history/")) {
+	}
+	if (location.href.startsWith("https://xhamster.com/my/watch-history/") || location.href.startsWith("https://xhvid.com/my/watch-history/")) {
 		css += `
 		/* GM - CLEAN BOOST - HISTORY - STY HISTORY (new562) */
 		.xhamster-auto-clean-button {
@@ -42317,9 +42316,9 @@ if (location.href.startsWith("https://xhamster.com/my/watch-history/") || locati
 		    display: none  !important;
 		}
 		`;
-}
-if (location.href.startsWith("https://xhamster.com/my/favorites/videos") || location.href.startsWith("https://xhvid.com/my/favorites/videos")) {
-  css += `
+	}
+	if (location.href.startsWith("https://xhamster.com/my/favorites/videos") || location.href.startsWith("https://xhvid.com/my/favorites/videos")) {
+		css += `
   /* === GM - Xhamster Auto Unlock Playlists v.4 === */
 
   .user-page.favorites-page [class^="userCollection-"] > [class^="root-"] > [class^="list-"] > [class^="root-"]:not([class*="isDesktop-"]) a [class*="title-"] {
@@ -42338,7 +42337,7 @@ if (location.href.startsWith("https://xhamster.com/my/favorites/videos") || loca
   /* Add style for "Auto unlock" button*/
     button.OpenLockedPlaylists {
   	position: fixed !important;
-  	
+
       bottom: 0.5vh !important;
   	left: 52% !important;
       margin: 0 !important;
@@ -42351,8 +42350,8 @@ if (location.href.startsWith("https://xhamster.com/my/favorites/videos") || loca
 
     }
   `;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
 		css += `
 		/* PLAYLISTS - SUPERLOADER */
 
@@ -42606,9 +42605,9 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		background: #111 !important;
 		}
 		`;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
-  css += `
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+		css += `
   /* PLAYLIST - LIST of PLAYLIST (new564 */
 
   /* LIST of PLAYLISTS - MY / OTHERS */
@@ -42938,7 +42937,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
   	display: inline-block !important;
   }
 
-  [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] , 
+  [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] ,
   .favorites-nav-container + .xh-tabs.content-column .tab-favorite.current-tab [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"]  {
       /*grid-template-columns: repeat(20, minmax(0, 1fr)) !important;*/
   	position: fixed !important;
@@ -43040,7 +43039,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
   }
 
   /* HOVER */
-  [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] [class^="root-"] [class^="preview-"]:hover, 
+  [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] [class^="root-"] [class^="preview-"]:hover,
   .favorites-nav-container + .xh-tabs.content-column .tab-favorite.current-tab [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="preview-"]:hover {
       position: relative;
       height: 10vh !important;
@@ -43059,7 +43058,7 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
   background-color: #111 !important;
 
   }
-  [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] [class^="root-"] [class^="preview-"]:hover [class^="overlay-"], 
+  [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="list-"] [class^="root-"] [class^="preview-"]:hover [class^="overlay-"],
   .favorites-nav-container + .xh-tabs.content-column .tab-favorite.current-tab [data-role="favorites-video-collections"] header:has(.xh-icon.playlists2) + div:has([class^="userCollection-"]) [class^="userCollection-"] > [class^="root-"] [class^="preview-"]:hover [class^="overlay-"] {
       font-size: 12px !important;
       height: 2.5vh !important;
@@ -43111,8 +43110,8 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 
   }
   `;
-}
-if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
+	}
+	if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamster.com")) || (location.hostname === "xhvid.com" || location.hostname.endsWith(".xhvid.com"))) {
 		css += `
 		/* PLAYLIST - MY / OTHERS - CONTAINER - TEST LIGHT */
 
@@ -43194,9 +43193,9 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 		/*border: 1px solid aqua !important;*/
 		}
 
-		/* 
+		/*
 		TAG
-		.user-page.favorites-page .user-content-section .user-content-body .favorites-nav-container + .content-column:not(:has([class^="userCollection-"])):has([data-role="favorites-video-collections"]) [data-role="favorites-video-collections"] [class^="root-"] [class^="section-"]:not(:has([class*="isColumn-"])):has([class^="tags-"]) 
+		.user-page.favorites-page .user-content-section .user-content-body .favorites-nav-container + .content-column:not(:has([class^="userCollection-"])):has([data-role="favorites-video-collections"]) [data-role="favorites-video-collections"] [class^="root-"] [class^="section-"]:not(:has([class*="isColumn-"])):has([class^="tags-"])
 
 		USER INFOS
 
@@ -43471,12 +43470,12 @@ if ((location.hostname === "xhamster.com" || location.hostname.endsWith(".xhamst
 			overflow: hidden !important;
 		}
 		`;
-}
-if (typeof GM_addStyle !== "undefined") {
-  GM_addStyle(css);
-} else {
-  const styleNode = document.createElement("style");
-  styleNode.appendChild(document.createTextNode(css));
-  (document.querySelector("head") || document.documentElement).appendChild(styleNode);
-}
+	}
+	if (typeof GM_addStyle !== "undefined") {
+		GM_addStyle(css);
+	} else {
+		const styleNode = document.createElement("style");
+		styleNode.appendChild(document.createTextNode(css));
+		(document.querySelector("head") || document.documentElement).appendChild(styleNode);
+	}
 })();
