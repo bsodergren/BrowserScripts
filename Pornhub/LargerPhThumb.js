@@ -5,18 +5,19 @@
 // @match        https://*.pornhub.org/*
 // @match        https://*.pornhubpremium.com/*
 // @match        https://*.pornhubpremium.org/*
-// @version     1.0.3
+// @version     1.0.4
 // @author      Bjorn
 // @run-at       document-end
 // @description
 // ==/UserScript==
 
-; (function () {
-    'use strict';
-
-    let d = document.getElementsByClassName('row-5-thumbs');
-    if (typeof d[0] !== "undefined") {
-        d[0].setAttribute("style", 'grid-template-columns: repeat(2, minmax(0, 1fr));')
-    }
-
-}());
+(function () {
+  'use strict';
+  let d = document.getElementsByClassName ('row-5-thumbs');
+  if (typeof d[0] !== 'undefined') {
+    d[0].setAttribute (
+      'style',
+      'grid-template-columns: repeat(2, minmax(0, 1fr));'
+    );
+  }
+}) ();

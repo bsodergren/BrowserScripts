@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name      Pornhub -  Save Playlist to File
 // @description This adds a button to pornhub playlists to grab links to all videos of this playlist
-// @version  1.5.7
+// @version  1.5.8
 // @license MIT
 // @match    https://*.pornhub.com/playlist/*
 // @match    https://*.pornhubpremium.com/playlist/*
@@ -10,46 +10,40 @@
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?664041
-// @require http://media.lan/scripts/ScriptReq/PhFuncs.js?121247
+// @require http://media.lan/scripts/ScriptReq/Additional.js?105095
+// @require http://media.lan/scripts/ScriptReq/PhFuncs.js?285247
 // ==/UserScript==
 
 (function () {
+  const playlistId = window.location.pathname.split ('/').pop ();
+  var VideoListCmd = grabVideoList;
+  btnContainerId = '#userPlaylistActions #js-playlistTabsNav';
 
- const playlistId = window.location.pathname.split('/').pop();
-  var VideoListCmd = grabVideoList
-  btnContainerId = '#userPlaylistActions #js-playlistTabsNav'
-
-  if(playlistId == 'favorites'){
-    btnContainerId = '.profileSubNav'
-    VideoListCmd = grabFavList
-
+  if (playlistId == 'favorites') {
+    btnContainerId = '.profileSubNav';
+    VideoListCmd = grabFavList;
   }
 
+  var btnContainer = document.querySelector (btnContainerId);
+  var linkGrabberBtn = document.createElement ('button');
+  linkGrabberBtn.onclick = VideoListCmd;
+  linkGrabberBtn.classList.add ('playlistButtons'); //playlistButtons tooltipTrig js-pop
+  span = document.createElement ('span');
+  span.className = 'text';
+  span.innerText = 'Save Playlist';
+  linkGrabberBtn.appendChild (span);
+  btnContainer.appendChild (linkGrabberBtn);
 
-
-  var btnContainer = document.querySelector(btnContainerId)
-  var linkGrabberBtn = document.createElement('button')
-  linkGrabberBtn.onclick = VideoListCmd
-  linkGrabberBtn.classList.add('playlistButtons') //playlistButtons tooltipTrig js-pop
-  span = document.createElement('span')
-  span.className = 'text'
-  span.innerText = 'Save Playlist'
-  linkGrabberBtn.appendChild(span)
-  btnContainer.appendChild(linkGrabberBtn)
-
-
-
-  function grabFavList() {
-    var videoPlaylist = document.getElementById('moreData')
-    var linkList = videoPlaylist.querySelectorAll('li > div > div > a')
-    showLinks(linkList)
+  function grabFavList () {
+    var videoPlaylist = document.getElementById ('moreData');
+    var linkList = videoPlaylist.querySelectorAll ('li > div > div > a');
+    showLinks (linkList);
   }
 
-  function grabVideoList() {
-    var videoPlaylist = document.getElementById('videoPlaylist')
-    var linkList = videoPlaylist.querySelectorAll('div > a')
-    showLinks(linkList)
+  function grabVideoList () {
+    var videoPlaylist = document.getElementById ('videoPlaylist');
+    var linkList = videoPlaylist.querySelectorAll ('div > a');
+    showLinks (linkList);
   }
 
   // function _showLinks(linkList) {
@@ -143,5 +137,4 @@
   //   )
   //   toRemove.parentNode.removeChild(toRemove)
   // }
-
-}());
+}) ();

@@ -6,29 +6,28 @@
 // @match        https://*.pornhubpremium.com/*
 // @match        https://*.pornhubpremium.org/*
 // @grant       GM_xmlhttpRequest
-// @version     1.3.3
+// @version     1.3.4
 // @author      Bjorn
 // @run-at       document-end
 // @description 4/28/2026, 6:34:22 AM
-// @require http://media.lan/scripts/ScriptReq/Additional.js?387356
+// @require http://media.lan/scripts/ScriptReq/Additional.js?689997
 // ==/UserScript==
 
-
 (function () {
-    let savedLinks = [];
-    document.addEventListener('contextmenu', function (e) {
-        if (e.ctrlKey && e.shiftKey) {
-            const link = e.target.closest('a');
-            if (link && link.href) {
-                e.preventDefault(); // prevent default context menu
+  let savedLinks = [];
+  document.addEventListener ('contextmenu', function (e) {
+    if (e.ctrlKey && e.shiftKey) {
+      const link = e.target.closest ('a');
+      if (link && link.href) {
+        e.preventDefault (); // prevent default context menu
 
-                data = {
-                    file: "PhClicked.txt",
-                    action: "addToPlaylist",
-                    text: link.href
-                }
-                saveToLocalServer("pledit.php", data, "Saved to playlist")
-            }
-        }
-    });
-}());
+        data = {
+          file: 'PhClicked.txt',
+          action: 'addToPlaylist',
+          text: link.href,
+        };
+        saveToLocalServer ('pledit.php', data, 'Saved to playlist');
+      }
+    }
+  });
+}) ();

@@ -8,35 +8,34 @@
 // @description 9/15/2025, 10:25:49 AM
 // ==/UserScript==
 
-;(function () {
-  'use strict'
-
-  var videoPlaylist = document.querySelector('.title-zone')
+(function () {
+  'use strict';
+  var videoPlaylist = document.querySelector ('.title-zone');
   // var linkList = videoPlaylist.querySelectorAll("h1");
   // console.log(videoPlaylist)
-  console.log(videoPlaylist.firstChild)
-  var linkList = videoPlaylist.querySelectorAll('.tag-models')
+  console.log (videoPlaylist.firstChild);
+  var linkList = videoPlaylist.querySelectorAll ('.tag-models');
   for (var i = 0; i < linkList.length; i++) {
-    console.log(linkList[i].innerText)
+    console.log (linkList[i].innerText);
   }
 
-  var downloadList = document.querySelectorAll('.full_download_link')
+  var downloadList = document.querySelectorAll ('.full_download_link');
   // for (var i = 0; i < downloadList.length; i++) {
 
-  i = 0
+  i = 0;
 
-  const fileUrl = downloadList[i].href
-  const fileName = downloadList[i].download // Optional: Specify a custom file name
-  const link = document.createElement('a')
-  link.href = fileUrl
-  link.text = fileUrl
+  const fileUrl = downloadList[i].href;
+  const fileName = downloadList[i].download; // Optional: Specify a custom file name
+  const link = document.createElement ('a');
+  link.href = fileUrl;
+  link.text = fileUrl;
 
-  link.download = fileName // Set the file name for the download
-  document.body.appendChild(link)
+  link.download = fileName; // Set the file name for the download
+  document.body.appendChild (link);
 
   // Trigger the download
   // document.body.removeChild(link);
-  console.log(downloadList[i].href)
+  console.log (downloadList[i].href);
   // }
 
   //   const fileUrl = 'https://example.com/path/to/file';
@@ -53,4 +52,4 @@
 
   //     // Clean up the DOM
   //     document.body.removeChild(link);
-})()
+}) ();
