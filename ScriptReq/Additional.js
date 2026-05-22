@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Library
-// @version     1.6.1
+// @version     1.6.4
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @license     MIT
@@ -95,9 +95,19 @@ function saveToLocalServer(postUrl, data, toast, command = null) {
         data: encoded,
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
+        },
+        responseType: "document",
+        onload: function (response) {
+            var responseXML = response.responseXML;
+            if (!responseXML) {
+                try {
+                    responseXML = new DOMParser().parseFromString(response.responseText, "text/html");
+                } catch (err) { }
+            }
+            showToast( response.responseText, 3000, command)
         }
     });
 
-    showToast(toast, 3000, command)
+
 }
 
