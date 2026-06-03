@@ -3,10 +3,10 @@
 // @match        https://members.adulttime.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.9.1
+// @version     1.9.2
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?933777
+// @require http://media.lan/scripts/ScriptReq/Additional.js?413328
 // @description 4/28/2026, 6:34:22 AM
 // ==/UserScript==
 
