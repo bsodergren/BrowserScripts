@@ -1,55 +1,89 @@
 // ==UserScript==
 // @name       private.com
-// @namespace   Violentmonkey Scripts
 // @match       https://members.private.com/en/scene/*
-// @grant       none
-// @author      -
-// @license MIT
+// @grant        GM_xmlhttpRequest
+// @grant        nsafeWindow
+// @version     1.10.5
+// @license     MIT
+// @namespace https://greasyfork.org/users/984905
+// @require http://media.lan/scripts/ScriptReq/Additional.js?450092
 // @description 9/15/2025, 10:25:49 AM
 // ==/UserScript==
 
-(function () {
-  'use strict';
-  var videoPlaylist = document.querySelector ('.title-zone');
-  // var linkList = videoPlaylist.querySelectorAll("h1");
-  // console.log(videoPlaylist)
-  console.log (videoPlaylist.firstChild);
-  var linkList = videoPlaylist.querySelectorAll ('.tag-models');
-  for (var i = 0; i < linkList.length; i++) {
-    console.log (linkList[i].innerText);
+; (function ()
+{
+  function ucwords(str)
+  {
+    return str.toLowerCase().replace(/\b[a-z]/g, function (letter)
+    {
+      return letter.toUpperCase()
+    })
   }
 
-  var downloadList = document.querySelectorAll ('.full_download_link');
-  // for (var i = 0; i < downloadList.length; i++) {
+  var strongText = document.createElement('strong')
+  strongText.innerText = 'Get Video Markers'
 
-  i = 0;
+  var span = document.createElement('span')
+  span.className = 'glyphicons glyphicons-play-button'
 
-  const fileUrl = downloadList[i].href;
-  const fileName = downloadList[i].download; // Optional: Specify a custom file name
-  const link = document.createElement ('a');
-  link.href = fileUrl;
-  link.text = fileUrl;
+  var iconLink = document.createElement('a')
+  iconLink.href = '#'
+  iconLink.onclick = getVideoInfo
 
-  link.download = fileName; // Set the file name for the download
-  document.body.appendChild (link);
+  iconLink.appendChild(span)
+  iconLink.appendChild(strongText)
+  var newIcon = document.createElement('li')
+  newIcon.className = 'li-watch'
+  newIcon.appendChild(iconLink)
 
-  // Trigger the download
-  // document.body.removeChild(link);
-  console.log (downloadList[i].href);
-  // }
+  icons = document.querySelector('.nav-icos')
+  icons.appendChild(newIcon)
+  function getVideoInfo()
+  {
+    let people = []
+    let markers = []
+    let genreList = []
+    let actorList = []
+    studioName = ''
 
-  //   const fileUrl = 'https://example.com/path/to/file';
-  //     const fileName = 'downloaded-file.txt'; // Optional: Specify a custom file name
+    var videoPlaylist = document.querySelector('.title-zone')
+    title = videoPlaylist.firstChild.innerText
 
-  //     // Create an invisible link element
-  //     const link = document.createElement('a');
-  //     link.href = fileUrl;
-  //     link.download = fileName; // Set the file name for the download
-  //     document.body.appendChild(link);
+    d = videoPlaylist.querySelectorAll('.tag-models > a')
+    for (var i = 0; i < d.length; i++)
+    {
+      var actor = d[i].innerText
+      actor = actor.toLowerCase().replace(/\b[a-z]/g, function (letter)
+      {
+        return letter.toUpperCase()
+      })
+      actorList.push(actor)
+    }
 
-  //     // Trigger the download
-  //     link.click();
+    g = videoPlaylist.querySelectorAll('.tag-tags > a')
+    for (var i = 0; i < g.length; i++)
+    {
+      genre = g[i].innerText
+      genreList.push(genre)
+    }
 
-  //     // Clean up the DOM
-  //     document.body.removeChild(link);
-}) ();
+    var downloadList = document.querySelectorAll('.full_download_link')
+    fileNamePcs = downloadList[0].href.split('/')
+    idx = fileNamePcs.indexOf('upload')
+    video_file = fileNamePcs[idx + 1]
+    console.log(video_file)
+
+    people = {
+      VideoName: title,
+      Genre: genreList,
+      Actors: actorList,
+      video_file: video_file
+    }
+    data = {
+      action: 'savePrivateJson',
+      class: 'WebHelper',
+      text: JSON.stringify(people)
+    }
+    saveToLocalServer('process.php', data, 'Saved Markers')
+  }
+})()

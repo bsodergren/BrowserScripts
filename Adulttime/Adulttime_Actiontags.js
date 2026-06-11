@@ -3,10 +3,10 @@
 // @match        https://members.adulttime.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.9.2
+// @version     1.9.5
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?413328
+// @require http://media.lan/scripts/ScriptReq/Additional.js?104467
 // @description 4/28/2026, 6:34:22 AM
 // ==/UserScript==
 
@@ -55,6 +55,7 @@
   })
 
   waitForElement('.VideoJSPlayer-DownloadOptionSubTitle-Link', el => {
+
     el.onclick = getSubtitle
   })
   // Example usage:
@@ -84,9 +85,9 @@
   })
 
   function getSubtitle() {
-    // var downloadEl = document.getElementsByClassName(
-    //   'VideoJSPlayer-DownloadOptionSubTitle-Link'
-    // )
+    var downloadEl = document.getElementsByClassName(
+      'VideoJSPlayer-DownloadOptionSubTitle-Link'
+    )
     // console.log("SubtitleDL => ", downloadEl);
 
 
