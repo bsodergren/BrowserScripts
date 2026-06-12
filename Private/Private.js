@@ -3,10 +3,10 @@
 // @match       https://members.private.com/en/scene/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.10.6
+// @version     1.11.5
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?402925
+// @require http://media.lan/scripts/ScriptReq/Additional.js?450080
 // @description 9/15/2025, 10:25:49 AM
 // ==/UserScript==
 
@@ -68,7 +68,6 @@
     ppcs.pop ();
 
     video_file = ppcs.join ('_');
-    console.log (video_file);
 
     people = {
       VideoName: title,
@@ -82,5 +81,7 @@
       text: JSON.stringify (people),
     };
     saveToLocalServer ('process.php', data, 'Saved Markers');
+
+
   }
 }) ();

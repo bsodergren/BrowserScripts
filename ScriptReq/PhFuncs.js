@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren PH Library
-// @version     1.3.8
+// @version     1.3.9
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
 // ==/UserScript==
@@ -14,10 +14,17 @@ function SaveToPlaylist () {
     var WatchEl = document.querySelector ('h1 #watchPlaylist');
     if (WatchEl != null) {
       var PlaylistName = WatchEl.innerText;
+    } else {
+      WatchE2 = document.getElementsByClassName ('playlist-title');
+      if (WatchE2 != null) {
+        var PlaylistName = WatchE2[0].innerText.split("'",1)[0];
+      }
     }
   } else {
     var PlaylistName = PlaylistNameEl[0].innerHTML;
   }
+
+  console.log (PlaylistName);
 
   var videoPlaylist = document.getElementById ('linkListDivID');
   var linkList = videoPlaylist.querySelectorAll ('li > a');

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Library
-// @version     1.7.2
+// @version     1.10.4
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @license     MIT
@@ -84,6 +84,95 @@ function jsonToUrlEncoded (jsonObj) {
     .join ('&');
 }
 
+// function postData (url, data) {
+//   return new Promise ((resolve, reject) => {
+//     try {
+//       const xhr = new GM_xmlhttpRequest ({
+//         method: 'POST',
+//         url: url,
+//         data: data,
+//         responseType: 'document',
+//         headers: {
+//           'Content-Type': 'application/x-www-form-urlencoded',
+//         }
+//       });
+
+//        console.log ('Server status:', xhr);
+//       // xhr.open ('POST', url, true);
+//       // xhr.setRequestHeader (
+//       //   'Content-Type',
+//       //   'application/x-www-form-urlencoded'
+//       // );
+//       // Handle successful response
+//       xhr.onload = function () {
+//            console.log ('Server status:', xhr.status);
+//         if (xhr.status >= 200 && xhr.status < 300) {
+
+//            console.log ('Server response:', xhr.responseText);
+//           resolve (xhr.responseText);
+//         } else {
+//           reject (new Error (`Request failed with status ${xhr.status}`));
+//         }
+//       };
+
+//       // Handle network errors
+//       xhr.onerror = function () {
+//         reject (new Error ('Network error occurred'));
+//       };
+
+//       // Send JSON data
+//       // xhr.send (JSON.stringify (data));
+//     } catch (err) {
+//       reject (err);
+//     }
+//   });
+// }
+
+// // Example usage:
+
+// function saveToLocalServer (postUrl, data, toast, command = null) {
+//   postUrl = 'http://media.lan/plex/' + postUrl;
+//   const encoded = jsonToUrlEncoded (data);
+
+//   postData (postUrl, encoded)
+//     .then (response => {
+//       console.log ('Server response:', response);
+//       showToast (response, 3000, command);
+//     })
+//     .catch (error => {
+//       console.error ('Error:', error.message);
+//     });
+// }
+
+// GM_xmlhttpRequest (
+// {
+//   method: 'POST',
+//   url: postUrl,
+//   data: encoded,
+//   headers: {
+//     'Content-Type': 'application/x-www-form-urlencoded',
+//   },
+// }
+
+//   onload: function (response) {
+//     const serverReplay = response;
+//     var responseXML = response.responseXML;
+//     if (!responseXML) {
+//       try {
+//         responseXML = new DOMParser ().parseFromString (
+//           response.responseText,
+//           'text/html'
+//         );
+//       } catch (err) {}
+//     }
+//     showToast (response.responseText, 3000, command);
+//   },
+// });
+
+//  checkResponse (serverReplay);
+
+// }
+
 function saveToLocalServer (postUrl, data, toast, command = null) {
   postUrl = 'http://media.lan/plex/' + postUrl;
   const encoded = jsonToUrlEncoded (data);
@@ -107,8 +196,18 @@ function saveToLocalServer (postUrl, data, toast, command = null) {
         } catch (err) {}
       }
       showToast (response.responseText, 3000, command);
+      sentback (response.responseText);
     },
   });
+}
 
-
+function sentback (str) {
+  newstr = str.replace ('Saved as ', '');
+  if (newstr.startsWith ('x')) {
+    favBtn = document.getElementById ('favorites_del');
+    if (favBtn !== null) {
+      favBtn.click ();
+    }
+    console.log (str);
+  }
 }
