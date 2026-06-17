@@ -6,11 +6,11 @@
 // @match        https://*.pornhubpremium.com/*
 // @match        https://*.pornhubpremium.org/*
 // @grant       GM_xmlhttpRequest
-// @version     1.3.4
+// @version     1.4.1
 // @author      Bjorn
 // @run-at       document-end
 // @description 4/28/2026, 6:34:22 AM
-// @require http://media.lan/scripts/ScriptReq/Additional.js?689997
+// @require http://media.lan/scripts/ScriptReq/Additional.js?619336
 // ==/UserScript==
 
 (function () {
@@ -21,13 +21,57 @@
       if (link && link.href) {
         e.preventDefault (); // prevent default context menu
 
-        data = {
-          file: 'PhClicked.txt',
-          action: 'addToPlaylist',
-          text: link.href,
-        };
-        saveToLocalServer ('pledit.php', data, 'Saved to playlist');
+        saveLink (link.href);
       }
     }
   });
+  // waitForElement ('.ratingInfo', el => {
+      waitForElement ('.tab-menu-wrapper-row', el => {
+
+    createPlaylistButton (el);
+  });
+
+
+  function createoldPlaylistButton (element) {
+    var DivEl = document.createElement ('div');
+    DivEl.classList.add ('videoInfo');
+    DivEl.style.borderLeftWidth = '1px';
+    DivEl.style.borderLeftStyle = 'solid';
+    DivEl.style.borderLeftColor = '#848484';
+    DivEl.style.margin = '10px';
+    DivEl.innerText = 'Save to Playlist';
+    DivEl.onclick = saveLinktoPlaylist;
+    element.appendChild (DivEl);
+  }
+
+  function createPlaylistButton (element) {
+    var menuWrapper = document.createElement ('div');
+    menuWrapper.classList.add ('tab-menu-wrapper-cell');
+    menuWrapper.classList.add ('videoCtaPill');
+
+    var menuItem = document.createElement ('div');
+    menuItem.classList.add ('gtm-event-video-underplayer');
+    menuItem.classList.add ('flag-btn');
+    menuItem.classList.add ('tab-menu-item');
+    menuItem.classList.add ('tooltipTrig');
+
+    var menuLabel = document.createElement ('span');
+    menuLabel.innerText = 'save to playlist';
+    menuLabel.onclick = saveLinktoPlaylist;
+    menuItem.appendChild (menuLabel);
+    menuWrapper.appendChild (menuItem);
+    element.appendChild (menuWrapper);
+  }
+
+  function saveLinktoPlaylist () {
+    saveLink (window.location.href);
+  }
+  function saveLink (url) {
+    data = {
+      file: 'PhClicked.txt',
+      action: 'addToPlaylist',
+      text: url,
+    };
+    saveToLocalServer ('pledit.php', data, 'Saved to playlist');
+  }
 }) ();
