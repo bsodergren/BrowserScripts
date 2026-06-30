@@ -1,103 +1,120 @@
 // ==UserScript==
-// @name        newsensations.com
-// @match       https://newsensations.com/members/gallery.php*
+// @name        tagteampov.com
+// @match      https://www.tagteampov.com/members/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?338696
-// @version     1.0.2
+// @require http://media.lan/scripts/ScriptReq/VideoMetadata.js?740567
+// @require http://media.lan/scripts/ScriptReq/Additional.js?826456
+// @version     1.0.10
 // @author      -
 // @description 5/14/2026, 8:26:35 AM
 // ==/UserScript==
 
-; (function () {
-  function searchNodeListForText(nodes, searchText) {
-    if (!(nodes instanceof NodeList)) {
-      throw new TypeError('First argument must be a NodeList')
-    }
-    if (typeof searchText !== 'string') {
-      throw new TypeError('Search text must be a string')
-    }
 
-    const matches = []
-    const lowerSearch = searchText.toLowerCase()
 
-    nodes.forEach(node => {
-      if (node.textContent.toLowerCase().includes(lowerSearch)) {
-        matches.push(node)
-      }
-    })
+class tagteampov extends VideoMetaData
+{
 
-    return matches
+  setup()
+  {
+    this.videoPlaylist = document.querySelector('.title-zone')
   }
 
-  var ButtonRow = document.querySelectorAll('.ex-grid-item.ex-actions-row')
-  var linkGrabberBtn = document.createElement('button')
-  linkGrabberBtn.onclick = getVideoLinks
-  //     // linkGrabberBtn.classList.add('Button'); //playlistButtons tooltipTrig js-pop
-  var span = document.createElement('span')
-  span.innerText = 'Get Video Json'
-  span.className = 'text'
-  linkGrabberBtn.appendChild(span)
-  ButtonRow[0].appendChild(linkGrabberBtn)
+  getVideoFile()
+  {
+    var downloadList = document.querySelector("#information-video > div > div > div > div.buttons > div.download.dropdown > div > a:nth-child(1)")
+    var fileNamePcs = downloadList.href.split('/')
+    var idx = fileNamePcs.findIndex(str => str.includes('.mp4'))
+    var pcs = fileNamePcs[idx].split('.mp4', 1)
+    this.video_file = pcs[0]
+  }
 
-  function getVideoLinks() {
-    // Example: Change background color
-    let videoJson = []
-    let names = []
-    let VideoSeries = 'New Sensations'
-
-    const listItems = document.querySelectorAll('div >.ex-grid-item > span')
-    const found = searchNodeListForText(listItems, 'Series: ')
-
-    console.log('Found elements:', found)
-
-    // Highlight matches
-    found.forEach(el => {
-      next = el.nextElementSibling
-      VideoSeries = next.innerText
-      console.log(next.innerText)
+  getVideoGenreList()
+  {
+    var cat = document.querySelectorAll("div.categories-wrapper > a ")
+    cat.forEach(g =>
+    {
+      this.genreList.push(g.title)
     })
+  }
 
-    e = document.querySelector('.ex-player.is-paused')
-    s = e.getAttribute('data-sources')
-    array = JSON.parse(s)
-    url = array[0].src
-    path = url.split('?', 1)
-    pcs = path[0].split('/')
-    filename = pcs[pcs.length - 1]
+  getVideoTitle()
+  {
+    var el = document.querySelector("#title-video > div > div.col-12.col-xl-8.p-0 > div > div > h1")
+    this.title = el.innerHTML
+  }
 
-    videoTitleEl = document.querySelectorAll('div>.ex-grid-item > h4')
-    videoTitle = videoTitleEl[0].innerText
+  getVideoActors()
+  {
+    var Models = document.querySelectorAll(".model-name")
+    Models.forEach(m =>
+    {
+      this.actorList.push(m.title)
+    })
+  }
 
-    link = document.querySelectorAll('div> .ex-grid-item > a')
-    for (var i = 0; i < link.length; i++) {
-      name = link[i].innerText
-      if (name !== '') {
-        if (name !== VideoSeries) {
-          names.push(name)
-        }
-      }
-    }
+}
 
-    videoJson = {
-      Network: 'New Sensations',
-      Title: videoTitle,
-      Studio: VideoSeries,
-      Actors: names,
-      video_file: filename
-    }
 
+
+
+
+; (function ()
+{
+
+var ButtonContainer = document.querySelector("#title-video > div > div.col-12.col-xl-4.p-0 > div")
+
+
+  // var MarkerGrabberBtn = document.createElement('button')
+  // var spanm = document.createElement('span')
+  // spanm.innerText = 'Get Video Markers'
+  // spanm.className = 'media-option'
+
+  // MarkerGrabberBtn.appendChild(spanm)
+  // MarkerGrabberBtn.onclick = getVideoInfo
+
+btns = ButtonContainer.children
+idx = btns.length
+btn = btns[idx-1].cloneNode(true)
+btn.removeAttribute("href")
+btn.innerHTML="Get Data"
+btn.onclick = getVideoInfo
+ButtonContainer.appendChild(btn)
+
+
+  // var strongText = document.createElement('strong')
+  // strongText.innerText = 'Get Video Markers'
+
+  // var span = document.createElement('span')
+  // span.className = 'glyphicons glyphicons-play-button'
+
+  // var iconLink = document.createElement('a')
+  // iconLink.href = '#'
+  // iconLink.onclick = getVideoInfo
+
+  // iconLink.appendChild(span)
+  // iconLink.appendChild(strongText)
+  // var newIcon = document.createElement('li')
+  // newIcon.className = 'li-watch'
+  // newIcon.appendChild(iconLink)
+
+  // icons = document.querySelector('.nav-icos')
+  // icons.appendChild(newIcon)
+
+  function getVideoInfo()
+  {
+    MetaData = new tagteampov;
+    MetaData.getVideoDetails()
 
     data = {
-      action: 'saveNewSensationsJson',
+      action: 'saveTagTeam',
       class: 'WebHelper',
-      text: JSON.stringify(videoJson)
+      text: MetaData.getJsonData()
     }
-    saveToLocalServer('process.php', data, 'Saved Subtitles')
-    // Your DOM manipulation code here
+    saveToLocalServer('process.php', data, 'Saved Markers')
   }
-
-
 })()
+
+

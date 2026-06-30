@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Meta Library
-// @version     1.0.0
+// @version     1.0.6
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @grant        GM_addStyle
@@ -9,21 +9,44 @@
 // @namespace   https://greasyfork.org/users/984905
 // ==/UserScript==
 
-
-
 class VideoMetaData
 {
-  constructor()
-  {
+    constructor()
+    {
+        this.people = []
+        this.markers = []
+        this.genreList = []
+        this.actorList = []
+        this.studioName = ''
+        this.title = ''
+        this.video_file = ''
+    }
 
-   }
+    getVideoTitle() { }
+    getVideoActors() { }
+    getVideoFile() { }
+    getVideoGenreList() { }
+
+    getVideoDetails()
+    {
+        this.getVideoActors()
+        this.getVideoFile()
+        this.getVideoTitle()
+        this.getVideoGenreList()
 
 
-  /**
-   * Initialize the script and do basic UI removals
-   */
-  init()
-  {
-  }
+        this.people = {
+            VideoName: this.title,
+            Genre: this.genreList,
+            Actors: this.actorList,
+            video_file: this.video_file
+        }
+    }
+
+    getJsonData()
+    {
+        return JSON.stringify( this.people)
+    }
+
 
 }
