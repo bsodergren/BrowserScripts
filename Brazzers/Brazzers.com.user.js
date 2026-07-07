@@ -5,120 +5,120 @@
 // @grant        nsafeWindow
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/VideoMetadata.js?372328
-// @require http://media.lan/scripts/ScriptReq/Additional.js?529240
-// @version     1.2.7
+// @require http://media.lan/scripts/ScriptReq/VideoMetadata.js?289613
+// @require http://media.lan/scripts/ScriptReq/Additional.js?113255
+// @version     1.3.1
 // @author      -
 // @description 5/14/2026, 8:26:35 AM
 // ==/UserScript==
 
 class brazzers extends VideoMetaData {
-  setup () {
-    // this.videoPlaylist = document.querySelector('.title-zone')
-  }
+	setup() {
+		// this.videoPlaylist = document.querySelector('.title-zone')
+	}
 
-  getFormatedVideoTitle (str) {
-    var videoTitle = str.toLowerCase()
-        videoTitle = videoTitle.replaceAll("-", '')
-    return this.getBefore(videoTitle, '_')
-  }
+	getFormatedVideoTitle(str) {
+		var videoTitle = str.toLowerCase();
+		videoTitle = videoTitle.replaceAll('-', '');
+		return this.getBefore(videoTitle, '_');
+	}
 
-  getSearchTitle (str) {
-    var titletxt = str.replaceAll(' ', '-').toLowerCase()
-    titletxt = titletxt.replaceAll("'", '-')
-        titletxt = titletxt.replaceAll("-", '')
-    return titletxt
-  }
+	getSearchTitle(str) {
+		var titletxt = str.replaceAll(' ', '-').toLowerCase();
+		titletxt = titletxt.replaceAll("'", '-');
+		titletxt = titletxt.replaceAll('-', '');
+		return titletxt;
+	}
 
-  getVideoFile () {
-    var downloadList = document.querySelectorAll('head > meta')
-    downloadList.forEach(el => {
-      if (el.name == 'dti.url') {
-        var urlstr = el.content.split('/')
-        this.video_file = urlstr[urlstr.length - 1] + '_1080p.mp4'
-        return true
-      }
-    })
-  }
+	getVideoFile() {
+		var downloadList = document.querySelectorAll('head > meta');
+		downloadList.forEach((el) => {
+			if (el.name == 'dti.url') {
+				var urlstr = el.content.split('/');
+				this.video_file = urlstr[urlstr.length - 1] + '_1080p.mp4';
+				return true;
+			}
+		});
+	}
 
-  getVideoGenreList () {
-    var divList = document.querySelectorAll('div>h2')
-    divList.forEach((divEl, idx) => {
-      if (divEl.innerText == 'INFORMATION') {
-        var next = divList[idx].parentNode.parentNode.childNodes
-        var children = next[1].childNodes[1].childNodes
-        children.forEach(cEl => {
-          this.genreList.push(cEl.innerHTML)
-        })
-        return true
-      }
-    })
-  }
+	getVideoGenreList() {
+		var divList = document.querySelectorAll('div>h2');
+		divList.forEach((divEl, idx) => {
+			if (divEl.innerText == 'INFORMATION') {
+				var next = divList[idx].parentNode.parentNode.childNodes;
+				var children = next[1].childNodes[1].childNodes;
+				children.forEach((cEl) => {
+					this.genreList.push(cEl.innerHTML);
+				});
+				return true;
+			}
+		});
+	}
 
-  getVideoTitle () {
-    if (this.video_file == '') {
-      this.getVideoFile()
-    }
+	getVideoTitle() {
+		if (this.video_file == '') {
+			this.getVideoFile();
+		}
 
-    var videoTitle = this.getFormatedVideoTitle(this.video_file)
+		var videoTitle = this.getFormatedVideoTitle(this.video_file);
 
-    var hElement = document.querySelectorAll('h2')
+		var hElement = document.querySelectorAll('h2');
 
-    hElement.forEach(hel => {
-      var titletxt = this.getSearchTitle(hel.innerHTML)
-      if (videoTitle == titletxt) {
-        this.title = hel.innerHTML
-        return true
-      }
-    })
-  }
+		hElement.forEach((hel) => {
+			var titletxt = this.getSearchTitle(hel.innerHTML);
+			if (videoTitle == titletxt) {
+				this.title = hel.innerHTML;
+				return true;
+			}
+		});
+	}
 
-  getVideoActors () {
-    if (this.video_file == '') {
-      this.getVideoFile()
-    }
+	getVideoActors() {
+		if (this.video_file == '') {
+			this.getVideoFile();
+		}
 
-    var videoTitle = this.getFormatedVideoTitle(this.video_file)
+		var videoTitle = this.getFormatedVideoTitle(this.video_file);
 
-    var hElement = document.querySelectorAll('h2')
+		var hElement = document.querySelectorAll('h2');
 
-    hElement.forEach(hel => {
-      var titletxt = this.getSearchTitle(hel.innerHTML)
-      console.log(videoTitle + ' = ' + titletxt)
-      if (videoTitle == titletxt) {
-        var parentElement = hel.parentNode
-        var aList = parentElement.querySelectorAll('a')
-        aList.forEach(m => {
-          this.actorList.push(m.title)
-        })
+		hElement.forEach((hel) => {
+			var titletxt = this.getSearchTitle(hel.innerHTML);
+			console.log(videoTitle + ' = ' + titletxt);
+			if (videoTitle == titletxt) {
+				var parentElement = hel.parentNode;
+				var aList = parentElement.querySelectorAll('a');
+				aList.forEach((m) => {
+					this.actorList.push(m.title);
+				});
 
-        return true
-      }
-    })
-  }
+				return true;
+			}
+		});
+	}
 }
 
-;(function () {
-  waitForElement('div > a.active', el => {
-    var markerBtn = el.cloneNode(true)
-    markerBtn.classList.remove('active')
-    markerBtn.innerHTML = 'Get Data'
-    markerBtn.removeAttribute('href')
-    markerBtn.onclick = getVideoInfo
-    el.parentNode.appendChild(markerBtn)
-  })
+(function () {
+	waitForElement('div > a.active', (el) => {
+		var markerBtn = el.cloneNode(true);
+		markerBtn.classList.remove('active');
+		markerBtn.innerHTML = 'Get Data';
+		markerBtn.removeAttribute('href');
+		markerBtn.onclick = getVideoInfo;
+		el.parentNode.appendChild(markerBtn);
+	});
 
-  function getVideoInfo () {
-    MetaData = new brazzers()
-    MetaData.getVideoDetails()
+	function getVideoInfo() {
+		MetaData = new brazzers();
+		MetaData.getVideoDetails();
 
-    data = {
-      action: 'saveBrazzers',
-      class: 'WebHelper',
-      text: MetaData.getJsonData()
-    }
-    saveToLocalServer('process.php', data, 'Saved Markers')
-  }
+		data = {
+			action: 'saveBrazzers',
+			class: 'WebHelper',
+			text: MetaData.getJsonData(),
+		};
+		saveToLocalServer('process.php', data, 'Saved Markers');
+	}
 
-  unsafeWindow.brazzers = brazzers
-})()
+	unsafeWindow.brazzers = brazzers;
+})();

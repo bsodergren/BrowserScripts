@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Meta Library
-// @version     1.0.7
+// @version     1.0.9
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @grant        GM_addStyle
@@ -9,10 +9,8 @@
 // @namespace   https://greasyfork.org/users/984905
 // ==/UserScript==
 
-class VideoMetaData
-{
-    constructor()
-    {
+class VideoMetaData {
+    constructor() {
         this.people = []
         this.markers = []
         this.genreList = []
@@ -27,13 +25,11 @@ class VideoMetaData
     getVideoFile() { }
     getVideoGenreList() { }
 
-    getVideoDetails()
-    {
+    getVideoDetails() {
         this.getVideoActors()
         this.getVideoFile()
         this.getVideoTitle()
         this.getVideoGenreList()
-
 
         this.people = {
             VideoName: this.title,
@@ -43,19 +39,22 @@ class VideoMetaData
         }
     }
 
-    getJsonData()
-    {
-        return JSON.stringify( this.people)
+    getJsonData() {
+        return JSON.stringify(this.people)
     }
 
-     getBefore(str, delimiter) {
-    if (typeof str !== 'string' || typeof delimiter !== 'string' || delimiter.length === 0) {
-        throw new Error("Invalid input: both arguments must be non-empty strings.");
+    getBefore(str, delimiter) {
+        if (
+            typeof str !== 'string' ||
+            typeof delimiter !== 'string' ||
+            delimiter.length === 0
+        ) {
+            throw new Error(
+                'Invalid input: both arguments must be non-empty strings.'
+            )
+        }
+
+        const index = str.indexOf(delimiter)
+        return index === -1 ? str : str.substring(0, index)
     }
-
-    const index = str.indexOf(delimiter);
-    return index === -1 ? str : str.substring(0, index);
-}
-
-
 }
