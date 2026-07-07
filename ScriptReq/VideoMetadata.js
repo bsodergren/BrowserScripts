@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Meta Library
-// @version     1.0.6
+// @version     1.0.7
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @grant        GM_addStyle
@@ -47,6 +47,15 @@ class VideoMetaData
     {
         return JSON.stringify( this.people)
     }
+
+     getBefore(str, delimiter) {
+    if (typeof str !== 'string' || typeof delimiter !== 'string' || delimiter.length === 0) {
+        throw new Error("Invalid input: both arguments must be non-empty strings.");
+    }
+
+    const index = str.indexOf(delimiter);
+    return index === -1 ? str : str.substring(0, index);
+}
 
 
 }
