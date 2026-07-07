@@ -1,0 +1,11 @@
+{
+	"emeraldwalk.runonsave": {
+		"commands": [
+			{
+				// Run whenever html, css, or js files are saved
+				"match": "\\.(js)$",
+				"cmd": "/home/bjorn/scripts/BrowserScripts/updateVersion.php ${file}"
+			}
+		]
+	}
+}
