@@ -3,10 +3,10 @@
 // @match        https://members.adulttime.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.9.5
+// @version     1.9.6
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?104467
+// @require http://media.lan/scripts/ScriptReq/Additional.js?569854
 // @description 4/28/2026, 6:34:22 AM
 // ==/UserScript==
 
@@ -168,8 +168,9 @@
       Actors: actorList
     }
     data = {
-      action: 'saveAdulttimeJson',
+      action: 'saveJson',
       class: 'WebHelper',
+      site: 'adulttime',
       text: JSON.stringify(people)
     }
     saveToLocalServer('process.php', data, 'Saved Markers')

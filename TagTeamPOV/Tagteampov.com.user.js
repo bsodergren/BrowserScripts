@@ -5,67 +5,54 @@
 // @grant        nsafeWindow
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/VideoMetadata.js?740567
-// @require http://media.lan/scripts/ScriptReq/Additional.js?826456
-// @version     1.0.10
+// @require http://media.lan/scripts/ScriptReq/VideoMetadata.js?397378
+// @require http://media.lan/scripts/ScriptReq/Additional.js?325101
+// @version     1.1.2
 // @author      -
 // @description 5/14/2026, 8:26:35 AM
 // ==/UserScript==
 
-
-
-class tagteampov extends VideoMetaData
-{
-
-  setup()
-  {
-    this.videoPlaylist = document.querySelector('.title-zone')
+class tagteampov extends VideoMetaData {
+  setup() {
+    this.videoPlaylist = document.querySelector(".title-zone");
   }
 
-  getVideoFile()
-  {
-    var downloadList = document.querySelector("#information-video > div > div > div > div.buttons > div.download.dropdown > div > a:nth-child(1)")
-    var fileNamePcs = downloadList.href.split('/')
-    var idx = fileNamePcs.findIndex(str => str.includes('.mp4'))
-    var pcs = fileNamePcs[idx].split('.mp4', 1)
-    this.video_file = pcs[0]
+  getVideoFile() {
+    var downloadList = document.querySelector(
+      "#information-video > div > div > div > div.buttons > div.download.dropdown > div > a:nth-child(1)",
+    );
+    var fileNamePcs = downloadList.href.split("/");
+    var idx = fileNamePcs.findIndex((str) => str.includes(".mp4"));
+    var pcs = fileNamePcs[idx].split(".mp4", 1);
+    this.video_file = pcs[0];
   }
 
-  getVideoGenreList()
-  {
-    var cat = document.querySelectorAll("div.categories-wrapper > a ")
-    cat.forEach(g =>
-    {
-      this.genreList.push(g.title)
-    })
+  getVideoGenreList() {
+    var cat = document.querySelectorAll("div.categories-wrapper > a ");
+    cat.forEach((g) => {
+      this.genreList.push(g.title);
+    });
   }
 
-  getVideoTitle()
-  {
-    var el = document.querySelector("#title-video > div > div.col-12.col-xl-8.p-0 > div > div > h1")
-    this.title = el.innerHTML
+  getVideoTitle() {
+    var el = document.querySelector(
+      "#title-video > div > div.col-12.col-xl-8.p-0 > div > div > h1",
+    );
+    this.title = el.innerHTML;
   }
 
-  getVideoActors()
-  {
-    var Models = document.querySelectorAll(".model-name")
-    Models.forEach(m =>
-    {
-      this.actorList.push(m.title)
-    })
+  getVideoActors() {
+    var Models = document.querySelectorAll(".model-name");
+    Models.forEach((m) => {
+      this.actorList.push(m.title);
+    });
   }
-
 }
 
-
-
-
-
-; (function ()
-{
-
-var ButtonContainer = document.querySelector("#title-video > div > div.col-12.col-xl-4.p-0 > div")
-
+(function () {
+  var ButtonContainer = document.querySelector(
+    "#title-video > div > div.col-12.col-xl-4.p-0 > div",
+  );
 
   // var MarkerGrabberBtn = document.createElement('button')
   // var spanm = document.createElement('span')
@@ -75,14 +62,13 @@ var ButtonContainer = document.querySelector("#title-video > div > div.col-12.co
   // MarkerGrabberBtn.appendChild(spanm)
   // MarkerGrabberBtn.onclick = getVideoInfo
 
-btns = ButtonContainer.children
-idx = btns.length
-btn = btns[idx-1].cloneNode(true)
-btn.removeAttribute("href")
-btn.innerHTML="Get Data"
-btn.onclick = getVideoInfo
-ButtonContainer.appendChild(btn)
-
+  btns = ButtonContainer.children;
+  idx = btns.length;
+  btn = btns[idx - 1].cloneNode(true);
+  btn.removeAttribute("href");
+  btn.innerHTML = "Get Data";
+  btn.onclick = getVideoInfo;
+  ButtonContainer.appendChild(btn);
 
   // var strongText = document.createElement('strong')
   // strongText.innerText = 'Get Video Markers'
@@ -103,18 +89,11 @@ ButtonContainer.appendChild(btn)
   // icons = document.querySelector('.nav-icos')
   // icons.appendChild(newIcon)
 
-  function getVideoInfo()
-  {
-    MetaData = new tagteampov;
-    MetaData.getVideoDetails()
+  function getVideoInfo() {
+    MetaData = new tagteampov();
+    MetaData.getVideoDetails();
+    MetaData.sendToServer()
 
-    data = {
-      action: 'saveTagTeam',
-      class: 'WebHelper',
-      text: MetaData.getJsonData()
-    }
-    saveToLocalServer('process.php', data, 'Saved Markers')
+  
   }
-})()
-
-
+})();

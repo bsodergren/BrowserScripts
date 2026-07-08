@@ -5,9 +5,9 @@
 // @grant        nsafeWindow
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/VideoMetadata.js?289613
-// @require http://media.lan/scripts/ScriptReq/Additional.js?113255
-// @version     1.3.1
+// @require http://media.lan/scripts/ScriptReq/VideoMetadata.js?639087
+// @require http://media.lan/scripts/ScriptReq/Additional.js?482283
+// @version     1.3.6
 // @author      -
 // @description 5/14/2026, 8:26:35 AM
 // ==/UserScript==
@@ -84,7 +84,7 @@ class brazzers extends VideoMetaData {
 
 		hElement.forEach((hel) => {
 			var titletxt = this.getSearchTitle(hel.innerHTML);
-			console.log(videoTitle + ' = ' + titletxt);
+			// console.log(videoTitle + ' = ' + titletxt);
 			if (videoTitle == titletxt) {
 				var parentElement = hel.parentNode;
 				var aList = parentElement.querySelectorAll('a');
@@ -110,14 +110,8 @@ class brazzers extends VideoMetaData {
 
 	function getVideoInfo() {
 		MetaData = new brazzers();
-		MetaData.getVideoDetails();
+		MetaData.sendToServer();
 
-		data = {
-			action: 'saveBrazzers',
-			class: 'WebHelper',
-			text: MetaData.getJsonData(),
-		};
-		saveToLocalServer('process.php', data, 'Saved Markers');
 	}
 
 	unsafeWindow.brazzers = brazzers;

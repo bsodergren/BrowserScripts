@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Library
-// @version     1.10.4
+// @version     1.10.6
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @license     MIT
@@ -117,6 +117,7 @@ function saveToLocalServer(postUrl, data, toast, command = null)
     responseType: 'document',
     onload: function (response)
     {
+      
       var responseXML = response.responseXML
       if (!responseXML)
       {
@@ -146,7 +147,6 @@ function sentback(str)
     {
       favBtn.click()
     }
-    console.log(str)
   }
 }
 // end function sendback

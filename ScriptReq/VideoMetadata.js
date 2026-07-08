@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Meta Library
-// @version     1.0.9
+// @version     1.1.3
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @grant        GM_addStyle
@@ -57,4 +57,23 @@ class VideoMetaData {
         const index = str.indexOf(delimiter)
         return index === -1 ? str : str.substring(0, index)
     }
+
+    sendToServer()
+    {
+        this.getVideoDetails() 
+        var hostname = window.location.host
+        var pcs = hostname.split(".")
+        var sitename = pcs[pcs.length - 2]
+
+
+      var data = {
+        action: "saveJson",
+        class: "WebHelper",
+        site: sitename,
+        text: this.getJsonData(),
+        };
+    saveToLocalServer("process.php", data, "Saved Markers");
+}
+
+
 }
