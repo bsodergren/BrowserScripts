@@ -6,11 +6,11 @@
 // @match        https://*.pornhubpremium.com/*
 // @match        https://*.pornhubpremium.org/*
 // @grant       GM_xmlhttpRequest
-// @version     1.4.3
+// @version     1.4.7
 // @author      Bjorn
 // @run-at       document-end
 // @description 4/28/2026, 6:34:22 AM
-// @require http://media.lan/scripts/ScriptReq/Additional.js?107180
+// @require http://media.lan/scripts/ScriptReq/Additional.js?823978
 // ==/UserScript==
 
 ; (function () {
