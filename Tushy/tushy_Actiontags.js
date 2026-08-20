@@ -4,10 +4,10 @@
 // @match       https://members.vixenplus.com/videos/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.2.2
+// @version     1.2.3
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?488636
+// @require http://media.lan/scripts/ScriptReq/Additional.js?894515
 // @description 4/28/2026, 6:34:22 AM
 // ==/UserScript==
 
@@ -108,7 +108,9 @@
     };
 
     data = {
-      action: 'saveTushyJson',
+      action: 'saveJson',
+            site: 'tushy',
+
       class: 'WebHelper',
       text: JSON.stringify(people),
     };
