@@ -2,12 +2,12 @@
 // @name        New script pornbox.com
 // @namespace https://greasyfork.org/users/984905
 // @match       https://pornbox.com/application/*
-// @version     1.1.10
+// @version     1.2.1
 // @author      Bjorn
 // @license     MIT
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @require http://media.lan/scripts/ScriptReq/Additional.js?898625
+// @require http://media.lan/scripts/ScriptReq/Additional.js?890916
 // @description 9/15/2025, 11:01:57 AM
 // ==/UserScript==
 

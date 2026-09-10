@@ -1,6 +1,18 @@
 #!/usr/bin/php
 <?php
 
+/**
+ *
+ * "emeraldwalk.runonsave": {
+        "commands": [
+      {
+        // Run whenever html, css, or js files are saved
+        "match": "\\.(html|css|js)$",
+        "cmd": "${workspaceFolder}/updateVersion.php ${relativeFile}",
+      },
+    ],
+    }
+ */
 $file = file_get_contents($argv[1]);
 
 

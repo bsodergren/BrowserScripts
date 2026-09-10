@@ -3,10 +3,10 @@
 // @match        https://app.reptyle.com/movies/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.0.0
+// @version     1.0.1
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?569854
+// @require http://media.lan/scripts/ScriptReq/Additional.js?916190
 // @description 4/28/2026, 6:34:22 AM
 // ==/UserScript==
 
