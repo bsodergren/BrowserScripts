@@ -6,25 +6,84 @@
 // @match        https://*.pornhubpremium.com/*
 // @match        https://*.pornhubpremium.org/*
 // @grant       GM_xmlhttpRequest
-// @version     1.4.7
+// @version     1.4.8
 // @author      Bjorn
 // @run-at       document-end
 // @description 4/28/2026, 6:34:22 AM
-// @require http://media.lan/scripts/ScriptReq/Additional.js?823978
+// @require http://media.lan/scripts/ScriptReq/Additional.js?937128
 // ==/UserScript==
 
-; (function () {
-  waitForElement('.playlist-menu-addTo', el => {
-    plWindow = document.getElementById('addToPlaylist')
+; (function ()
+{
 
-    console.log(plWindow)
-  })
+
+  const drums = document.querySelectorAll('.gtm-event-actionmenu');
+
+  // Define the event handler
+  // Define the event handler
+  function handleClick(e)
+  {
+    // console.log(e.target.querySelector)
+
+    waitForElement('.moreActionMenu ', el =>
+    {
+      // var el = e.target.querySelectorAll('.moreActionMenu')
+
+      videoKey = document.querySelector("ul>li[id=v" + el.parentElement.id + "]").dataset['videoVkey']
+
+      videoURL = window.location.origin + window.location.pathname + "?viewkey=" + videoKey;
+
+      var aLink = document.createElement('a')
+
+      aLink.classList.add('moreActionLink')
+      aLink.classList.add('gtm-event-actionmenu')
+      aLink.dataset.name = "Add to Playlist"
+      aLink.dataset.videoUrl = videoURL
+      aLink.onclick = saveDropDownLink
+
+      var linkIcon = document.createElement('span')
+      linkIcon.classList.add('icon')
+      linkIcon.classList.add('ph-icon-playlist-add')
+
+      var linkText = document.createElement('span')
+      linkText.classList.add('label')
+      linkText.innerText = 'save to playlist'
+
+
+      aLink.appendChild(linkIcon)
+      aLink.appendChild(linkText)
+      el.appendChild(aLink)
+
+    })
+
+  }
+
+  // Add the listener to each element in the array
+  drums.forEach(el =>
+  {
+    el.addEventListener('click', handleClick);
+  });
+
+
+  function saveDropDownLink(e)
+  {
+    videoURL = e.target.dataset['videoUrl']
+    saveLink(videoURL)
+    var last = e.target.lastChild
+    e.target.removeChild(last)
+
+  }
+
+
 
   let savedLinks = []
-  document.addEventListener('contextmenu', function (e) {
-    if (e.ctrlKey && e.shiftKey) {
+  document.addEventListener('contextmenu', function (e)
+  {
+    if (e.ctrlKey && e.shiftKey)
+    {
       const link = e.target.closest('a')
-      if (link && link.href) {
+      if (link && link.href)
+      {
         e.preventDefault() // prevent default context menu
 
         saveLink(link.href)
@@ -32,11 +91,13 @@
     }
   })
   // waitForElement ('.ratingInfo', el => {
-  waitForElement('.tab-menu-wrapper-row', el => {
+  waitForElement('.tab-menu-wrapper-row', el =>
+  {
     createPlaylistButton(el)
   })
 
-  function createoldPlaylistButton(element) {
+  function createoldPlaylistButton(element)
+  {
     var DivEl = document.createElement('div')
     DivEl.classList.add('videoInfo')
     DivEl.style.borderLeftWidth = '1px'
@@ -48,7 +109,8 @@
     element.appendChild(DivEl)
   }
 
-  function createPlaylistButton(element) {
+  function createPlaylistButton(element)
+  {
     var menuWrapper = document.createElement('div')
     menuWrapper.classList.add('tab-menu-wrapper-cell')
     menuWrapper.classList.add('videoCtaPill')
@@ -67,13 +129,16 @@
     element.appendChild(menuWrapper)
   }
 
-  function saveLinktoPlaylist() {
+  function saveLinktoPlaylist()
+  {
     saveLink(window.location.href)
   }
-  function saveLink(url) {
+  function saveLink(url)
+  {
     playlistFile = 'PhClicked.txxt'
 
-    if (window.location.hostname == 'www.pornhubpremium.com') {
+    if (window.location.hostname == 'www.pornhubpremium.com')
+    {
       playlistFile = 'PhPremium.txxt'
     }
 
