@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Meta Library
-// @version     1.1.3
+// @version     1.3.2
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @grant        GM_addStyle
@@ -9,8 +9,10 @@
 // @namespace   https://greasyfork.org/users/984905
 // ==/UserScript==
 
-class VideoMetaData {
-    constructor() {
+class VideoMetaData
+{
+    constructor()
+    {
         this.people = []
         this.markers = []
         this.genreList = []
@@ -20,12 +22,26 @@ class VideoMetaData {
         this.video_file = ''
     }
 
+    timeToSeconds(timeString)
+    {
+         if(timeString.split(":").length == 1){
+            timeString = "0:" + timeString;
+        }
+        if(timeString.split(":").length == 2){
+            timeString = "0:" + timeString;
+        }
+        const [hours, minutes, seconds] = timeString.split(':').map(Number);
+        return hours * 3600 + minutes * 60 + seconds;
+    }
+
     getVideoTitle() { }
     getVideoActors() { }
     getVideoFile() { }
     getVideoGenreList() { }
+    getActionTags() { }
 
-    getVideoDetails() {
+    getVideoDetails()
+    {
         this.getVideoActors()
         this.getVideoFile()
         this.getVideoTitle()
@@ -36,19 +52,23 @@ class VideoMetaData {
             Genre: this.genreList,
             Actors: this.actorList,
             video_file: this.video_file
+
         }
     }
 
-    getJsonData() {
+    getJsonData()
+    {
         return JSON.stringify(this.people)
     }
 
-    getBefore(str, delimiter) {
+    getBefore(str, delimiter)
+    {
         if (
             typeof str !== 'string' ||
             typeof delimiter !== 'string' ||
             delimiter.length === 0
-        ) {
+        )
+        {
             throw new Error(
                 'Invalid input: both arguments must be non-empty strings.'
             )
@@ -60,20 +80,24 @@ class VideoMetaData {
 
     sendToServer()
     {
-        this.getVideoDetails() 
+        if (this.people.length == 0)
+        {
+            this.getVideoDetails()
+        }
+
         var hostname = window.location.host
         var pcs = hostname.split(".")
         var sitename = pcs[pcs.length - 2]
 
 
-      var data = {
-        action: "saveJson",
-        class: "WebHelper",
-        site: sitename,
-        text: this.getJsonData(),
+        var data = {
+            action: "saveJson",
+            class: "WebHelper",
+            site: sitename,
+            text: this.getJsonData()
         };
-    saveToLocalServer("process.php", data, "Saved Markers");
-}
+        saveToLocalServer("process.php", data, "Saved Markers");
+    }
 
 
 }

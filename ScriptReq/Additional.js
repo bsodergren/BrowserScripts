@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Bsodergren Library
-// @version     1.10.6
+// @version     1.11.10
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @license     MIT
@@ -107,6 +107,7 @@ function saveToLocalServer(postUrl, data, toast, command = null)
   postUrl = 'http://media.lan/plex/' + postUrl
   const encoded = jsonToUrlEncoded(data)
 
+  console.log(postUrl +"?"+ encoded)
   GM_xmlhttpRequest({
     method: 'POST',
     url: postUrl,
@@ -115,9 +116,9 @@ function saveToLocalServer(postUrl, data, toast, command = null)
       'Content-Type': 'application/x-www-form-urlencoded'
     },
     responseType: 'document',
+
     onload: function (response)
     {
-      
       var responseXML = response.responseXML
       if (!responseXML)
       {

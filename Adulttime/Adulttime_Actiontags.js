@@ -3,15 +3,16 @@
 // @match        https://members.adulttime.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
-// @version     1.9.6
+// @version     1.9.7
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?569854
+// @require http://media.lan/scripts/ScriptReq/Additional.js?909201
 // @description 4/28/2026, 6:34:22 AM
 // ==/UserScript==
 
 
-; (function () {
+; (function ()
+{
 
 
   var MarkerGrabberBtn = document.createElement('button')
@@ -22,44 +23,51 @@
   spanm.style.fontSize = '16px'
   MarkerGrabberBtn.appendChild(spanm)
 
-  waitForElement('.VideoJSPlayer-DownloadOptions-BorderBox', el => {
+  waitForElement('.VideoJSPlayer-DownloadOptions-BorderBox', el =>
+  {
 
     clickFunction = getInfoPlusActionTag
 
     lastChild = el.lastChild
-     if(lastChild.classList.contains(
-          'VideoJSPlayer-DownloadOptionSubTitle-Link'
-        ) === true
-      ) {
-            clickFunction = getInfoPlusSubtitle
-      }
+    if (lastChild.classList.contains(
+      'VideoJSPlayer-DownloadOptionSubTitle-Link'
+    ) === true
+    )
+    {
+      clickFunction = getInfoPlusSubtitle
+    }
 
     children = el.childNodes
-    children.forEach(child => {
+    children.forEach(child =>
+    {
       if (
         child.classList.contains(
           'VideoJSPlayer-DownloadOptions-Title-BorderBox'
         ) === true
-      ) {
+      )
+      {
         return
       }
       if (
         child.classList.contains(
           'VideoJSPlayer-DownloadOptionSubTitle-Link'
         ) === true
-      ) {
+      )
+      {
         return
       }
       child.onclick = clickFunction;
     })
   })
 
-  waitForElement('.VideoJSPlayer-DownloadOptionSubTitle-Link', el => {
+  waitForElement('.VideoJSPlayer-DownloadOptionSubTitle-Link', el =>
+  {
 
     el.onclick = getSubtitle
   })
   // Example usage:
-  waitForElement('.ScenePlayerHeaderPlus-ActionTagsButtonToggleWrapper', el => {
+  waitForElement('.ScenePlayerHeaderPlus-ActionTagsButtonToggleWrapper', el =>
+  {
 
     btn = document.getElementById('InfoButton')
     btn.remove()
@@ -71,11 +79,13 @@
   })
 
 
-  waitForElement('.ScenePlayerHeaderPlus-ChannelName-Link', el => {
+  waitForElement('.ScenePlayerHeaderPlus-ChannelName-Link', el =>
+  {
     t = document.querySelector(
       '.ScenePlayerHeaderPlus-ActionTagsButtonToggleWrapper'
     )
-    if (t === null) {
+    if (t === null)
+    {
       MarkerGrabberBtn.onclick = getVideoInfo
       spanm.innerText = 'Get Video Info'
       MarkerGrabberBtn.id = 'InfoButton'
@@ -84,7 +94,8 @@
     }
   })
 
-  function getSubtitle() {
+  function getSubtitle()
+  {
     var downloadEl = document.getElementsByClassName(
       'VideoJSPlayer-DownloadOptionSubTitle-Link'
     )
@@ -109,16 +120,19 @@
     saveToLocalServer('process.php', data, 'Saved Subtitles')
   }
 
-  function getInfoPlusSubtitle() {
+  function getInfoPlusSubtitle()
+  {
     getVideoInfo(true)
     getSubtitle()
   }
 
-  function getInfoPlusActionTag() {
+  function getInfoPlusActionTag()
+  {
     getVideoInfo(true)
   }
   // Ensure script runs only after DOM is ready
-  function getVideoInfo(actionTags = false) {
+  function getVideoInfo(actionTags = false)
+  {
     // Example: Change background color
     let people = []
     let markers = []
@@ -138,19 +152,23 @@
     lenSplit = Lentext.split(' of ')
     Videolength = lenSplit[1]
     d = document.querySelectorAll('.ActorImage-BackgroundBox')
-    for (var i = 0; i < d.length; i++) {
+    for (var i = 0; i < d.length; i++)
+    {
       var parent = d[i].parentElement
       actor = parent.innerText
       actorList.push(actor)
     }
     g = document.querySelectorAll('.ButtonList-Button')
-    for (var i = 0; i < g.length; i++) {
+    for (var i = 0; i < g.length; i++)
+    {
       genre = g[i].innerText
       genreList.push(genre)
     }
     var VideoList = document.querySelectorAll('.vjs-marker')
-    if (VideoList !== null) {
-      for (var i = 0; i < VideoList.length; i++) {
+    if (VideoList !== null)
+    {
+      for (var i = 0; i < VideoList.length; i++)
+      {
         markerName = VideoList[i].getAttribute('data-tip')
         position = VideoList[i].getAttribute('position')
         markers.push({
@@ -176,7 +194,8 @@
     saveToLocalServer('process.php', data, 'Saved Markers')
   }
 
-  function removeMarkerButton() {
+  function removeMarkerButton()
+  {
     b = document.getElementById('MarkerButton')
   }
   // function saveToText(Formdata, action) {
