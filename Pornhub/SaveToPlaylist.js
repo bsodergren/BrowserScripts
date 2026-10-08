@@ -6,11 +6,11 @@
 // @match        https://*.pornhubpremium.com/*
 // @match        https://*.pornhubpremium.org/*
 // @grant       GM_xmlhttpRequest
-// @version     1.4.8
+// @version     1.4.9
 // @author      Bjorn
 // @run-at       document-end
 // @description 4/28/2026, 6:34:22 AM
-// @require http://media.lan/scripts/ScriptReq/Additional.js?937128
+// @require http://media.lan/scripts/ScriptReq/Additional.js?904709
 // ==/UserScript==
 
 ; (function ()
@@ -31,7 +31,7 @@
 
       videoKey = document.querySelector("ul>li[id=v" + el.parentElement.id + "]").dataset['videoVkey']
 
-      videoURL = window.location.origin + window.location.pathname + "?viewkey=" + videoKey;
+      videoURL = window.location.origin + "/view_video.php?viewkey=" + videoKey;
 
       var aLink = document.createElement('a')
 
