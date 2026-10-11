@@ -5,26 +5,32 @@
 // @grant        nsafeWindow
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?978558
-// @version     1.0.5
+// @require http://media.lan/scripts/ScriptReq/Additional.js?311651
+// @version     1.1.0
 // @author      -
 // @description 5/14/2026, 8:26:35 AM
 // ==/UserScript==
 
-; (function () {
-  function searchNodeListForText(nodes, searchText) {
-    if (!(nodes instanceof NodeList)) {
+; (function ()
+{
+  function searchNodeListForText(nodes, searchText)
+  {
+    if (!(nodes instanceof NodeList))
+    {
       throw new TypeError('First argument must be a NodeList')
     }
-    if (typeof searchText !== 'string') {
+    if (typeof searchText !== 'string')
+    {
       throw new TypeError('Search text must be a string')
     }
 
     const matches = []
     const lowerSearch = searchText.toLowerCase()
 
-    nodes.forEach(node => {
-      if (node.textContent.toLowerCase().includes(lowerSearch)) {
+    nodes.forEach(node =>
+    {
+      if (node.textContent.toLowerCase().includes(lowerSearch))
+      {
         matches.push(node)
       }
     })
@@ -42,7 +48,8 @@
   linkGrabberBtn.appendChild(span)
   ButtonRow[0].appendChild(linkGrabberBtn)
 
-  function getVideoLinks() {
+  function getVideoLinks()
+  {
     // Example: Change background color
     let videoJson = []
     let names = []
@@ -54,7 +61,8 @@
     console.log('Found elements:', found)
 
     // Highlight matches
-    found.forEach(el => {
+    found.forEach(el =>
+    {
       next = el.nextElementSibling
       VideoSeries = next.innerText
       console.log(next.innerText)
@@ -63,7 +71,8 @@
     e = document.querySelector('.ex-player.is-paused')
     s = e.getAttribute('data-sources')
     array = JSON.parse(s)
-    url = array[0].src
+    source = array.filter((c) => c.label == '1080p')
+    url = source[0].src
     path = url.split('?', 1)
     pcs = path[0].split('/')
     filename = pcs[pcs.length - 1]
@@ -72,10 +81,13 @@
     videoTitle = videoTitleEl[0].innerText
 
     link = document.querySelectorAll('div> .ex-grid-item > a')
-    for (var i = 0; i < link.length; i++) {
+    for (var i = 0; i < link.length; i++)
+    {
       name = link[i].innerText
-      if (name !== '') {
-        if (name !== VideoSeries) {
+      if (name !== '')
+      {
+        if (name !== VideoSeries)
+        {
           names.push(name)
         }
       }
@@ -88,9 +100,13 @@
       Actors: names,
       video_file: filename
     }
+    var hostname = window.location.host
+    var pcs = hostname.split(".")
+    var sitename = pcs[pcs.length - 2]
 
     data = {
-      action: 'saveNewSensationsJson',
+      action: 'saveJson',
+      site: sitename,
       class: 'WebHelper',
       text: JSON.stringify(videoJson)
     }
