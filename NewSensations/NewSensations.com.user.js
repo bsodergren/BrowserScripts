@@ -5,8 +5,8 @@
 // @grant        nsafeWindow
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/Additional.js?311651
-// @version     1.1.0
+// @require http://media.lan/scripts/ScriptReq/Additional.js?118331
+// @version     1.1.3
 // @author      -
 // @description 5/14/2026, 8:26:35 AM
 // ==/UserScript==
@@ -39,6 +39,8 @@
   }
 
   var ButtonRow = document.querySelectorAll('.ex-grid-item.ex-actions-row')
+
+
   var linkGrabberBtn = document.createElement('button')
   linkGrabberBtn.onclick = getVideoLinks
   //     // linkGrabberBtn.classList.add('Button'); //playlistButtons tooltipTrig js-pop
@@ -46,7 +48,35 @@
   span.innerText = 'Get Video Json'
   span.className = 'text'
   linkGrabberBtn.appendChild(span)
+
+  var FilenameGrabberBtn = document.createElement('button')
+  FilenameGrabberBtn.onclick = getVideoFilename
+  //     // linkGrabberBtn.classList.add('Button'); //playlistButtons tooltipTrig js-pop
+  var FileNamespan = document.createElement('span')
+  FileNamespan.innerText = 'Get Video filename'
+  FileNamespan.className = 'text'
+  FilenameGrabberBtn.appendChild(FileNamespan)
+
+
+
   ButtonRow[0].appendChild(linkGrabberBtn)
+  ButtonRow[0].appendChild(FilenameGrabberBtn)
+
+function getVideoFilename(){
+
+    e = document.querySelector('.ex-player.is-paused')
+    s = e.getAttribute('data-sources')
+    array = JSON.parse(s)
+    source = array.filter((c) => c.label == '1080p')
+    url = source[0].src
+    path = url.split('?', 1)
+    pcs = path[0].split('/')
+    filename = pcs[pcs.length - 1]
+
+
+      showToast(filename, 30000 )
+
+}
 
   function getVideoLinks()
   {
