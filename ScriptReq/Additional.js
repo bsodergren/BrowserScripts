@@ -1,11 +1,96 @@
 // ==UserScript==
 // @name        Bsodergren Library
-// @version     1.11.10
+// @version     1.12.0
 // @grant       GM_xmlhttpRequest
 // @grant       nsafeWindow
 // @license     MIT
 // @namespace   https://greasyfork.org/users/984905
 // ==/UserScript==
+const objToStr = (obj) => Object.prototype.toString.call(obj);
+	const isElem = (obj) => {
+		const s = objToStr(obj);
+		return s.includes('Element');
+	};
+
+	const normalizeTarget = (target, toQuery = true, root) => {
+		if (Object.is(target, null) || Object.is(target, undefined)) {
+			return [];
+		}
+		if (Array.isArray(target)) {
+			return target;
+		}
+		if (typeof target === 'string') {
+			return toQuery ? Array.from((root || document).querySelectorAll(target)) : [target];
+		}
+		if (isElem(target)) {
+			return [target];
+		}
+		return Array.from(target);
+	};
+
+const dom = {
+		attr(target, attr, value = undefined) {
+			for (const elem of normalizeTarget(target)) {
+				if (value === undefined) {
+					return elem.getAttribute(attr);
+				}
+				if (value === null) {
+					elem.removeAttribute(attr);
+				} else {
+					elem.setAttribute(attr, value);
+				}
+			}
+		},
+		prop(target, prop, value = undefined) {
+			for (const elem of normalizeTarget(target)) {
+				if (value === undefined) {
+					return elem[prop];
+				}
+				elem[prop] = value;
+			}
+		},
+		text(target, text) {
+			const targets = normalizeTarget(target);
+			if (text === undefined) {
+				return targets.length !== 0 ? targets[0].textContent : undefined;
+			}
+			for (const elem of targets) {
+				elem.textContent = text;
+			}
+		},
+		remove(target) {
+			return normalizeTarget(target).some((elem) => elem.remove());
+		},
+		cl: {
+			add(target, token) {
+				token = Array.isArray(token) ? token : [token];
+				return normalizeTarget(target).some((elem) => elem.classList.add(...token));
+			},
+			remove(target, token) {
+				token = Array.isArray(token) ? token : [token];
+				return normalizeTarget(target).some((elem) => elem.classList.remove(...token));
+			},
+			toggle(target, token, force) {
+				let r;
+				for (const elem of normalizeTarget(target)) {
+					r = elem.classList.toggle(token, force);
+				}
+				return r;
+			},
+			has(target, token) {
+				return normalizeTarget(target).some((elem) => elem.classList.contains(token));
+			}
+		}
+	};
+	const qs = (selector, root) => {
+		try {
+			return (root || document).querySelector(selector);
+		} catch (ex) {
+			err(ex);
+		}
+		return null;
+	};
+
 
 function showToast(message, duration = 3000, cmdElement = null)
 {

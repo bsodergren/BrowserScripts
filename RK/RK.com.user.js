@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name        RealityKings.com
 // @match      https://site-ma.realitykings.com/scene/*
+// @match   https://site-ma.digitalplayground.com/scene/*
 // @grant        GM_xmlhttpRequest
 // @grant        nsafeWindow
 // @license     MIT
 // @namespace https://greasyfork.org/users/984905
-// @require http://media.lan/scripts/ScriptReq/VideoMetadata.js?461015
-// @require http://media.lan/scripts/ScriptReq/Additional.js?931082
-// @version     1.6.2
+// @require http://media.lan/scripts/ScriptReq/VideoMetadata.js?839440
+// @require http://media.lan/scripts/ScriptReq/Additional.js?591716
+// @version     1.6.3
 // @author      -
 // @description 5/14/2026, 8:26:35 AM
 // ==/UserScript==
